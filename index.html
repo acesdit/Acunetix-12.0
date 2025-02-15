@@ -2,15 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/src/style.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link href="/src/styles.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.172.0/three.tsl.js" integrity="sha512-PiFiRajtnAStBKn2yo9z+RO3RJ6/Njc4l2KhPRuJ3jQ3J8aro4NRQpoGVNDOJNQ6Iuzou85TWxN2QGNDUyj6wA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="three.r134.min.js"></script>
-    <script src="vanta.waves.min.js"></script>
-    <title>ACUNETIX 12.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acunetix 12.0</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      VANTA.WAVES({
+          el: "#background",
+          mouseControls: true,
+touchControls: true,
+gyroControls: false,
+minHeight: 200.00,
+minWidth: 200.00,
+scale: 1.00,
+scaleMobile: 1.00,
+color: 0x511a1a,
+shininess: 43.00  // Added background color
+      })
+  </script>
   </body>
 </html>

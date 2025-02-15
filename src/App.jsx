@@ -1,25 +1,28 @@
-import { Switch, Route } from "wouter";
-import { QueryClientProvider } from "@tanstack/react-query";
-import Home from "../pages/Home";
-// import { Toaster } from "@/components/ui/toaster";
-import Home from "@/pages/Home";
-
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
+import { useState } from 'react'
+import React from "react";
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import About from './components/About';
 
 function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <Router />
-      <Toaster />
-    </QueryClientProvider>
-  );
+    <>
+      <div className="bg-black w-full fixed top-0 h-18 z-50 flex items-center ">
+        <Navbar />
+      </div>
+      <section className="flex flex-col backdrop-blur-xl items-center justify-center h-screen w-full"> 
+        <Hero />
+      </section>
+      <section className='flex bg-black text-white flex-col items-center justify-center h-screen w-full'>
+        <About/>
+      </section>
+    </>
+  )
 }
 
-export default App;
+export default App
