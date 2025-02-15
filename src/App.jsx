@@ -23,8 +23,13 @@ function App() {
       <section className='flex bg-black text-white flex-col items-center justify-center h-screen w-full'>
         <About/>
       </section>
-      <Event/>
+      <section>
+        <Event/>
+      </section>
+      <section>
       <Sponsors/>
+      </section>
+      
     </>
   )
 }
