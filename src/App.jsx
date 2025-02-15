@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import React from "react";
 import './App.css'
@@ -5,6 +6,8 @@ import './index.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About';
+import Event from './components/Event';
+import Sponsors from './components/Sponsors';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +23,8 @@ function App() {
       <section className='flex bg-black text-white flex-col items-center justify-center h-screen w-full'>
         <About/>
       </section>
+      <Event/>
+      <Sponsors/>
     </>
   )
 }
