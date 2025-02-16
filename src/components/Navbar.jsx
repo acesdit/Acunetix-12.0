@@ -35,7 +35,7 @@ const Navbar = () => {
             href="#services"
             className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4"
           >
-            FAQs
+            Schedule
           </a>
           <a href="#contact" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4">
           About Us
@@ -96,7 +96,7 @@ const Navbar = () => {
               className="py-2 hover:text-gray-400 transition-colors duration-300"
               style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
             >
-              FAQs
+              Schedule
             </a>
             <a
               href="#contact"
