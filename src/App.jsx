@@ -46,7 +46,7 @@ function App() {
         <Hero />
       </section>
 
-      <section data-scroll-section data-scroll-speed="1" className='flex bg-black text-white flex-col items-center justify-center h-screen w-full' style={{ backgroundImage: "url('')" }}>
+      <section data-scroll-section data-scroll-speed="1" className='flex bg-black text-white flex-col items-center justify-center h-screen w-full' >
         <About />
       </section>
 
