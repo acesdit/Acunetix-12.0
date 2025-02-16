@@ -14,7 +14,7 @@ const Navbar = () => {
             Home
           </a>
           <a href="#about" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4">
-            About
+            Events
           </a>
         </div>
 
@@ -35,10 +35,10 @@ const Navbar = () => {
             href="#services"
             className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4"
           >
-            Services
+            FAQs
           </a>
           <a href="#contact" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4">
-            Contact
+          About Us
           </a>
         </div>
 
@@ -89,21 +89,21 @@ const Navbar = () => {
               className="py-2 hover:text-gray-400 transition-colors duration-300"
               style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
             >
-              About
+              Events
             </a>
             <a
               href="#services"
               className="py-2 hover:text-gray-400 transition-colors duration-300"
               style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
             >
-              Services
+              FAQs
             </a>
             <a
               href="#contact"
               className="py-2 hover:text-gray-400 transition-colors duration-300"
               style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
             >
-              Contact
+              About Us
             </a>
           </div>
           <div className="flex justify-center mt-auto bottom-0 pb-4">
