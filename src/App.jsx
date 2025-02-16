@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Event from './components/Event';
+import '../locomotive-custom.scss';
 import Sponsors from './components/Sponsors';
 import Reel from './components/Reel';
 import Footer from './components/Footer';
@@ -34,10 +35,12 @@ function App() {
   }, []);
 
   return (
+    <>
+    <section data-scroll-section data-scroll-speed="2" className="bg-black w-full fixed top-0 h-18 z-50 flex items-center">
+    <Navbar />
+  </section>
     <div ref={scrollRef} data-scroll-container>
-      <section data-scroll-section data-scroll-speed="2" className="bg-black w-full fixed top-0 h-18 z-50 flex items-center">
-        <Navbar />
-      </section>
+      
 
       <section data-scroll-section data-scroll-speed="3" className="flex flex-col backdrop-blur-xl items-center justify-center h-screen w-full bg-cover bg-center">
         <Hero />
@@ -67,6 +70,7 @@ function App() {
     </div>
 </section>
     </div>
+    </>
   );
 }
 
