@@ -91,7 +91,7 @@ function Event() {
         <div className="relative z-10">
           {/* Compact Header */}
           <div className="pt-12 pb-8 text-center">
-            <h1 className="text-6xl font-bold text-white mb-0">EVENTS</h1>
+            <h1 className="text-6xl font-bold text-white mb-0 pb-10">EVENTS</h1>
           </div>
 
           {/* Tilted Cards Grid */}

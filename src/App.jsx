@@ -50,7 +50,7 @@ function App() {
         <About />
       </section>
 
-      <section data-scroll-section data-scroll-speed="2">
+      <section data-scroll-section data-scroll-speed="2" className='mt-30 '>
         <Event />
       </section>
 
