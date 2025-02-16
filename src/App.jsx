@@ -1,6 +1,6 @@
+import React from "react";
 import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
-import React from "react";
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './App.css';
 import './index.css';
@@ -9,6 +9,8 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Event from './components/Event';
 import Sponsors from './components/Sponsors';
+import Reel from './components/Reel';
+import Footer from './components/Footer';
 
 function App() {
   const scrollRef = useRef(null);
@@ -49,9 +51,21 @@ function App() {
         <Event />
       </section>
 
-      <section data-scroll-section data-scroll-speed="1">
+      <section data-scroll-section data-scroll-speed="2">
         <Sponsors />
       </section>
+      <section  data-scroll-section data-scroll-speed="2">
+        <Reel/>
+      </section>
+      <section 
+    data-scroll-section 
+    data-scroll-speed="2"
+    className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10"
+>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <Footer />
+    </div>
+</section>
     </div>
   );
 }
