@@ -25,11 +25,11 @@ function App() {
 
   return (
     <div ref={scrollRef} data-scroll-container>
-      <section data-scroll-section className="bg-black w-full fixed top-0 h-18 z-50 flex items-center">
+      <section data-scroll-section data-scroll-speed className="bg-black w-full fixed top-0 h-18 z-50 flex items-center">
         <Navbar />
       </section>
 
-      <section data-scroll-section data-scroll-speed="2" data-scroll-direction="horizontal" className="flex flex-col backdrop-blur-xl items-center justify-center h-screen w-full bg-cover bg-center" >
+      <section data-scroll-section className="flex flex-col backdrop-blur-xl items-center justify-center h-screen w-full bg-cover bg-center" >
         <Hero />
       </section>
 

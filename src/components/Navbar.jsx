@@ -61,10 +61,10 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed z-50 top-0 right-0 h-full text-white transition-transform duration-500 ease-in-out transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed backdrop-blur-xl z-50 top-0 right-0 h-full text-white transition-transform duration-500 ease-in-out transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
         style={{ width: "190px", background: "rgba(0, 0, 0, 0.92)" }}
       >
-        <div className="flex flex-col space-y-4 text-center">
+        <div className="flex flex-col space-y-4 text-center bg-black">
           <button
             className="self-end focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
             style={{ padding: "1rem 1.5rem" }}
