@@ -33,10 +33,12 @@ function App() {
   }, []);
 
   return (
+    <>
+    <section data-scroll-section data-scroll-speed="2" className="bg-black w-full fixed top-0 h-18 z-50 flex items-center">
+    <Navbar />
+  </section>
     <div ref={scrollRef} data-scroll-container>
-      <section data-scroll-section data-scroll-speed="2" className="bg-black w-full fixed top-0 h-18 z-50 flex items-center">
-        <Navbar />
-      </section>
+      
 
       <section data-scroll-section data-scroll-speed="3" className="flex flex-col backdrop-blur-xl items-center justify-center h-screen w-full bg-cover bg-center">
         <Hero />
@@ -54,6 +56,7 @@ function App() {
         <Sponsors />
       </section>
     </div>
+    </>
   );
 }
 
