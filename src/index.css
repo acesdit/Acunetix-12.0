@@ -35,4 +35,15 @@ p{
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
-      
+html.has-scroll-smooth {
+    overflow: hidden;
+  }
+  
+  html.has-scroll-dragging {
+    user-select: none;
+  }
+  
+  [data-scroll-container] {
+    min-height: 100vh;
+  }
+  

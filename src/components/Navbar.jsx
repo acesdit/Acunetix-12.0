@@ -9,12 +9,12 @@ const Navbar = () => {
     <nav className="text-white py-6 max-sm:px-5 md:px-4 lg:px-12 fixed w-full z-5 ">
       <div className="flex items-center justify-between" style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* Left as - Desktop */}
-          <div className="hidden md:flex space-x-12 gap-16">
-            <a href="#home" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5">
-              Home
-            </a>
-          <a href="#about" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4">
-            About
+        <div className="hidden md:flex space-x-12 gap-16">
+          <a href="#home" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5">
+            Home
+          </a>
+          <a href="#events" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4">
+            Events
           </a>
         </div>
 
@@ -25,20 +25,17 @@ const Navbar = () => {
             alt="Logo"
             width={48}
             height={48}
-            className="transform hover:scale-105 transition-transform max-sm:ml-14 sm:ml-15 duration-300 "
+            className="transform hover:scale-105 transition-transform duration-300 "
           />
         </div>
 
         {/* Right as - Desktop */}
-        <div className="hidden md:flex space-x-12 gap-16 px-3">
-          <a
-            href="#services"
-            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4"
-          >
-            Services
+        <div className="hidden md:flex space-x-12 gap-16">
+          <a href="#schedule" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5">
+            Schedule
           </a>
-          <a href="#contact" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4">
-            Contact
+          <a href="#about" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4">
+            About
           </a>
         </div>
 
@@ -61,10 +58,10 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed z-50 top-0 right-0 h-full text-white transition-transform duration-500 ease-in-out transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
-        style={{ width: "170px", background: "rgba(0, 0, 0, 0.92)" }}
+        className={`fixed backdrop-blur-xl z-50 top-0 right-0 h-full text-white transition-transform duration-500 ease-in-out transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+        style={{ width: "190px", background: "rgba(0, 0, 0, 0.92)" }}
       >
-        <div className="flex flex-col space-y-4 text-center">
+        <div className="flex flex-col space-y-4 text-center bg-[#0000006f]">
           <button
             className="self-end focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
             style={{ padding: "1rem 1.5rem" }}
@@ -75,7 +72,8 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          <div className="flex flex-col py-4">
+          <div className="flex justify-around  flex-col py-4" style={{ height: "90vh" }}>
+          <div className="flex justify-center align-middle  flex-col py-4" style={{ gap: "1rem" }}>
             <a
               href="#home"
               className="py-2 hover:text-gray-400 transition-colors duration-300"
@@ -86,26 +84,36 @@ const Navbar = () => {
             <a
               href="#about"
               className="py-2 hover:text-gray-400 transition-colors duration-300"
-              style={{ fontSize: "1.5rem", padding: "1rem 2rem" }}
+              style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
             >
-              About
+              Events
             </a>
             <a
               href="#services"
               className="py-2 hover:text-gray-400 transition-colors duration-300"
-              style={{ fontSize: "1.5rem", padding: "1rem 2rem" }}
+              style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
             >
-              Services
+              Schedule
             </a>
             <a
               href="#contact"
               className="py-2 hover:text-gray-400 transition-colors duration-300"
-              style={{ fontSize: "1.5rem", padding: "1rem 2rem" }}
+              style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
             >
-              Contact
+              About Us
             </a>
           </div>
+          <div className="flex justify-center mt-auto bottom-0 pb-4">
+            <img
+              src={logo}
+              alt="Logo"
+              width={48}
+              height={48}
+              className="transform hover:scale-105 transition-transform duration-300"
+            />
         </div>
+        </div> 
+      </div>
       </div>
     </nav>
   )
