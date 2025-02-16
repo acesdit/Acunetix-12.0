@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import 'locomotive-scroll/dist/locomotive-scroll.css';
-import './App.css';
 import './index.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
