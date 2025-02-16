@@ -15,11 +15,7 @@
     "ogl": "^1.0.11",
 
     "locomotive-scroll": "^4.1.4",
-<<<<<<< HEAD
     "postprocessing": "^6.36.7",
-=======
-
->>>>>>> 0b501f4925b494fb157133802ae07c56da973c3a
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scroll-parallax": "^3.4.5",
