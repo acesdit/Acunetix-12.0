@@ -29,7 +29,7 @@ function App() {
         <Navbar />
       </section>
 
-      <section data-scroll-section className="flex flex-col backdrop-blur-xl items-center justify-center h-screen w-full bg-cover bg-center" >
+      <section data-scroll-section data-scroll-speed="2" data-scroll-direction="horizontal" className="flex flex-col backdrop-blur-xl items-center justify-center h-screen w-full bg-cover bg-center" >
         <Hero />
       </section>
 
