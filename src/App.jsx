@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Event from './components/Event';
+import '../locomotive-custom.scss';
 import Sponsors from './components/Sponsors';
 
 function App() {
