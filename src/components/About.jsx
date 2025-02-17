@@ -28,7 +28,7 @@
                     <p
                         className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8 pt-6 sm:pt-10"
                     >
-                        🚀 Pioneering the future of digital experiences, we blend cutting-edge technology 
+                        Pioneering the future of digital experiences, we blend cutting-edge technology 
                         with creative vision to deliver transformative solutions. Our team of experts 
                         thrives at the intersection of <strong>innovation</strong> and <strong>execution</strong>.
                     </p>
