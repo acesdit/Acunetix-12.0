@@ -6,7 +6,6 @@
         return (
             <section 
                 className="relative w-full min-h-screen flex flex-col items-center justify-center bg-black overflow-hidden px-4 sm:px-6"
-                id="about"
             >
                 {/* Hyperspeed Animated Background */}
                 <motion.div 
