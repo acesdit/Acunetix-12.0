@@ -1,5 +1,6 @@
     import React from "react";
     import Hyperspeed from "../animation/Backgrounds/Hyperspeed/Hyperspeed";
+    import { motion } from "framer-motion";
     import "./about.css";
 
     const About = () => {
