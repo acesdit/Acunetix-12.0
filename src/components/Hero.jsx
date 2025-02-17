@@ -4,8 +4,8 @@ import video from '../assets/Background.mp4';
 const Hero = () => {
     return (
         <div className="relative w-full flex items-center justify-center h-screen">
-            <video className="absolute inset-0 w-full h-full object-cover" autoPlay loop muted>
-                <source src={video} type="video/mp4" />
+            <video className="absolute inset-0 w-full h-full object-cover" autoPlay loop muted preload="auto">
+                <source src={video} type="video/mp4" loading="lazy" />
                 Your browser does not support the video tag.
             </video>
             <div className="relative z-10 text-center text-white" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}>
