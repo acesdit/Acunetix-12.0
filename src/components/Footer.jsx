@@ -3,7 +3,7 @@ import acunetix from "../assets/logo.png";
 
 function Footer() {
     return (
-        <div data-scroll-section className="bg-black text-white flex justify-center mt-12 py-8">
+        <div data-scroll-section className="bg-black text-white flex justify-center mt-12 py-8 w-full">
             <div className="h-24 w-full max-w-6xl flex justify-between items-center px-4">
                 <div className="flex flex-col justify-between h-full">
                     <a href="#" className="hover:text-aqua hover:shadow-lg">HOME</a>
