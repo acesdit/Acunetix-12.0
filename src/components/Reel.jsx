@@ -10,8 +10,8 @@ function Reel() {
 
     return (
         <div className="w-full flex flex-col items-center justify-center bg-black p-5">
-            <h2 className="text-white text-xl text-center w-full my-2">PAST EVENTS</h2>
-            <div className="flex flex-nowrap justify-between md:justify-evenly gap-2 w-[90%] max-w-[800px] bg-gray-300 rounded-2xl p-5 overflow-x-auto whitespace-nowrap">
+            <h2 className="text-white text-3xl text-center w-full m-10 my-2">PAST EVENTS</h2>
+            <div className="flex flex-nowrap justify-between md:justify-evenly gap-2 w-[90%] max-w-[800px] mt-15 bg-gray-300 rounded-2xl p-5 overflow-x-auto whitespace-nowrap">
                 {Reeldata.map((reel, index) => (
                     <div key={index} className="flex flex-col items-center flex-none w-[30%] max-w-[120px] md:max-w-[150px] bg-gray-300 rounded-2xl">
                         <video 
