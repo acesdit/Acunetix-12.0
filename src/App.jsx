@@ -60,9 +60,9 @@ function App() {
           <Sponsors />
         </section>
         
-        <section ref={reelRef} data-scroll-section data-scroll-speed="2">
+        {/* <section ref={reelRef} data-scroll-section data-scroll-speed="2">
           <Reel />
-        </section>
+        </section> */}
         
         <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
