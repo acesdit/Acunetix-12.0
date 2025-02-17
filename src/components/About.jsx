@@ -1,7 +1,7 @@
     import React from "react";
     import Hyperspeed from "../animation/Backgrounds/Hyperspeed/Hyperspeed";
     import { motion } from "framer-motion";
-    import "./about.css";
+    import "./About.css";
 
     const About = () => {
         return (
