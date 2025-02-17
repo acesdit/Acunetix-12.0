@@ -11,6 +11,8 @@ import Sponsors from './components/Sponsors';
 import Reel from './components/Reel';
 import Footer from './components/Footer';
 import Start from './components/Start';
+import Chatbot from "./components/Chatbot";
+
 
 function App() {
   const [startAnimationComplete, setStartAnimationComplete] = useState(false);
@@ -21,6 +23,12 @@ function App() {
   const sponsorsRef = useRef(null);
   const reelRef = useRef(null);
   const footerRef = useRef(null);
+  const [isChatbotVisible, setIsChatbotVisible] = useState(false); // State to manage Chatbot visibility
+
+  // Function to toggle Chatbot visibility
+  const toggleChatbot = () => {
+    setIsChatbotVisible(!isChatbotVisible);
+  };
 
   useEffect(() => {
     if (startAnimationComplete) {
@@ -79,6 +87,20 @@ function App() {
               </div>
             </section>
           </div>
+           {/* Chatbot Section */}
+      {isChatbotVisible && <Chatbot onClose={toggleChatbot} />}
+
+      {/* Bot Logo */}
+      <div
+        className="fixed bottom-5 right-5 z-50 cursor-pointer"
+        onClick={toggleChatbot}
+      >
+        <img
+          src="https://w7.pngwing.com/pngs/1001/63/png-transparent-internet-bot-computer-icons-chatbot-sticker-electronics-face-careobot.png" // Update the path to your logo
+          alt="Chatbot Logo"
+          className="w-12 h-12 rounded-full shadow-lg hover:scale-110 transition-transform"
+        />
+      </div>
         </>
       )}
     </>
