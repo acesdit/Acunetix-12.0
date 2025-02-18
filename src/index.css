@@ -82,16 +82,8 @@ html.has-scroll-smooth {
     .text-2xl { font-size: 1.25rem; }
   }
   
-  /* Performance Optimization */
-  [style*="transform"] {
-    transform: translateZ(0);
-  }
-  [data-scroll-container] {
-    perspective: 1px;
-    transform-style: preserve-3d;
-    will-change: transform;
-  }
   
+<<<<<<< HEAD
   [data-scroll-section] {
     transform: translateZ(0);
     backface-visibility: hidden;
@@ -126,3 +118,5 @@ html.has-scroll-smooth {
   .perspective-1000 {
     perspective: 1000px;
   }
+=======
+>>>>>>> 6042423f553ea8436009a8a0a28ebe2e7904efd3

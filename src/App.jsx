@@ -12,6 +12,7 @@ import Reel from './components/Reel';
 import Footer from './components/Footer';
 import Chatbot from "./components/Chatbot";
 import Start from "./components/Start";
+import SchedulePage from "./components/SchedulePage";
 
 function App() {
   const [startAnimationComplete, setStartAnimationComplete] = useState(false);
@@ -20,10 +21,11 @@ function App() {
   const aboutRef = useRef(null);
   const eventRef = useRef(null);
   const sponsorsRef = useRef(null);
+  const scheduleRef = useRef(null);
   const reelRef = useRef(null);
   const footerRef = useRef(null);
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
-  const locomotiveScroll = useRef(null); // Ref to store Locomotive Scroll instance
+  const locomotiveScroll = useRef(null);
 
   // Function to toggle Chatbot visibility
   const toggleChatbot = () => {
@@ -74,7 +76,7 @@ function App() {
       {startAnimationComplete && (
         <>
           <section className="bg-black w-full fixed top-0 h-18 z-50 flex items-center">
-            <Navbar scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef, reelRef, footerRef }} scrollToSection={scrollToSection} />
+            <Navbar scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef,scheduleRef, reelRef, footerRef }} scrollToSection={scrollToSection} />
           </section>
 
           <div ref={scrollRef} data-scroll-container style={{ minHeight: '100vh' }}>
@@ -89,11 +91,13 @@ function App() {
             <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
               <Event />
             </section>
-
+            <section ref={scheduleRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
+              <SchedulePage/>
+            </section>
             <section ref={sponsorsRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
               <Sponsors />
             </section>
-
+            
             {/* <section ref={reelRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
               <Reel />
             </section> */}
