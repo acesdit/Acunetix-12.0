@@ -25,7 +25,7 @@ function App() {
   const reelRef = useRef(null);
   const footerRef = useRef(null);
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
-  const locomotiveScroll = useRef(null); // Ref to store Locomotive Scroll instance
+  const locomotiveScroll = useRef(null);
 
   // Function to toggle Chatbot visibility
   const toggleChatbot = () => {
