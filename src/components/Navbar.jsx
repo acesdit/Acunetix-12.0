@@ -139,6 +139,7 @@ const Navbar = ({ scrollToRefs, scrollToSection }) => {
           </div>
         </div>
       </div>
+      </div>
     </nav>
   );
 };
