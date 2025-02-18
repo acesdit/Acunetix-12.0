@@ -69,7 +69,7 @@ function App() {
               <About />
             </section>
 
-            <section ref={eventRef} data-scroll-section className='mt-4'>
+            <section ref={eventRef} data-scroll-section className='mt-6'>
               <Event />
             </section>
 

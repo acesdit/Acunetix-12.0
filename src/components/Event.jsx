@@ -12,7 +12,7 @@ const cardsData = [
   },
   {
     id: 2,
-    image: "https://www.campustimespune.com/wp-content/uploads/2016/02/sympuls-symbiosis-event-college-life-events-pune.jpg",
+    image: "https://images.unsplash.com/photo-1739639845916-6bfcaec516ba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
     title: "Event 2",
     description: "This is the second event.",
   },
