@@ -105,6 +105,7 @@ const Navbar = ({ scrollToRefs, scrollToSection }) => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
+
           <div className="flex flex-col py-4 h-100vh" >
           <div className="flex justify-center align-middle  flex-col py-4" style={{ gap: "1rem" }}>
             <a
@@ -136,8 +137,7 @@ const Navbar = ({ scrollToRefs, scrollToSection }) => {
               About Us
             </a>
           </div>
-        </div> 
-      </div>
+        </div>
       </div>
     </nav>
   );

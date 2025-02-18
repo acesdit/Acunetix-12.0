@@ -26,6 +26,7 @@ export default function LogoAnimation() {
   }, []);
 
   return (
+
     <div className="fixed top-0 left-0 w-full h-full bg-black overflow-hidden flex items-center justify-center">
       {/* Logo Container */}
       {showLogo && (
