@@ -76,7 +76,7 @@ export default function Chatbot({ onClose }) {
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.95, opacity: 0 }}
-        className="w-full max-w-2xl mx-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 relative"
+        className="w-full max-w-md mx-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 relative"
       >
         {/* Glow effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-emerald-500/20 animate-pulse pointer-events-none" />
@@ -105,7 +105,7 @@ export default function Chatbot({ onClose }) {
         </div>
 
         {/* Chat Messages */}
-        <div className="h-[400px] overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-gray-900/80 to-gray-800/80 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
+        <div className="h-[300px] overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-gray-900/80 to-gray-800/80 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
           <AnimatePresence>
             {messages.map((message, index) => (
               <motion.div
