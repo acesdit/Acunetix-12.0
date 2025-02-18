@@ -86,15 +86,14 @@ html.has-scroll-smooth {
   [style*="transform"] {
     transform: translateZ(0);
   }
-
-
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #4f46e5 #000;
+  [data-scroll-container] {
+    perspective: 1px;
+    transform-style: preserve-3d;
+    will-change: transform;
   }
   
-  /* Enable hardware acceleration for smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+  [data-scroll-section] {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    min-height: 100vh;
   }
