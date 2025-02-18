@@ -86,3 +86,15 @@ html.has-scroll-smooth {
   [style*="transform"] {
     transform: translateZ(0);
   }
+
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4f46e5 #000;
+  }
+  
+  /* Enable hardware acceleration for smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
