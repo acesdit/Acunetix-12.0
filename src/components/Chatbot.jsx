@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Send, Bot, User, HelpCircle, X } from "lucide-react"; // Import X icon for close button
-import { Qna_db } from "../data/Qna_db";//database stored here
+import { Send, Bot, User, HelpCircle, X } from "lucide-react";
+import { Qna_db } from "../data/Qna_db"; // database stored here
 
 const DEFAULT_QUESTIONS = [
   "what is Acunetix",
@@ -15,9 +15,10 @@ const INITIAL_MESSAGE = {
   isBot: true,
 };
 
-function Chatbot({ onClose }) {
+export default function Chatbot({ onClose }) {
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const [input, setInput] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -26,7 +27,7 @@ function Chatbot({ onClose }) {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, isTyping]);
 
   const handleSend = (e) => {
     e.preventDefault();
@@ -41,14 +42,19 @@ function Chatbot({ onClose }) {
       isBot: false,
     };
 
-    const botMessage = {
-      id: messages.length + 2,
-      text: generateResponse(question.toLowerCase()),
-      isBot: true,
-    };
-
-    setMessages((prev) => [...prev, userMessage, botMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
+    setIsTyping(true);
+
+    setTimeout(() => {
+      const botMessage = {
+        id: messages.length + 2,
+        text: generateResponse(question.toLowerCase()),
+        isBot: true,
+      };
+      setMessages((prev) => [...prev, botMessage]);
+      setIsTyping(false);
+    }, 1500); // Simulate a delay before the bot responds
   };
 
   const generateResponse = (question) => {
@@ -65,9 +71,7 @@ function Chatbot({ onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      {/* Chatbot Container */}
       <div className="w-full max-w-2xl mx-4 bg-gray-800 rounded-lg shadow-2xl overflow-hidden border border-gray-700 transform transition-all duration-300 ease-in-out">
-        {/* Chat header with close button */}
         <div className="bg-gray-800 p-4 border-b border-gray-700 flex justify-between items-center">
           <h1 className="text-gray-100 text-xl font-semibold flex items-center gap-2">
             <Bot className="w-6 h-6 text-emerald-400" />
@@ -81,7 +85,6 @@ function Chatbot({ onClose }) {
           </button>
         </div>
 
-        {/* Chat messages */}
         <div className="h-[400px] overflow-y-auto p-4 space-y-4 bg-gray-900">
           {messages.map((message) => (
             <div
@@ -116,10 +119,21 @@ function Chatbot({ onClose }) {
               </div>
             </div>
           ))}
+          {isTyping && (
+            <div className="flex justify-start">
+              <div className="flex items-center space-x-2 max-w-[80%]">
+                <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+                  <Bot className="w-5 h-5 text-emerald-400" />
+                </div>
+                <div className="p-3 bg-gray-800 text-gray-100 border border-gray-700 rounded-lg">
+                  Thinking...
+                </div>
+              </div>
+            </div>
+          )}
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Default Questions */}
         <div className="p-4 bg-gray-800 border-t border-gray-700">
           <div className="flex items-center gap-2 mb-2">
             <HelpCircle className="w-5 h-5 text-emerald-400" />
@@ -130,8 +144,7 @@ function Chatbot({ onClose }) {
               <button
                 key={index}
                 onClick={() => processUserInput(question)}
-                className="px-3 py-1.5 bg-gray-700 text-gray-300 rounded-full text-sm
-                  hover:bg-gray-600 transition-colors duration-200 border border-gray-600"
+                className="px-3 py-1.5 bg-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-600 transition-colors duration-200 border border-gray-600"
               >
                 {question}
               </button>
@@ -139,7 +152,6 @@ function Chatbot({ onClose }) {
           </div>
         </div>
 
-        {/* Chat input */}
         <form onSubmit={handleSend} className="p-4 border-t border-gray-700 bg-gray-800">
           <div className="flex space-x-2">
             <input
@@ -147,15 +159,11 @@ function Chatbot({ onClose }) {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type your message..."
-              className="flex-1 p-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-lg 
-                focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent
-                placeholder-gray-400"
+              className="flex-1 p-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent placeholder-gray-400"
             />
             <button
               type="submit"
-              className="bg-emerald-500 text-gray-900 p-2 rounded-lg hover:bg-emerald-400 
-                transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed
-                disabled:hover:bg-emerald-500"
+              className="bg-emerald-500 text-gray-900 p-2 rounded-lg hover:bg-emerald-400 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-emerald-500"
               disabled={!input.trim()}
             >
               <Send className="w-5 h-5" />
@@ -166,5 +174,3 @@ function Chatbot({ onClose }) {
     </div>
   );
 }
-
-export default Chatbot;

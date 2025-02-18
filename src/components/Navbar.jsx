@@ -1,19 +1,38 @@
-import { useState } from "react"
-import React from "react"
-import logo from "../assets/logo.png"
+import { useState } from "react";
+import React from "react";
+import logo from "../assets/logo.png";
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+const Navbar = ({ scrollToRefs, scrollToSection }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleLinkClick = (ref) => {
+    scrollToSection(ref);
+    setIsMenuOpen(false); // Close the mobile menu after clicking a link
+  };
 
   return (
     <nav className="text-white py-6 max-sm:px-5 md:px-4 lg:px-12 fixed w-full z-5 ">
       <div className="flex items-center justify-between" style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* Left as - Desktop */}
         <div className="hidden md:flex space-x-12 gap-16">
-          <a href="#home" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5">
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick(scrollToRefs.heroRef);
+            }}
+            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5"
+          >
             Home
           </a>
-          <a href="#events" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4">
+          <a
+            href="#events"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick(scrollToRefs.eventRef);
+            }}
+            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4"
+          >
             Events
           </a>
         </div>
@@ -31,10 +50,20 @@ const Navbar = () => {
 
         {/* Right as - Desktop */}
         <div className="hidden md:flex space-x-12 gap-16">
-          <a href="#schedule" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5">
+          <a
+            href="#schedule"
+            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5"
+          >
             Schedule
           </a>
-          <a href="#about" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4">
+          <a
+            href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick(scrollToRefs.aboutRef);
+            }}
+            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4"
+          >
             About
           </a>
         </div>
@@ -73,50 +102,53 @@ const Navbar = () => {
             </svg>
           </button>
           <div className="flex justify-around  flex-col py-4" style={{ height: "90vh" }}>
-          <div className="flex justify-center align-middle  flex-col py-4" style={{ gap: "1rem" }}>
-            <a
-              href="#home"
-              className="py-2 hover:text-gray-400 transition-colors duration-300"
-              style={{ fontSize: "1.5rem", padding: "1rem 2rem" }}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="py-2 hover:text-gray-400 transition-colors duration-300"
-              style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
-            >
-              Events
-            </a>
-            <a
-              href="#services"
-              className="py-2 hover:text-gray-400 transition-colors duration-300"
-              style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
-            >
-              Schedule
-            </a>
-            <a
-              href="#contact"
-              className="py-2 hover:text-gray-400 transition-colors duration-300"
-              style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
-            >
-              About Us
-            </a>
+            <div className="flex justify-center align-middle  flex-col py-4" style={{ gap: "1rem" }}>
+              <a
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(scrollToRefs.heroRef);
+                }}
+                className="py-2 hover:text-gray-400 transition-colors duration-300"
+                style={{ fontSize: "1.5rem", padding: "1rem 2rem" }}
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(scrollToRefs.aboutRef);
+                }}
+                className="py-2 hover:text-gray-400 transition-colors duration-300"
+                style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
+              >
+                About
+              </a>
+              <a
+                href="#events"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(scrollToRefs.eventRef);
+                }}
+                className="py-2 hover:text-gray-400 transition-colors duration-300"
+                style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
+              >
+                Events
+              </a>
+              <a
+                href="#schedule"
+                className="py-2 hover:text-gray-400 transition-colors duration-300"
+                style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
+              >
+                Schedule
+              </a>
+            </div>
           </div>
-          <div className="flex justify-center mt-auto bottom-0 pb-4">
-            <img
-              src={logo}
-              alt="Logo"
-              width={48}
-              height={48}
-              className="transform hover:scale-105 transition-transform duration-300"
-            />
         </div>
-        </div> 
-      </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
