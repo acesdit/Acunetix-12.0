@@ -10,9 +10,8 @@ import '../locomotive-custom.scss';
 import Sponsors from './components/Sponsors';
 import Reel from './components/Reel';
 import Footer from './components/Footer';
-import Start from './components/Start';
 import Chatbot from "./components/Chatbot";
-
+import Start from "./components/Start"
 
 function App() {
   const [startAnimationComplete, setStartAnimationComplete] = useState(false);
@@ -29,6 +28,14 @@ function App() {
   const toggleChatbot = () => {
     setIsChatbotVisible(!isChatbotVisible);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStartAnimationComplete(true);
+    }, 2450);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (startAnimationComplete) {
@@ -52,7 +59,7 @@ function App() {
 
   return (
     <>
-      {!startAnimationComplete && <Start onAnimationComplete={() => setStartAnimationComplete(true)} />}
+      {!startAnimationComplete && <div><Start/></div>}
       
       {startAnimationComplete && (
         <>

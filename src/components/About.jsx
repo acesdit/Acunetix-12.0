@@ -7,13 +7,17 @@ const Hyperspeed = lazy(() => import("../animation/Backgrounds/Hyperspeed/Hypers
 
 const About = () => {
   // State to decide whether to render the hyperlapse animation
-  const [shouldRenderHyperspeed, setShouldRenderHyperspeed] = useState(false);
+  const [shouldRenderHyperspeed, setShouldRenderHyperspeed] = useState(window.innerWidth > 768);
 
   useEffect(() => {
-    // Check if the device width is greater than 768px (or any condition you prefer)
-    if (window.innerWidth > 768) {
-      setShouldRenderHyperspeed(true);
-    }
+    const handleResize = () => {
+      setShouldRenderHyperspeed(window.innerWidth > 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
