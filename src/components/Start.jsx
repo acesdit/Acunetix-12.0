@@ -29,7 +29,7 @@ export default function LogoAnimation() {
           src={img}
           alt="Logo"
           className={`w-24 h-24 md:w-22 md:h-22 transition-transform duration-1000 ${
-            moveUp ? "translate-y-[-25vh] scale-45" : "rotate-360"
+            moveUp ? "translate-y-[-25vh] scale-50" : "rotate-360"
           }`}
         />
 
