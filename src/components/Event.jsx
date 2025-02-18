@@ -12,19 +12,19 @@ const cardsData = [
   },
   {
     id: 2,
-    image: "https://www.campustimespune.com/wp-content/uploads/2016/02/sympuls-symbiosis-event-college-life-events-pune.jpg",
+    image: "https://images.unsplash.com/photo-1739639845916-6bfcaec516ba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
     title: "Event 2",
     description: "This is the second event.",
   },
   {
     id: 3,
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVkzTHskrCa14QFF3VZS8PFivaif6PeFLJ_w&s",
+    image: "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlicmFudHxlbnwwfHwwfHx8MA%3D%3D",
     title: "Event 3",
     description: "This is the third event.",
   },
   {
     id: 4,
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4F65kk7xAC64Q2YTe3ZCUu_BYxFTL3xCjAQ&s",
+    image: "https://plus.unsplash.com/premium_photo-1667105168121-0fe3333b5b14?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D",
     title: "Event 4",
     description: "This is the fourth event.",
   },
@@ -86,7 +86,7 @@ function Event() {
           </div>
 
           {/* Tilted Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 pb-12 my-7 mx-[1.5rem]">
+          <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 pb-12 my-7 mx-[1.5rem]">
             {cardsData.map((card) => (
               <div key={card.id} className="p-2 sm:p-4">
                 <TiltedCard
