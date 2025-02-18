@@ -11,7 +11,8 @@ import Sponsors from './components/Sponsors';
 import Reel from './components/Reel';
 import Footer from './components/Footer';
 import Chatbot from "./components/Chatbot";
-import Start from "./components/Start"
+import Start from "./components/Start";
+import SchedulePage from "./components/SchedulePage";
 
 function App() {
   const [startAnimationComplete, setStartAnimationComplete] = useState(false);
@@ -20,9 +21,11 @@ function App() {
   const aboutRef = useRef(null);
   const eventRef = useRef(null);
   const sponsorsRef = useRef(null);
+  const scheduleRef = useRef(null);
   const reelRef = useRef(null);
   const footerRef = useRef(null);
-  const [isChatbotVisible, setIsChatbotVisible] = useState(false); // State to manage Chatbot visibility
+  const [isChatbotVisible, setIsChatbotVisible] = useState(false);
+  const locomotiveScroll = useRef(null);
 
   // Function to toggle Chatbot visibility
   const toggleChatbot = () => {
@@ -39,7 +42,7 @@ function App() {
 
   useEffect(() => {
     if (startAnimationComplete) {
-      const locomotiveScroll = new LocomotiveScroll({
+      locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
         smoothMobile: true,
@@ -47,67 +50,79 @@ function App() {
         getDirection: true,
       });
 
-      locomotiveScroll.on('scroll', (args) => {
+      locomotiveScroll.current.on('scroll', (args) => {
         document.documentElement.setAttribute('data-direction', args.direction);
       });
 
       return () => {
-        locomotiveScroll.destroy();
+        if (locomotiveScroll.current) {
+          locomotiveScroll.current.destroy();
+        }
       };
     }
   }, [startAnimationComplete]);
 
+  // Function to scroll to a specific section
+  const scrollToSection = (ref) => {
+    if (locomotiveScroll.current && ref.current) {
+      locomotiveScroll.current.scrollTo(ref.current);
+    }
+  };
+
   return (
     <>
-      {!startAnimationComplete && <div><Start/></div>}
-      
+      {!startAnimationComplete && <div><Start /></div>}
+
       {startAnimationComplete && (
         <>
           <section className="bg-black w-full fixed top-0 h-18 z-50 flex items-center">
-            <Navbar scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef, reelRef, footerRef }} />
+            <Navbar scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef,scheduleRef, reelRef, footerRef }} scrollToSection={scrollToSection} />
           </section>
-          
+
           <div ref={scrollRef} data-scroll-container style={{ minHeight: '100vh' }}>
             <section ref={heroRef} data-scroll-section data-scroll-speed="3" className="flex flex-col backdrop-blur-xl items-center justify-center h-screen w-full bg-cover bg-center">
               <Hero />
             </section>
 
-            <section ref={aboutRef} data-scroll-section data-scroll-speed="1" className='flex bg-black text-white flex-col items-center justify-center h-screen  w-full'>
+            <section ref={aboutRef} data-scroll-section data-scroll-speed="1" className='flex bg-black text-white flex-col items-center justify-center min-h-screen w-full'>
               <About />
             </section>
 
-            <section ref={eventRef} data-scroll-section className='mt-6'>
+            <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
               <Event />
             </section>
-
-            <section ref={sponsorsRef} data-scroll-section data-scroll-speed="2">
+            <section ref={scheduleRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
+              <SchedulePage/>
+            </section>
+            <section ref={sponsorsRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
               <Sponsors />
             </section>
             
-            {/* <section ref={reelRef} data-scroll-section data-scroll-speed="2">
+            {/* <section ref={reelRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
               <Reel />
             </section> */}
-            
-            <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10">
+
+            {/* <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10">
               <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <Footer />
               </div>
-            </section>
+            </section> */}
           </div>
-           {/* Chatbot Section */}
-      {isChatbotVisible && <Chatbot onClose={toggleChatbot} />}
 
-      {/* Bot Logo */}
-      <div
-        className="fixed bottom-5 right-5 z-50 cursor-pointer"
-        onClick={toggleChatbot}
-      >
-        <img
-          src="https://w7.pngwing.com/pngs/1001/63/png-transparent-internet-bot-computer-icons-chatbot-sticker-electronics-face-careobot.png" // Update the path to your logo
-          alt="Chatbot Logo"
-          className="w-12 h-12 rounded-full shadow-lg hover:scale-110 transition-transform"
-        />
-      </div>
+          {/* Chatbot Section */}
+          {isChatbotVisible && <Chatbot onClose={toggleChatbot} />}
+
+          {/* Bot Logo */}
+          <div
+            className="fixed bottom-5 right-5 z-50 cursor-pointer"
+            onClick={toggleChatbot}
+          >
+            <img
+              src="https://w7.pngwing.com/pngs/1001/63/png-transparent-internet-bot-computer-icons-chatbot-sticker-electronics-face-careobot.png"
+              alt="Chatbot Logo"
+              className="w-12 h-12 rounded-full shadow-lg hover:scale-110 transition-transform"
+            />
+          </div>
         </>
       )}
     </>

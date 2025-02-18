@@ -1,19 +1,38 @@
-import { useState } from "react"
-import React from "react"
-import logo from "../assets/logo.png"
+import { useState } from "react";
+import React from "react";
+import logo from "../assets/logo.png";
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+const Navbar = ({ scrollToRefs, scrollToSection }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleLinkClick = (ref) => {
+    scrollToSection(ref);
+    setIsMenuOpen(false); // Close the mobile menu after clicking a link
+  };
 
   return (
     <nav className="text-white py-6 max-sm:px-5 md:px-4 lg:px-12 fixed w-full z-5 ">
       <div className="flex items-center justify-between" style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* Left as - Desktop */}
         <div className="hidden md:flex space-x-12 gap-16">
-          <a href="#home" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5">
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick(scrollToRefs.heroRef);
+            }}
+            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5"
+          >
             Home
           </a>
-          <a href="#events" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4">
+          <a
+            href="#events"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick(scrollToRefs.eventRef);
+            }}
+            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4"
+          >
             Events
           </a>
         </div>
@@ -31,10 +50,24 @@ const Navbar = () => {
 
         {/* Right as - Desktop */}
         <div className="hidden md:flex space-x-12 gap-16">
-          <a href="#schedule" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5">
+          <a
+            href="#schedule"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick(scrollToRefs.scheduleRef);
+            }}
+            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5"
+          >
             Schedule
           </a>
-          <a href="#about" className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4">
+          <a
+            href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick(scrollToRefs.aboutRef);
+            }}
+            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4"
+          >
             About
           </a>
         </div>
@@ -72,6 +105,7 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
+
           <div className="flex flex-col py-4 h-100vh" >
           <div className="flex justify-center align-middle  flex-col py-4" style={{ gap: "1rem" }}>
             <a
@@ -103,11 +137,10 @@ const Navbar = () => {
               About Us
             </a>
           </div>
-        </div> 
-      </div>
+        </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
