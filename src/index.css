@@ -136,43 +136,4 @@ html.has-scroll-smooth {
     will-change: transform;
   }
 
-  /* Hardware Acceleration */
-[data-scroll-section] {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000;
-  will-change: transform;
-}
-
-/* Video Optimization */
-video {
-  transform: translateZ(0);
-  object-fit: cover;
-  background-size: cover;
-  background-position: center;
-  will-change: transform;
-}
-
-/* Scroll Container */
-[data-scroll-container] {
-  overflow: hidden;
-  touch-action: manipulation;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Chatbot Performance */
-.chatbot-trigger {
-  will-change: transform;
-  transform: translateZ(0);
-}
-
-/* Mobile Optimization */
-@media (max-width: 768px) {
-  [data-scroll-section] {
-    scroll-behavior: smooth !important;
-  }
   
-  video {
-    display: none; /* Hide video on mobile if not essential */
-  }
-}
