@@ -120,4 +120,18 @@ html.has-scroll-smooth {
 
 
 
+
+  html.has-scroll-smooth {
+    overflow: hidden;
+    touch-action: manipulation;
+  }
   
+  [data-scroll-container] {
+    perspective: 1px;
+    transform-style: preserve-3d;
+  }
+  
+  [data-scroll-section] {
+    transform: translateZ(0);
+    will-change: transform;
+  }
