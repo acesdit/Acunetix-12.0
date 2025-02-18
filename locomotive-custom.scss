@@ -4,32 +4,18 @@
 // Add your custom styles here
 
 
-  .has-scroll-smooth [data-scroll-container] {
-    overflow: hidden;
-  }
-  
-  .has-scroll-smooth body {
-    overflow: hidden;
-  }
-  
-  .c-scrollbar {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 11px;
-    height: 100vh;
-    transform-origin: center right;
-    transition: transform 0.3s, opacity 0.3s;
-    z-index: 999;
-  }
-  
-  .c-scrollbar_thumb {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #4f46e5;
-    opacity: 0.5;
-    width: 7px;
-    border-radius: 10px;
-    margin: 2px;
-  }
+.c-scrollbar {
+  z-index: 9999;
+  width: 8px;
+  background: rgba(255,255,255,0.1);
+}
+
+.c-scrollbar_thumb {
+  background: rgba(255,255,255,0.4);
+  width: 100%;
+  border-radius: 0;
+}
+
+.is-revealed {
+  will-change: transform, opacity;
+}
