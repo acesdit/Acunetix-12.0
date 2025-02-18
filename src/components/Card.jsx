@@ -10,8 +10,11 @@ const Card = ({ image, title, description, buttonText }) => {
       <div className="relative rounded-lg p-4 sm:p-6 h-full flex flex-col">
         {/* Image */}
         <img
-          src={image}
-          alt={title}
+          src={card.image}
+          alt={card.title}
+          onError={(e) => {
+            e.target.src = "https://via.placeholder.com/400"; 
+          }}
           className="w-full h-32 sm:h-48 md:h-64 object-cover rounded-lg mb-4 transition-transform duration-300 group-hover:scale-110"
         />
 
