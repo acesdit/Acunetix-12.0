@@ -82,18 +82,4 @@ html.has-scroll-smooth {
     .text-2xl { font-size: 1.25rem; }
   }
   
-  /* Performance Optimization */
-  [style*="transform"] {
-    transform: translateZ(0);
-  }
-  [data-scroll-container] {
-    perspective: 1px;
-    transform-style: preserve-3d;
-    will-change: transform;
-  }
   
-  [data-scroll-section] {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    min-height: 100vh;
-  }
