@@ -103,15 +103,6 @@ const Navbar = () => {
               About Us
             </a>
           </div>
-          <div className="flex justify-center mt-auto bottom-0 pb-4">
-            <img
-              src={logo}
-              alt="Logo"
-              width={48}
-              height={48}
-              className="transform hover:scale-105 transition-transform duration-300"
-            />
-        </div>
         </div> 
       </div>
       </div>
