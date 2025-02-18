@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Send, Bot, User, HelpCircle, X } from "lucide-react";
-import { Qna_db } from "../data/Qna_db"; // database stored here
+import { motion, AnimatePresence } from "framer-motion";
+import { Qna_db } from "../data/Qna_db";
 
 const DEFAULT_QUESTIONS = [
   "what is Acunetix",
@@ -31,7 +32,7 @@ export default function Chatbot({ onClose }) {
 
   const handleSend = (e) => {
     e.preventDefault();
-    if (!input.trim()) return;
+    if (!input.trim() || input.length > 200) return;
     processUserInput(input);
   };
 
@@ -70,107 +71,164 @@ export default function Chatbot({ onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="w-full max-w-2xl mx-4 bg-gray-800 rounded-lg shadow-2xl overflow-hidden border border-gray-700 transform transition-all duration-300 ease-in-out">
-        <div className="bg-gray-800 p-4 border-b border-gray-700 flex justify-between items-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-lg">
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.95, opacity: 0 }}
+        className="w-full max-w-md mx-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 relative"
+      >
+        {/* Glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-emerald-500/20 animate-pulse pointer-events-none" />
+
+        {/* Header */}
+        <div className="bg-gradient-to-r from-gray-800 to-gray-900 p-4 border-b border-gray-700/50 flex justify-between items-center">
           <h1 className="text-gray-100 text-xl font-semibold flex items-center gap-2">
-            <Bot className="w-6 h-6 text-emerald-400" />
-            Acunetix Bot
+            <motion.div
+              animate={{ rotate: [0, 15, -15, 0] }}
+              transition={{ repeat: Infinity, duration: 3 }}
+            >
+              <Bot className="w-6 h-6 text-blue-400" />
+            </motion.div>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+              Acunetix AI
+            </span>
           </h1>
-          <button
+          <motion.button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
+            whileHover={{ scale: 1.1 }}
+            className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+            aria-label="Close chatbot"
           >
             <X className="w-6 h-6" />
-          </button>
+          </motion.button>
         </div>
 
-        <div className="h-[400px] overflow-y-auto p-4 space-y-4 bg-gray-900">
-          {messages.map((message) => (
-            <div
-              key={message.id}
-              className={`flex ${message.isBot ? "justify-start" : "justify-end"}`}
-            >
-              <div
-                className={`flex items-start space-x-2 max-w-[80%] ${
-                  message.isBot ? "flex-row" : "flex-row-reverse"
-                }`}
+        {/* Chat Messages */}
+        <div className="h-[300px] overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-gray-900/80 to-gray-800/80 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
+          <AnimatePresence>
+            {messages.map((message, index) => (
+              <motion.div
+                key={message.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, x: message.isBot ? -20 : 20 }}
+                transition={{ delay: index * 0.1 }}
+                className={`flex ${message.isBot ? "justify-start" : "justify-end"}`}
               >
                 <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                    message.isBot ? "bg-gray-700" : "bg-emerald-500"
+                  className={`flex items-start space-x-2 max-w-[80%] ${
+                    message.isBot ? "flex-row" : "flex-row-reverse"
                   }`}
                 >
-                  {message.isBot ? (
-                    <Bot className="w-5 h-5 text-emerald-400" />
-                  ) : (
-                    <User className="w-5 h-5 text-gray-900" />
-                  )}
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className={`w-8 h-8 rounded-full flex items-center justify-center shadow-lg ${
+                      message.isBot
+                        ? "bg-gradient-to-br from-blue-500 to-blue-600"
+                        : "bg-gradient-to-br from-emerald-500 to-emerald-600"
+                    }`}
+                  >
+                    {message.isBot ? (
+                      <Bot className="w-5 h-5 text-gray-100" />
+                    ) : (
+                      <User className="w-5 h-5 text-gray-100" />
+                    )}
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className={`p-3 rounded-xl shadow-lg backdrop-blur-sm ${
+                      message.isBot
+                        ? "bg-gray-800/80 text-blue-300 border border-blue-400/30"
+                        : "bg-gray-700/80 text-emerald-300 border border-emerald-400/30"
+                    }`}
+                  >
+                    {message.text}
+                  </motion.div>
                 </div>
-                <div
-                  className={`p-3 rounded-lg ${
-                    message.isBot
-                      ? "bg-gray-800 text-gray-100 border border-gray-700"
-                      : "bg-emerald-500 text-gray-900"
-                  }`}
-                >
-                  {message.text}
-                </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            ))}
+          </AnimatePresence>
+
+          {/* Typing Indicator */}
           {isTyping && (
-            <div className="flex justify-start">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex justify-start"
+            >
               <div className="flex items-center space-x-2 max-w-[80%]">
-                <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-emerald-400" />
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                  <Bot className="w-5 h-5 text-gray-100" />
                 </div>
-                <div className="p-3 bg-gray-800 text-gray-100 border border-gray-700 rounded-lg">
-                  Thinking...
+                <div className="flex space-x-2 p-3 bg-gray-800/80 text-blue-300 border border-blue-400/30 rounded-xl">
+                  {[...Array(3)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 0.8,
+                        delay: i * 0.2,
+                      }}
+                      className="w-2 h-2 bg-blue-400 rounded-full"
+                    />
+                  ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           )}
           <div ref={messagesEndRef} />
         </div>
 
-        <div className="p-4 bg-gray-800 border-t border-gray-700">
-          <div className="flex items-center gap-2 mb-2">
-            <HelpCircle className="w-5 h-5 text-emerald-400" />
-            <span className="text-gray-300 text-sm">Suggested Questions:</span>
+        {/* Suggested Queries */}
+        <div className="p-4 bg-gradient-to-r from-gray-800 to-gray-900 border-t border-gray-700/50">
+          <div className="flex items-center gap-2 mb-3">
+            <HelpCircle className="w-5 h-5 text-blue-400 animate-pulse" />
+            <span className="text-blue-300 text-sm font-medium">Suggested Queries:</span>
           </div>
           <div className="flex flex-wrap gap-2">
             {DEFAULT_QUESTIONS.map((question, index) => (
-              <button
+              <motion.button
                 key={index}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => processUserInput(question)}
-                className="px-3 py-1.5 bg-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-600 transition-colors duration-200 border border-gray-600"
+                className="px-3 py-1.5 bg-gray-700/80 text-blue-300 rounded-xl text-sm hover:bg-gray-600/80 transition-all duration-200 border border-blue-400/30 backdrop-blur-sm"
+                aria-label={`Ask: ${question}`}
               >
                 {question}
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
 
-        <form onSubmit={handleSend} className="p-4 border-t border-gray-700 bg-gray-800">
+        {/* Input Form */}
+        <form onSubmit={handleSend} className="p-4 border-t border-gray-700/50 bg-gradient-to-r from-gray-800 to-gray-900">
           <div className="flex space-x-2">
-            <input
+            <motion.input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Type your message..."
-              className="flex-1 p-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent placeholder-gray-400"
+              placeholder="Type your query..."
+              className="flex-1 p-3 bg-gray-700/80 text-blue-300 border border-blue-400/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent placeholder-blue-300/50 backdrop-blur-sm"
+              whileFocus={{ scale: 1.02 }}
+              maxLength={200}
+              aria-label="Type your message"
             />
-            <button
+            <motion.button
               type="submit"
-              className="bg-emerald-500 text-gray-900 p-2 rounded-lg hover:bg-emerald-400 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-emerald-500"
-              disabled={!input.trim()}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="bg-gradient-to-br from-blue-500 to-blue-600 text-gray-100 p-3 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={!input.trim() || input.length > 200}
+              aria-label="Send message"
             >
               <Send className="w-5 h-5" />
-            </button>
+            </motion.button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 }
