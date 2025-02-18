@@ -52,6 +52,10 @@ const Navbar = ({ scrollToRefs, scrollToSection }) => {
         <div className="hidden md:flex space-x-12 gap-16">
           <a
             href="#schedule"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick(scrollToRefs.scheduleRef);
+            }}
             className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5"
           >
             Schedule
