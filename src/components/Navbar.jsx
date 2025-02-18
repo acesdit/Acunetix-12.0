@@ -91,10 +91,10 @@ const Navbar = ({ scrollToRefs, scrollToSection }) => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed backdrop-blur-md z-50 top-0 right-0 h-full text-white transition-transform duration-500 ease-in-out transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed backdrop-blur-xl z-50 top-0 right-0 h-full text-white transition-transform duration-500 ease-in-out transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
         style={{ width: "190px", background: "rgba(0, 0, 0, 0.92)" }}
       >
-        <div className="flex flex-col justify-center space-y-4 text-center bg-[#0000006f]">
+        <div className="flex flex-col space-y-4 text-center bg-[#0000006f]">
           <button
             className="self-end focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
             style={{ padding: "1rem 1.5rem" }}
@@ -105,40 +105,51 @@ const Navbar = ({ scrollToRefs, scrollToSection }) => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-
-          <div className="flex flex-col py-4 h-100vh" >
-          <div className="flex justify-center align-middle  flex-col py-4" style={{ gap: "1rem" }}>
-            <a
-              href="#home"
-              className="py-2 hover:text-gray-400 transition-colors duration-300"
-              style={{ fontSize: "1.5rem", padding: "1rem 2rem" }}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="py-2 hover:text-gray-400 transition-colors duration-300"
-              style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
-            >
-              Events
-            </a>
-            <a
-              href="#services"
-              className="py-2 hover:text-gray-400 transition-colors duration-300"
-              style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
-            >
-              Schedule
-            </a>
-            <a
-              href="#contact"
-              className="py-2 hover:text-gray-400 transition-colors duration-300"
-              style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
-            >
-              About Us
-            </a>
+          <div className="flex  flex-col py-4" style={{ height: "90vh" }}>
+            <div className="flex justify-center align-middle  flex-col py-4" style={{ gap: "1rem" }}>
+              <a
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(scrollToRefs.heroRef);
+                }}
+                className="py-2 hover:text-gray-400 transition-colors duration-300"
+                style={{ fontSize: "1.5rem", padding: "1rem 2rem" }}
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(scrollToRefs.aboutRef);
+                }}
+                className="py-2 hover:text-gray-400 transition-colors duration-300"
+                style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
+              >
+                About
+              </a>
+              <a
+                href="#events"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(scrollToRefs.eventRef);
+                }}
+                className="py-2 hover:text-gray-400 transition-colors duration-300"
+                style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
+              >
+                Events
+              </a>
+              <a
+                href="#schedule"
+                className="py-2 hover:text-gray-400 transition-colors duration-300"
+                style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
+              >
+                Schedule
+              </a>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </nav>
   );
