@@ -1,91 +1,66 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
-import LocomotiveScroll from "locomotive-scroll";
-import "locomotive-scroll/dist/locomotive-scroll.css";
-import TiltedCard from "./TitleCard"; // Ensure this path is correct
+import TiltedCard from "./TitleCard";
 import Particles from "./Particles";
 
-// Define cardsData at the top so it's available for the component
 const cardsData = [
   {
     id: 1,
-    image:
-      "https://images.squarespace-cdn.com/content/v1/58c9fe99f5e231f0df86179b/1504017391390-HK35326DFYJSSYIVZSIO/party.jpg?format=1500w",
+    image: "https://images.squarespace-cdn.com/content/v1/58c9fe99f5e231f0df86179b/1504017391390-HK35326DFYJSSYIVZSIO/party.jpg?format=1500w",
     title: "Event 1",
     description: "This is the first event.",
   },
   {
     id: 2,
-    image:
-      "https://www.campustimespune.com/wp-content/uploads/2016/02/sympuls-symbiosis-event-college-life-events-pune.jpg",
+    image: "https://www.campustimespune.com/wp-content/uploads/2016/02/sympuls-symbiosis-event-college-life-events-pune.jpg",
     title: "Event 2",
     description: "This is the second event.",
   },
   {
     id: 3,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVkzTHskrCa14QFF3VZS8PFivaif6PeFLJ_w&s",
+    image: "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlicmFudHxlbnwwfHwwfHx8MA%3D%3D",
     title: "Event 3",
     description: "This is the third event.",
   },
   {
     id: 4,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4F65kk7xAC64Q2YTe3ZCUu_BYxFTL3xCjAQ&s",
+    image: "https://plus.unsplash.com/premium_photo-1667105168121-0fe3333b5b14?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D",
     title: "Event 4",
     description: "This is the fourth event.",
   },
   {
     id: 5,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPAhI1tH8qypZE4oYMrRz7aULbjMnWUflTXA&s",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPAhI1tH8qypZE4oYMrRz7aULbjMnWUflTXA&s",
     title: "Event 5",
     description: "This is the fifth event.",
   },
   {
     id: 6,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4n_sbg1Yb2nveOyRq_27P8U0O1p0caFwpMw&s",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4n_sbg1Yb2nveOyRq_27P8U0O1p0caFwpMw&s",
     title: "Event 6",
     description: "This is the sixth event.",
   },
   {
     id: 7,
-    image:
-      "https://res.cloudinary.com/purnesh/image/upload/w_540,f_auto,q_auto:eco,c_limit/reverie.jpg",
+    image: "https://res.cloudinary.com/purnesh/image/upload/w_540,f_auto,q_auto:eco,c_limit/reverie.jpg",
     title: "Event 7",
     description: "This is the seventh event.",
   },
   {
     id: 8,
-    image:
-      "https://www.hire4event.com/blogs/wp-content/uploads/2020/12/Kolkata-Wedding.jpg",
+    image: "https://www.hire4event.com/blogs/wp-content/uploads/2020/12/Kolkata-Wedding.jpg",
     title: "Event 8",
     description: "This is the eighth event.",
   },
   {
     id: 9,
-    image:
-      "https://fashionherald.in/wp-content/uploads/2025/01/image-33-1024x606.png",
+    image: "https://fashionherald.in/wp-content/uploads/2025/01/image-33-1024x606.png",
     title: "Event 9",
     description: "This is the ninth event.",
   },
 ];
 
 function Event() {
-  const gridRef = useRef(null);
-
-  useEffect(() => {
-    if (gridRef.current) {
-      const locoScroll = new LocomotiveScroll({
-        el: gridRef.current,
-        smooth: true,
-      });
-
-      return () => locoScroll.destroy();
-    }
-  }, []);
-
   return (
     <ParallaxProvider>
       <div className="app bg-black relative min-h-screen">
@@ -107,19 +82,13 @@ function Event() {
         <div className="relative z-10">
           {/* Compact Header */}
           <div className="pt-12 pb-8 text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-0 pb-10">
-              EVENTS
-            </h1>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-0 pb-10">EVENTS</h1>
           </div>
 
-          {/* Tilted Cards Grid wrapped with Locomotive Scroll */}
-          <div
-            ref={gridRef}
-            data-scroll-container
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 px-4 sm:px-6 lg:px-8 pb-12 my-7 mx-[1.5rem]"
-          >
+          {/* Tilted Cards Grid */}
+          <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 pb-12 my-7 mx-[1.5rem]">
             {cardsData.map((card) => (
-              <div key={card.id} className="p-2 sm:p-4" data-scroll data-scroll-speed="1">
+              <div key={card.id} className="p-2 sm:p-4">
                 <TiltedCard
                   imageSrc={card.image}
                   altText={card.title}

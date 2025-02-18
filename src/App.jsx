@@ -56,7 +56,7 @@ function App() {
       
       {startAnimationComplete && (
         <>
-          <section data-scroll-section data-scroll-speed="2" className="bg-black w-full fixed top-0 h-18 z-50 flex items-center">
+          <section className="bg-black w-full fixed top-0 h-18 z-50 flex items-center">
             <Navbar scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef, reelRef, footerRef }} />
           </section>
           
@@ -65,11 +65,11 @@ function App() {
               <Hero />
             </section>
 
-            <section ref={aboutRef} data-scroll-section data-scroll-speed="1" className='flex bg-black text-white flex-col items-center justify-center h-screen w-full'>
+            <section ref={aboutRef} data-scroll-section data-scroll-speed="1" className='flex bg-black text-white flex-col items-center justify-center h-screen  w-full'>
               <About />
             </section>
 
-            <section ref={eventRef} data-scroll-section data-scroll-speed="2" className='mt-30'>
+            <section ref={eventRef} data-scroll-section className='mt-4'>
               <Event />
             </section>
 
