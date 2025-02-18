@@ -39,6 +39,13 @@ const Navbar = ({ scrollToRefs, scrollToSection }) => {
 
         {/* Center Logo */}
         <div className="flex-1 flex justify-center">
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick(scrollToRefs.heroRef);
+            }}
+          >
           <img
             src={logo}
             alt="Logo"
@@ -46,6 +53,7 @@ const Navbar = ({ scrollToRefs, scrollToSection }) => {
             height={48}
             className="transform hover:scale-105 ml-8 transition-transform duration-300 "
           />
+          </a>
         </div>
 
         {/* Right as - Desktop */}
@@ -142,6 +150,10 @@ const Navbar = ({ scrollToRefs, scrollToSection }) => {
               </a>
               <a
                 href="#schedule"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(scrollToRefs.scheduleRef);
+                }}
                 className="py-2 hover:text-gray-400 transition-colors duration-300"
                 style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
               >
