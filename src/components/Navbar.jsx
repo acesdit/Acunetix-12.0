@@ -44,7 +44,7 @@ const Navbar = ({ scrollToRefs, scrollToSection }) => {
             alt="Logo"
             width={48}
             height={48}
-            className="transform hover:scale-105 transition-transform duration-300 "
+            className="transform hover:scale-105 ml-8 transition-transform duration-300 "
           />
         </div>
 
