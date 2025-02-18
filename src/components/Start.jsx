@@ -26,35 +26,22 @@ export default function LogoAnimation() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-black overflow-hidden flex items-center justify-center">
-      {/* Logo Container */}
-      {showLogo && (
-        <div
-          className={`relative flex flex-col items-center transition-all duration-1000 ${
-            moveUp ? "mt-[-40vh]" : "mt-0"
-          }`}
-        >
-          <img
-            src={img}
-            alt="Logo"
-            className={`w-24 h-24 sm:w-32 sm:h-32 transition-transform duration-1000 ${
-              moveUp
-                ? "translate-y-[-24vh] max-sm:translate-y-[-18vh] scale-40 rotate-360"
-                : ""
-            }`}
-          />
-        </div>
-      )}
 
-      {/* Heading Container */}
-      {showHeading && (
-        <div className="absolute flex flex-col pt-5 items-center justify-center text-center animate-fadeIn">
-          <h1 className="text-4xl sm:text-4xl md:text-6xl font-extrabold uppercase text-white">
-            Acunetix 12.0
-          </h1>
-          <p className="text-sm sm:text-lg text-white">Dive into world of illusions</p>
-        </div>
-      )}
+    <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-black overflow-hidden transition-opacity duration-1000 ${fadeOut ? "opacity-0" : "opacity-100"}`}>
+      {/* Content Container */}
+      <div className={`relative flex flex-col items-center z-10 transition-all duration-1000 ${moveUp ? "mt-[-40vh]" : "mt-0"}`}>
+        {/* Logo with scaling and translation */}
+        <img
+          src={img}
+          alt="Logo"
+          className={`w-24 h-24 md:w-22 md:h-22 transition-transform duration-1000 ${
+            moveUp ? "translate-y-[-25vh] max-sm:translate-y-[-18vh] scale-50" : "rotate-360"
+          }`}
+        />
+
+        
+
+      </div>
     </div>
   );
 }

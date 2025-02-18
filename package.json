@@ -18,6 +18,8 @@
     "postprocessing": "^6.36.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.5",
+    "react-scroll": "^1.9.2",
     "react-scroll-parallax": "^3.4.5",
     "react-tsparticles": "^2.12.2",
     "rollup": "^4.34.7",
