@@ -29,25 +29,12 @@ export default function LogoAnimation() {
           src={img}
           alt="Logo"
           className={`w-24 h-24 md:w-22 md:h-22 transition-transform duration-1000 ${
-            moveUp ? "translate-y-[-25vh] scale-45" : "rotate-360"
+            moveUp ? "translate-y-[-25vh] max-sm:translate-y-[-20vh] scale-50" : "rotate-360"
           }`}
         />
 
         
-{/* {showText && (
-          <div className="flex flex-col justify-center items-center animate-text-slide-in mt-4">
-            <h1 className="text-4xl md:text-6xl font-extrabold uppercase  translate-y-4">
-              <span className="shiny-text bg-gradient-to-r from-gray-500 via-gray-300 to-gray-200 bg-clip-text text-transparent">
-                Acunetix 12
-              </span>
-            </h1>
-            <div>
-              <p className="text-gray-300 text-sm md:text-lg text-center animate-subtext-fade">
-                DIVE INTO THE WORLD OF ILLUSIONS
-              </p>
-            </div>
-          </div>
-        )}  */}
+
       </div>
     </div>
   );
