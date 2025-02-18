@@ -121,34 +121,3 @@ html.has-scroll-smooth {
 
 
   
-  /* Mobile-specific styles */
-  @media (max-width: 768px) {
-    [data-scroll-section] {
-      padding: 1rem;
-    }
-    
-    .c-scrollbar {
-      display: none;
-    }
-    
-    [data-scroll-speed] {
-      data-scroll-speed: 1 !important;
-    }
-  }
-
-  html.has-scroll-smooth {
-    overflow: hidden;
-    touch-action: manipulation;
-  }
-  
-  [data-scroll-container] {
-    perspective: 1px;
-    transform-style: preserve-3d;
-  }
-  
-  [data-scroll-section] {
-    transform: translateZ(0);
-    will-change: transform;
-  }
-
-  

@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setStartAnimationComplete(true);
-    }, 3500);
+    }, 2450);
 
     return () => clearTimeout(timer);
   }, []);
