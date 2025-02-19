@@ -14,9 +14,6 @@ import Chatbot from "./components/Chatbot";
 import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
 import chatbotIcon from "./assets/AcunetixChatbot.png";
-
-<img src={chatbotIcon} alt="Chatbot Logo" />
-
 import EventCard from "./components/EventCard";
 
 function App() {
@@ -81,10 +78,10 @@ function App() {
       {startAnimationComplete && (
         <>
           <section className="bg-black w-full fixed top-0 h-18 z-50 flex items-center">
-            <Navbar scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef,scheduleRef, reelRef, footerRef }} scrollToSection={scrollToSection} />
+            <Navbar scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef, scheduleRef, reelRef, footerRef }} scrollToSection={scrollToSection} />
           </section>
 
-          <div ref={scrollRef} data-scroll-container style={{ minHeight: '100vh' }}>
+          <div ref={scrollRef} data-scroll-container>
             <section ref={heroRef} data-scroll-section data-scroll-speed="3" className="flex flex-col backdrop-blur-xl items-center justify-center h-screen w-full bg-cover bg-center">
               <Hero />
             </section>
@@ -96,26 +93,22 @@ function App() {
             <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
               <Event />
             </section>
-            <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
-            <EventCard/>
-          </section>
+
+            <section data-scroll-section className='min-h-screen mt-6'>
+              <EventCard />
+            </section>
+
             <section ref={scheduleRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
-              <SchedulePage/>
-            </section>          
+              <SchedulePage />
+            </section>
 
             <section ref={sponsorsRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
               <Sponsors />
             </section>
-            
-            {/* <section ref={reelRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
-              <Reel />
-            </section> */}
 
-            {/* <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10">
-              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <Footer />
-              </div>
-            </section> */}
+            <section  data-scroll-section data-scroll-speed="-2" data-scroll-direction="horizontal"  >
+              <Footer />            
+            </section>
           </div>
 
           {/* Chatbot Section */}
@@ -123,7 +116,7 @@ function App() {
 
           {/* Bot Logo */}
           <div
-            className="fixed bottom-5 right-5 z-50 cursor-pointer"
+            className="fixed bottom-0 right-0 mb-5 mr-5 z-50 cursor-pointer"
             onClick={toggleChatbot}
           >
             <img
