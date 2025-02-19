@@ -118,9 +118,9 @@ function App() {
             onClick={toggleChatbot}
           >
             <img
-              src="https://w7.pngwing.com/pngs/1001/63/png-transparent-internet-bot-computer-icons-chatbot-sticker-electronics-face-careobot.png"
+              src="src\assets\chatbot.png"
               alt="Chatbot Logo"
-              className="w-12 h-12 rounded-full shadow-lg hover:scale-110 transition-transform"
+              className="w-15 h-15 rounded-full shadow-lg hover:scale-110 transition-transform"
             />
           </div>
         </>
