@@ -14,6 +14,7 @@ import Chatbot from "./components/Chatbot";
 import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
 import chatbotIcon from "./assets/AcunetixChatbot.png";
+import {Routes,Route} from 'react-router-dom';
 
 <img src={chatbotIcon} alt="Chatbot Logo" />
 
@@ -72,10 +73,15 @@ function App() {
     if (locomotiveScroll.current && ref.current) {
       locomotiveScroll.current.scrollTo(ref.current);
     }
+  <Routes>
+    <Route path="/" element={<App />} />
+    <Route path="/event" element={<EventCard />} />
+  </Routes>
   };
 
   return (
     <>
+
       {!startAnimationComplete && <div><Start /></div>}
 
       {startAnimationComplete && (
