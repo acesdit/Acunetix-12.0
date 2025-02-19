@@ -14,6 +14,7 @@ import Chatbot from "./components/Chatbot";
 import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
 import chatbotIcon from "./assets/AcunetixChatbot.png";
+
 import {Routes,Route} from 'react-router-dom';
 
 <img src={chatbotIcon} alt="Chatbot Logo" />
@@ -103,9 +104,17 @@ function App() {
             <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
               <Event />
             </section>
+
             {/* <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
             <EventCard/>
           </section> */}
+=========
+
+            <section data-scroll-section className='min-h-screen mt-6'>
+              <EventCard />
+            </section>
+
+>>>>>>>>> Temporary merge branch 2
             <section ref={scheduleRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
               <SchedulePage />
             </section>
