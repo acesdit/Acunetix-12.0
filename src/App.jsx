@@ -13,6 +13,10 @@ import Footer from './components/Footer';
 import Chatbot from "./components/Chatbot";
 import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
+import chatbotIcon from "./assets/chatbot.png";
+
+<img src={chatbotIcon} alt="Chatbot Logo" />
+
 
 function App() {
   const [startAnimationComplete, setStartAnimationComplete] = useState(false);
@@ -118,7 +122,7 @@ function App() {
             onClick={toggleChatbot}
           >
             <img
-              src="src\assets\chatbot.png"
+              src={chatbotIcon}
               alt="Chatbot Logo"
               className="w-15 h-15 rounded-full shadow-lg hover:scale-110 transition-transform"
             />
