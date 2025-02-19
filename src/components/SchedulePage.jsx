@@ -31,8 +31,8 @@ const SchedulePage = () => {
     return (
         <div className="min-h-screen bg-black py-8 px-4 sm:px-6 lg:px-8">
             {/* ... (keep header same) */}
-            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-center mt-10 mb-8 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 animate-pulse">
-                Event Schedule
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-center mt-10 mb-8 md:mb-12 text-transparent">
+                Events Schedule
             </h1>
 
             <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-3 gap-6 md:gap-8">
