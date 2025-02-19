@@ -1,0 +1,21 @@
+@use "node_modules/locomotive-scroll/src/styles/base";
+@use "node_modules/locomotive-scroll/src/styles/scrollbar";
+
+// Add your custom styles here
+
+
+.c-scrollbar {
+  z-index: 9999;
+  width: 8px;
+  background: rgba(255,255,255,0.1);
+}
+
+.c-scrollbar_thumb {
+  background: rgba(255,255,255,0.4);
+  width: 100%;
+  border-radius: 0;
+}
+
+.is-revealed {
+  will-change: transform, opacity;
+}
