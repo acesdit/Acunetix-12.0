@@ -1,8 +1,6 @@
 import React from 'react';
 import './Footer.css';
 import acunetixLogo from '../assets/acunetix-logo.png';
-import csiLogo from '../assets/csilogo.png';
-import acesLogo from '../assets/aceslogo.png';
 
 export default function Footer() {
     return (
