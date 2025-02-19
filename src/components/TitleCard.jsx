@@ -100,6 +100,7 @@ export default function TiltedCard({
           scale,
         }}
       >
+        <a href="https://www.w3schools.com/react/react_router.asp">
         <motion.img
           src={imageSrc}
           alt={altText}
@@ -109,6 +110,7 @@ export default function TiltedCard({
             height: imageHeight,
           }}
         />
+        </a>
 
         {displayOverlayContent && overlayContent && (
           <motion.div
