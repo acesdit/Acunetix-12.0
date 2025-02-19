@@ -14,12 +14,6 @@ import Chatbot from "./components/Chatbot";
 import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
 import chatbotIcon from "./assets/AcunetixChatbot.png";
-
-import {Routes,Route} from 'react-router-dom';
-
-<img src={chatbotIcon} alt="Chatbot Logo" />
-
-
 import EventCard from "./pages/EventCard";
 
 function MainContent() {
@@ -58,27 +52,16 @@ function MainContent() {
     if (locomotiveScroll.current && ref.current) {
       locomotiveScroll.current.scrollTo(ref.current);
     }
-  <Routes>
-    <Route path="/" element={<App />} />
-    <Route path="/event/:eventId" element={<EventCard />} />
-  </Routes>
   };
 
   return (
     <>
-
-      {!startAnimationComplete && <div><Start /></div>}
-
-      {startAnimationComplete && (
-        <>
-          <section className="bg-black w-full fixed top-0 h-18 z-50 flex items-center">
-            <Navbar scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef, scheduleRef, reelRef, footerRef }} scrollToSection={scrollToSection} />
-          </section>
-
-          <div ref={scrollRef} data-scroll-container>
-            <section ref={heroRef} data-scroll-section data-scroll-speed="3" className="flex flex-col backdrop-blur-xl items-center justify-center h-screen w-full bg-cover bg-center">
-              <Hero />
-            </section>
+      <Navbar scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef, scheduleRef, reelRef, footerRef }} scrollToSection={scrollToSection} />
+      
+      <div ref={scrollRef} data-scroll-container style={{ minHeight: '100vh' }}>
+        <section ref={heroRef} data-scroll-section className="flex flex-col items-center justify-center h-screen w-full bg-cover bg-center">
+          <Hero />
+        </section>
 
         <section ref={aboutRef} data-scroll-section className='flex bg-black text-white flex-col items-center justify-center min-h-screen w-full'>
           <About />
@@ -92,14 +75,15 @@ function MainContent() {
           <SchedulePage/>
         </section>
 
-            <section ref={sponsorsRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
-              <Sponsors />
-            </section>
+        <section ref={sponsorsRef} data-scroll-section className="min-h-screen">
+          <Sponsors />
+        </section>
+        
 
-            <section  data-scroll-section data-scroll-speed="-2" data-scroll-direction="horizontal"  >
-              <Footer />            
-            </section>
-          </div>
+        <section ref={footerRef} data-scroll-section className=" bg-black/90 pt-100 pb-0 mb-0 relative z-20 border-t border-white/10">
+          <Footer />
+        </section>
+      </div>
 
       {isChatbotVisible && <Chatbot onClose={toggleChatbot} />}
       <div className="fixed bottom-5 right-5 z-50 cursor-pointer" onClick={toggleChatbot}>
