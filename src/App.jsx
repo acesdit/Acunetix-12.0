@@ -15,7 +15,7 @@ import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
 import chatbotIcon from "./assets/AcunetixChatbot.png";
 
-import {Routes,Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 <img src={chatbotIcon} alt="Chatbot Logo" />
 
@@ -75,16 +75,16 @@ function App() {
     if (locomotiveScroll.current && ref.current) {
       locomotiveScroll.current.scrollTo(ref.current);
     }
-  <Routes>
-    <Route path="/" element={<App />} />
-    <Route path="/event/:eventId" element={<EventCard />} />
-  </Routes>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/event/:eventId" element={<EventCard />} />
+    </Routes>
   };
 
   return (
     <>
 
-      {!startAnimationComplete && <div><Start /></div>}
+      {!startAnimationComplete && <div ><Start /></div>}
 
       {startAnimationComplete && (
         <>
@@ -117,9 +117,12 @@ function App() {
               <Sponsors />
             </section>
 
-            <section  data-scroll-section data-scroll-speed="-2" data-scroll-direction="horizontal"  >
-              <Footer />            
+            <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 min-h-screen flex items-end">
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <Footer />
+              </div>
             </section>
+
           </div>
 
           {/* Chatbot Section */}

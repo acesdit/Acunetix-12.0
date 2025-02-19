@@ -137,3 +137,25 @@ html.has-scroll-smooth {
   }
 
   
+.animate-fadeIn {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
