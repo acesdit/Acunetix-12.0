@@ -17,7 +17,7 @@ import chatbotIcon from "./assets/AcunetixChatbot.png";
 
 <img src={chatbotIcon} alt="Chatbot Logo" />
 
-import EventCard from "./components/EventCard";
+import EventCard from "./pages/EventCard";
 
 function App() {
   const [startAnimationComplete, setStartAnimationComplete] = useState(false);
