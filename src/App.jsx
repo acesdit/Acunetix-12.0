@@ -13,7 +13,7 @@ import Footer from './components/Footer';
 import Chatbot from "./components/Chatbot";
 import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
-import chatbotIcon from "./assets/chatbot.png";
+import chatbotIcon from "./assets/logo.png";
 
 <img src={chatbotIcon} alt="Chatbot Logo" />
 
