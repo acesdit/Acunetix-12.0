@@ -108,13 +108,7 @@ function App() {
             {/* <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
             <EventCard/>
           </section> */}
-=========
 
-            <section data-scroll-section className='min-h-screen mt-6'>
-              <EventCard />
-            </section>
-
->>>>>>>>> Temporary merge branch 2
             <section ref={scheduleRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
               <SchedulePage />
             </section>
