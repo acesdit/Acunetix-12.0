@@ -17,7 +17,7 @@ const Hero = () => {
             </video>
             
             <div className="relative z-10 text-center text-white" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}>
-                <h1 className="text-4xl md:text-8xl font-bold">Acunetix 12.0</h1>
+                <h1 className="text-4xl md:text-8xl uppercase font-bold">Acunetix 12.0</h1>
                 <p className='text-lg md:text-2xl md:h-12 pt-4'>Dive into world of illusions</p>
             </div>
         </div>
