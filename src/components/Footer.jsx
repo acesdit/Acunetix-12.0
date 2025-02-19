@@ -7,18 +7,16 @@ export default function Footer() {
         <footer className="footer ">
             {/* Background Video */}
 
-
             {/* Overlay to darken the video for better text visibility */}
             <div className="overlay"></div>
-
-            <div className="footer-content flex max-sm:flex-col">
+            <div className="footer-content gap-4 flex max-sm:flex-col" style={{gap:"4rem"}}>
                 {/* Logos Section */}
                 
 
                 {/* Site Information */}
                 <div className="footer-section">
-                    <h3>Acunetix 12.0</h3>
-                    <p>Securing the web, one step at a time.</p>
+                    <h1 className='text-4xl'>Acunetix 12.0</h1>
+                    <p>Dive into world of illusions</p>
                 </div>
 
                 <div className="logos">
@@ -27,7 +25,7 @@ export default function Footer() {
 
                 {/* Quick Links */}
                 <div className="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4 className='text-xl'>Quick Links</h4>
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
@@ -49,7 +47,7 @@ export default function Footer() {
             </div>
 
             <div className="footer-bottom">
-                <p>© 2025 Acunetix 12.0 All rights reserved.</p>
+                <p className='text-[12px] sm:text-[15px]'>© 2025 Acunetix 12.0 All rights reserved.</p>
             </div>
         </footer>
     );
