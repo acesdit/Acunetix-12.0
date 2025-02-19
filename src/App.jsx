@@ -18,6 +18,7 @@ import {Routes,Route} from 'react-router-dom';
 
 <img src={chatbotIcon} alt="Chatbot Logo" />
 
+
 import EventCard from "./pages/EventCard";
 
 function App() {
@@ -75,7 +76,7 @@ function App() {
     }
   <Routes>
     <Route path="/" element={<App />} />
-    <Route path="/event" element={<EventCard />} />
+    <Route path="/event/:eventId" element={<EventCard />} />
   </Routes>
   };
 
@@ -102,9 +103,9 @@ function App() {
             <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
               <Event />
             </section>
-            <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
+            {/* <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
             <EventCard/>
-          </section>
+          </section> */}
             <section ref={scheduleRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
               <SchedulePage/>
             </section>          
