@@ -80,12 +80,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 0px;
     margin-bottom: 20px;
   }
   
   .logo {
-    height: 70px; /* Adjust size as needed */
+    height: 100px;
     transition: transform 0.3s;
   }
   
@@ -107,8 +107,29 @@
   
   /* Footer Bottom Styling */
   .footer-bottom {
-    margin-top: 20px;
-    font-size: 14px;
+    margin-top: 100px;
+    font-size: 15px;
     opacity: 0.7;
   }
   
+
+  /* Add to your CSS file */
+[data-scroll-container] {
+  transition: padding 0.3s ease;
+}
+
+.footer {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(12px);
+}
+
+@media (max-width: 768px) {
+  [data-scroll-container] {
+    padding-bottom: 80px !important;
+  }
+  
+  .footer {
+    position: static;
+    padding: 1rem 0;
+  }
+}
