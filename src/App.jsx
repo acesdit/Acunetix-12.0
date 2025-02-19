@@ -13,10 +13,11 @@ import Footer from './components/Footer';
 import Chatbot from "./components/Chatbot";
 import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
-import chatbotIcon from "./assets/chatbot.png";
+import chatbotIcon from "./assets/AcunetixChatbot.png";
 
 <img src={chatbotIcon} alt="Chatbot Logo" />
 
+import EventCard from "./components/EventCard";
 
 function App() {
   const [startAnimationComplete, setStartAnimationComplete] = useState(false);
@@ -95,9 +96,13 @@ function App() {
             <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
               <Event />
             </section>
+            <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
+            <EventCard/>
+          </section>
             <section ref={scheduleRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
               <SchedulePage/>
-            </section>
+            </section>          
+
             <section ref={sponsorsRef} data-scroll-section data-scroll-speed="2" className="min-h-screen">
               <Sponsors />
             </section>
