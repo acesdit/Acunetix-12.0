@@ -79,8 +79,6 @@ function MainContent() {
         <section ref={sponsorsRef} data-scroll-section className="min-h-screen">
           <Sponsors />
         </section>
-        
-
         <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 min-h-screen flex items-end">
               <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <Reel></Reel>
