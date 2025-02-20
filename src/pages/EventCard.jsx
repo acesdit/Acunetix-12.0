@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { events } from "../data/eventsData";
-import VantaBackground from "../animation/Backgrounds/Hyperspeed/Vanta";
 
 const EventCard = () => {
   const { id } = useParams();
