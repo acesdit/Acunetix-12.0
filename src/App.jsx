@@ -29,6 +29,7 @@ function MainContent() {
   const locomotiveScroll = useRef(null);
   const location = useLocation();
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     if (location.pathname === '/') {
@@ -39,6 +40,16 @@ function MainContent() {
         inertia: 0.75,
         getDirection: true,
       });
+
+      // Add scroll handler for navbar color change
+      const handleScroll = (args) => {
+        if (heroRef.current) {
+          const heroHeight = heroRef.current.offsetHeight;
+          setIsScrolled(args.scroll.y > heroHeight);
+        }
+      };
+
+      locomotiveScroll.current.on('scroll', handleScroll);
 
       return () => {
         if (locomotiveScroll.current) {
@@ -57,7 +68,11 @@ function MainContent() {
 
   return (
     <>
-      <Navbar scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef, scheduleRef, reelRef, footerRef }} scrollToSection={scrollToSection} />
+      <Navbar  
+        isScrolled={isScrolled}
+        scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef, scheduleRef, reelRef, footerRef }} 
+        scrollToSection={scrollToSection} 
+      />
       
       <div ref={scrollRef} data-scroll-container style={{ minHeight: '100vh' }}>
         <section ref={heroRef} data-scroll-section className="flex flex-col items-center justify-center h-screen w-full bg-cover bg-center">
@@ -79,14 +94,13 @@ function MainContent() {
         <section ref={sponsorsRef} data-scroll-section className="min-h-screen">
           <Sponsors />
         </section>
-        
 
         <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 min-h-screen flex items-end">
-              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <Reel></Reel>
-                <Footer />
-              </div>
-            </section>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <Reel></Reel>
+            <Footer />
+          </div>
+        </section>
       </div>
 
       {isChatbotVisible && <Chatbot onClose={toggleChatbot} />}
