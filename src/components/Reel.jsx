@@ -1,22 +1,23 @@
 import React from "react";
 import "./styles.css"
+import videosrc from "../assets/Reel Acunetix.mp4"
 
 function Reel() {
   const Reeldata = [
-    { 
+    {
       video: "https://www.instagram.com/p/C4SnEGfKtDg/",
-      thumbnail: "https://images.unsplash.com/photo-1515577756537-d9af957a75dc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbnRzfGVufDB8fDB8fHww", 
-      title: "Acunetix 12.0 Launch" 
+      thumbnail: "https://images.unsplash.com/photo-1515577756537-d9af957a75dc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbnRzfGVufDB8fDB8fHww",
+      title: "Acunetix 12.0 Launch"
     },
-    { 
+    {
       video: "https://www.instagram.com/p/C4M-m-_q1Lq/",
-      thumbnail: "https://images.unsplash.com/photo-1568721721169-dc9a5b5acf7f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbnRzJTIwdmVydGljYWwlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D", 
-      title: "Events" 
+      thumbnail: "https://images.unsplash.com/photo-1568721721169-dc9a5b5acf7f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbnRzJTIwdmVydGljYWwlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D",
+      title: "Events"
     },
-    { 
+    {
       video: "https://www.instagram.com/p/C3kdYnsNrF8/",
-      thumbnail: "https://plus.unsplash.com/premium_photo-1680965942284-38fbf394d71f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGV2ZW50cyUyMHZlcnRpY2FsJTIwaW1hZ2VzfGVufDB8fDB8fHww", 
-      title: "Legacy" 
+      thumbnail: "https://plus.unsplash.com/premium_photo-1680965942284-38fbf394d71f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGV2ZW50cyUyMHZlcnRpY2FsJTIwaW1hZ2VzfGVufDB8fDB8fHww",
+      title: "Legacy"
     },
     // Add more reels as needed
   ];
@@ -24,8 +25,8 @@ function Reel() {
   return (
     <section className="w-full bg-black py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-bold  text-white text-center mb-35">
-        Carrying the Legacy
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">
+          Carrying the Legacy
         </h2>
 
         <div className="flex overflow-x-auto pb-4 scrollbar-hide md:grid md:grid-cols-3 md:gap-6 lg:gap-8 md:overflow-visible">
@@ -39,14 +40,27 @@ function Reel() {
             >
               <div className="relative h-120 rounded-2xl overflow-hidden shadow-xl">
                 {/* Thumbnail Image Container */}
-                <div> {/* 16:9 aspect ratio */}
+                {/* <div> {/* 16:9 aspect ratio
                   <img
                     src={reel.thumbnail}
                     alt={`Thumbnail for ${reel.title}`}
                     className=" top-0 left-0 w-full h-full object-cover"
                     loading="lazy"
                   />                
-                </div>               
+                </div>*/}
+
+                <video
+                  className="absolute inset-0 w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                >
+                  <source src={videosrc} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+
               </div>
             </a>
           ))}
