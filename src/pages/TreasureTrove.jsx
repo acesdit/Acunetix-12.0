@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import LetterGlitch from '../components/LetterGlitch'
 import TreasureTroveImg from '../assets/TreasureTrove.png'
+import { exp } from 'three/tsl'
 
 
 export const TreasureTrove = () => {
@@ -96,4 +97,6 @@ export const TreasureTrove = () => {
     </>
   )
 }
+
+export default TreasureTrove
 

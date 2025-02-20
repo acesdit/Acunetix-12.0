@@ -97,3 +97,5 @@ export const Timescape = () => {
   )
 }
 
+export default Timescape
+

@@ -19,7 +19,7 @@ export default function Footer() {
                     <p>Dive into world of illusions</p>
                 </div>
 
-                <div className="logos">
+                <div  className="logos">
                     <img src={acunetixLogo} alt="Acunetix Logo" className="logo" />
                 </div>
 

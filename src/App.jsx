@@ -16,6 +16,10 @@ import SchedulePage from "./components/SchedulePage";
 import chatbotIcon from "./assets/AcunetixChatbot.png";
 import EventCard from "./pages/EventCard";
 import Reel from "./components/Reel";
+import Brainiac from "./pages/Brainiac";
+import CodeOfLies from "./pages/CodeOfLies";
+import Timescape from "./pages/TimeScape";
+import TreasureTrove from "./pages/TreasureTrove";
 
 function MainContent() {
   const scrollRef = useRef(null);
@@ -108,6 +112,15 @@ function App() {
       {!startAnimationComplete ? <Start /> : (
         <Routes>
           <Route path="/" element={<MainContent />} />
+          <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/codeOfLies" element={<CodeOfLies />} />
+          <Route path="event/timeScape" element={<Timescape />} />
+          <Route path="/event/treasuretrove" element={<TreasureTrove />} />
+          {/* <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/brainiac" element={<Brainiac />} /> */}
           <Route path="/event/:id" element={<EventCard />} />
         </Routes>
       )}
