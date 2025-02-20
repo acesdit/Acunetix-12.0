@@ -5,7 +5,7 @@ import LetterGlitch from '../components/LetterGlitch'
 import GameStormImg from '../assets/GameStorm.png'
 
 
-export const GameStorm = () => {
+const GameStorm = () => {
   return (
     <>
       {/* Fixed Navbar */}
@@ -96,4 +96,4 @@ export const GameStorm = () => {
     </>
   )
 }
-
+export default GameStorm;
