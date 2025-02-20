@@ -1,65 +1,83 @@
+ import treasureTrove from "../assets/treasureTrove.png"
+ import Brainiac from "../assets/Brainiac.png"
+ import insightOPS from "../assets/insightOPS.png"
+ import CtrlAltElite from "../assets/CtrlAltElite.png"
+ import uxHunt from "../assets/uxHunt.png"
+ import timeScape from "../assets/timeScape.png"
+ import cinemaEyesLens from "../assets/cinemaEyesLens.png"
+ import codeOfLies from "../assets/codeOfLies.png"
+
+ 
  export const events = [
     {
       id: 1,
-      image: "https://images.squarespace-cdn.com/content/v1/58c9fe99f5e231f0df86179b/1504017391390-HK35326DFYJSSYIVZSIO/party.jpg?format=1500w",
+      image: Brainiac,
       title: "Event 1",
       description: "This is the first event.",
       link: "/event/1",
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1739639845916-6bfcaec516ba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+      image: insightOPS,
       title: "Event 2",
       description: "This is the second event.",
       link: "/event/2",
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlicmFudHxlbnwwfHwwfHx8MA%3D%3D",
+      image: CtrlAltElite,
       title: "Event 3",
       description: "This is the third event.",
       link: "/event/3",
     },
     {
       id: 4,
-      image: "https://plus.unsplash.com/premium_photo-1667105168121-0fe3333b5b14?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D",
+      image: uxHunt,
       title: "Event 4",
       description: "This is the fourth event.",
       link: "/event/4",
     },
     {
       id: 5,
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPAhI1tH8qypZE4oYMrRz7aULbjMnWUflTXA&s",
+      image:timeScape,
       title: "Event 5",
       description: "This is the fifth event.",
       link: "/event/5",
     },
     {
       id: 6,
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4n_sbg1Yb2nveOyRq_27P8U0O1p0caFwpMw&s",
+      image: codeOfLies,
       title: "Event 6",
       description: "This is the sixth event.",
       link: "/event/6",
     },
     {
       id: 7,
-      image: "https://res.cloudinary.com/purnesh/image/upload/w_540,f_auto,q_auto:eco,c_limit/reverie.jpg",
+      image: cinemaEyesLens,
       title: "Event 7",
       description: "This is the seventh event.",
       link: "/event/7",
     },
     {
       id: 8,
-      image: "https://www.hire4event.com/blogs/wp-content/uploads/2020/12/Kolkata-Wedding.jpg",
+      image: insightOPS,
       title: "Event 8",
       description: "This is the eighth event.",
       link: "/event/8",
     },
     {
       id: 9,
-      image: "https://fashionherald.in/wp-content/uploads/2025/01/image-33-1024x606.png",
+      image: CtrlAltElite,
       title: "Event 9",
       description: "This is the ninth event.",
       link: "/event/9",
     },
+    {
+      id: 10,
+      image: treasureTrove,
+      title: "Event 9",
+      description: "This is the tenth event.",
+      link: "/event/10",
+    },
   ];
+  
