@@ -16,6 +16,9 @@ import SchedulePage from "./components/SchedulePage";
 import chatbotIcon from "./assets/AcunetixChatbot.png";
 import EventCard from "./pages/EventCard";
 import Reel from "./components/Reel";
+import Brainiac from "./pages/Brainiac";
+import CodeOfLies from "./pages/CodeOfLies";
+import Timescape from "./pages/TimeScape";
 
 function MainContent() {
   const scrollRef = useRef(null);
@@ -94,7 +97,6 @@ function MainContent() {
         <section ref={sponsorsRef} data-scroll-section className="min-h-screen">
           <Sponsors />
         </section>
-
         <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 min-h-screen flex items-end">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <Reel></Reel>
@@ -124,6 +126,14 @@ function App() {
       {!startAnimationComplete ? <Start /> : (
         <Routes>
           <Route path="/" element={<MainContent />} />
+          <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/codeOfLies" element={<CodeOfLies />} />
+          <Route path="event/timeScape" element={<Timescape />} />
+          {/* <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/brainiac" element={<Brainiac />} /> */}
           <Route path="/event/:id" element={<EventCard />} />
         </Routes>
       )}

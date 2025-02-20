@@ -97,3 +97,5 @@ export const CtrlAltElite = () => {
   )
 }
 
+export default CtrlAltElite
+
