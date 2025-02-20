@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import LetterGlitch from '../components/LetterGlitch'
-import TimescapeImg from '../assets/Timescape.png'
+import TimescapeImg from '../assets/timeScape.png'
 
 
 export const Timescape = () => {
