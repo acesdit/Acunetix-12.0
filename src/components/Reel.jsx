@@ -1,33 +1,88 @@
 import React from "react";
-import reel from "../assets/Reel.mp4";
+import "./styles.css";
+import reel from "../assets/Reel Acunetix.mp4";
+import reel2 from "../assets/Reel Acunetix2.mp4";
+import reel3 from "../assets/Reel Acunetix3.mp4";
 
 function Reel() {
-    const Reeldata = [
-        { link: reel, data: "This is reel" },
-        { link: reel, data: "This is reel" },
-        { link: reel, data: "This is reel" }
-    ];
+  return (
+    <section className="w-full bg-black py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">
+          Carrying the Legacy
+        </h2>
 
-    return (
-        <div className="w-full flex flex-col items-center justify-center bg-black p-5">
-            <h2 className="text-white text-3xl text-center w-full m-10 my-2">PAST EVENTS</h2>
-            <div className="flex flex-nowrap justify-between md:justify-evenly gap-2 w-[90%] max-w-[800px] mt-15 bg-gray-300 rounded-2xl p-5 overflow-x-auto whitespace-nowrap">
-                {Reeldata.map((reel, index) => (
-                    <div key={index} className="flex flex-col items-center flex-none w-[30%] max-w-[120px] md:max-w-[150px] bg-gray-300 rounded-2xl">
-                        <video 
-                            className="w-full max-h-[180px] md:max-h-[250px] rounded-2xl" 
-                            controls
-                        >
-                            <source src={reel.link} type="video/mp4"/>
-                        </video>
-                        <h3 className="text-black text-center mt-2 text-sm md:text-base">
-                            {reel.data}
-                        </h3>
-                    </div>
-                ))}
+        <div className="flex overflow-x-auto pb-4 scrollbar-hide md:grid md:grid-cols-3 md:gap-6 lg:gap-8 md:overflow-visible">
+          {/* First Reel */}
+          <a
+          href="https://www.instagram.com/reel/C16YeEQKCe5/"
+            
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex-shrink-0 w-[80vw] sm:w-[60vw] md:w-full mr-4 md:mr-0 transition-transform duration-300 hover:scale-105"
+          >
+            <div className="relative h-120 rounded-2xl overflow-hidden shadow-xl">
+              <video
+                className="absolute inset-0 w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+              >
+                <source src={reel} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
+          </a>
+
+          {/* Second Reel */}
+          <a
+            href="https://www.instagram.com/reel/C4SnEGfKtDg/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex-shrink-0 w-[80vw] sm:w-[60vw] md:w-full mr-4 md:mr-0 transition-transform duration-300 hover:scale-105"
+          >
+            <div className="relative h-120 rounded-2xl overflow-hidden shadow-xl">
+              <video
+                className="absolute inset-0 w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+              >
+                <source src={reel3} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </a>
+
+          {/* Third Reel */}
+          <a
+            href="https://www.instagram.com/p/C4M-m-_q1Lq/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex-shrink-0 w-[80vw] sm:w-[60vw] md:w-full mr-4 md:mr-0 transition-transform duration-300 hover:scale-105"
+          >
+            <div className="relative h-120 rounded-2xl overflow-hidden shadow-xl">
+              <video
+                className="absolute inset-0 w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+              >
+                <source src={reel2} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </a>
         </div>
-    );
+      </div>
+    </section>
+  );
 }
 
 export default Reel;

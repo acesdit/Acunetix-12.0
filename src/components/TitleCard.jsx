@@ -99,7 +99,7 @@ export default function TiltedCard({
           rotateY,
           scale,
         }}
-      >
+      >      
         <motion.img
           src={imageSrc}
           alt={altText}
