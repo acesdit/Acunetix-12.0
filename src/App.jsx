@@ -19,7 +19,6 @@ import Reel from "./components/Reel";
 import Brainiac from "./pages/Brainiac";
 import CodeOfLies from "./pages/CodeOfLies";
 import Timescape from "./pages/TimeScape";
-import TreasureTrove from "./pages/TreasureTrove";
 
 function MainContent() {
   const scrollRef = useRef(null);
