@@ -15,7 +15,7 @@ export default function Footer() {
 
                 {/* Site Information */}
                 <div className="footer-section">
-                    <h1 className='text-4xl'>Acunetix 12.0</h1>
+                    <h1 className='text-4xl max-sm:text-2xl'>Acunetix 12.0</h1>
                     <p>Dive into world of illusions</p>
                 </div>
 
