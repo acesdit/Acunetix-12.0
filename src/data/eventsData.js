@@ -72,12 +72,5 @@
       description: "This is the ninth event.",
       link: "/event/crtlAltElite",
     },
-    {
-      id: "treasuretrove",
-      image: treasureTrove,
-      title: "Event 9",
-      description: "This is the tenth event.",
-      link: "/event/treasuretrove",
-    },
   ];
   

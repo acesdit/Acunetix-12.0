@@ -115,7 +115,6 @@ function App() {
           <Route path="/event/brainiac" element={<Brainiac />} />
           <Route path="/event/codeOfLies" element={<CodeOfLies />} />
           <Route path="event/timeScape" element={<Timescape />} />
-          <Route path="/event/treasuretrove" element={<TreasureTrove />} />
           {/* <Route path="/event/brainiac" element={<Brainiac />} />
           <Route path="/event/brainiac" element={<Brainiac />} />
           <Route path="/event/brainiac" element={<Brainiac />} />
