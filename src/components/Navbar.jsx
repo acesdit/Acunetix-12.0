@@ -9,25 +9,28 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
     setIsMenuOpen(false);
     setTimeout(() => {
       scrollToSection(ref);
-    }, 300);
+    }, 300); // Reduced delay to make it smoother
   };
 
   return (
     <nav
-      className={`text-white py-4 px-5 md:px-4 lg:px-12 fixed w-full z-50 transition-all duration-300 ${
+      className={`text-white py-6 max-sm:px-5 md:px-4 lg:px-12 fixed w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-black/90 backdrop-blur-lg shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center justify-between max-w-[1200px] mx-auto">
-        {/* Left - Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+      <div
+        className="flex items-center justify-between"
+        style={{ maxWidth: "1200px", margin: "0 auto" }}
+      >
+        {/* Left as - Desktop */}
+        <div className="hidden md:flex space-x-12 gap-16">
           <a
             href="#home"
             onClick={(e) => {
               e.preventDefault();
               handleLinkClick(scrollToRefs.heroRef);
             }}
-            className="hover:text-gray-400 transition-colors duration-200 text-lg font-medium"
+            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5"
           >
             Home
           </a>
@@ -37,14 +40,14 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
               e.preventDefault();
               handleLinkClick(scrollToRefs.eventRef);
             }}
-            className="hover:text-gray-400 transition-colors duration-200 text-lg font-medium"
+            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4"
           >
             Events
           </a>
         </div>
 
-        {/* Center - Logo */}
-        <div className="flex justify-center flex-1 md:flex-none">
+        {/* Center Logo */}
+        <div className="flex-1 flex justify-center">
           <a
             href="#home"
             onClick={(e) => {
@@ -57,20 +60,20 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
               alt="Logo"
               width={48}
               height={48}
-              className="hover:scale-105 transition-transform duration-300"
+              className="transform hover:scale-105 ml-8 transition-transform duration-300 "
             />
           </a>
         </div>
 
-        {/* Right - Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+        {/* Right as - Desktop */}
+        <div className="hidden md:flex space-x-12 gap-16">
           <a
             href="#schedule"
             onClick={(e) => {
               e.preventDefault();
               handleLinkClick(scrollToRefs.scheduleRef);
             }}
-            className="hover:text-gray-400 transition-colors duration-200 text-lg font-medium"
+            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4 mx-5"
           >
             Schedule
           </a>
@@ -80,7 +83,7 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
               e.preventDefault();
               handleLinkClick(scrollToRefs.aboutRef);
             }}
-            className="hover:text-gray-400 transition-colors duration-200 text-lg font-medium"
+            className="hover:text-zinc-400 transition-colors duration-200 text-lg font-medium px-4"
           >
             About
           </a>
@@ -88,9 +91,10 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden focus:outline-none"
+          className="md:hidden py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
           onClick={() => setIsMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
         >
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isMenuOpen ? (
@@ -104,59 +108,64 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed inset-0 z-50 bg-black bg-opacity-95 transform transition-transform duration-500 ease-in-out ${
+        className={`fixed backdrop-blur-xl z-50 top-0 right-0 h-full text-white transition-transform duration-500 ease-in-out transform ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
-        } md:hidden flex flex-col items-center justify-center space-y-6`}
+        }`}
+        style={{ width: "220px", background: "rgba(0, 0, 0, 0.95)" }}
       >
-        <button
-          className="absolute top-6 right-6 focus:outline-none"
-          onClick={() => setIsMenuOpen(false)}
-          aria-label="Close menu"
-        >
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-        <a
-          href="#home"
-          onClick={(e) => {
-            e.preventDefault();
-            handleLinkClick(scrollToRefs.heroRef);
-          }}
-          className="text-xl text-white hover:text-gray-400 transition-colors duration-300"
-        >
-          Home
-        </a>
-        <a
-          href="#about"
-          onClick={(e) => {
-            e.preventDefault();
-            handleLinkClick(scrollToRefs.aboutRef);
-          }}
-          className="text-xl text-white hover:text-gray-400 transition-colors duration-300"
-        >
-          About
-        </a>
-        <a
-          href="#events"
-          onClick={(e) => {
-            e.preventDefault();
-            handleLinkClick(scrollToRefs.eventRef);
-          }}
-          className="text-xl text-white hover:text-gray-400 transition-colors duration-300"
-        >
-          Events
-        </a>
-        <a
-          href="#schedule"
-          onClick={(e) => {
-            e.preventDefault();
-            handleLinkClick(scrollToRefs.scheduleRef);
-          }}
-          className="text-xl text-white hover:text-gray-400 transition-colors duration-300"
-        >
-          Schedule
-        </a>
+        <div className="flex flex-col space-y-4 text-center bg-[#0000006f]">
+          <button
+            className="self-end focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white p-4"
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div className="flex flex-col justify-center items-center py-4 h-full">
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                handleLinkClick(scrollToRefs.heroRef);
+              }}
+              className="py-3 text-xl hover:text-gray-400 transition-colors duration-300 w-full text-center"
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                handleLinkClick(scrollToRefs.aboutRef);
+              }}
+              className="py-3 text-xl hover:text-gray-400 transition-colors duration-300 w-full text-center"
+            >
+              About
+            </a>
+            <a
+              href="#events"
+              onClick={(e) => {
+                e.preventDefault();
+                handleLinkClick(scrollToRefs.eventRef);
+              }}
+              className="py-3 text-xl hover:text-gray-400 transition-colors duration-300 w-full text-center"
+            >
+              Events
+            </a>
+            <a
+              href="#schedule"
+              onClick={(e) => {
+                e.preventDefault();
+                handleLinkClick(scrollToRefs.scheduleRef);
+              }}
+              className="py-3 text-xl hover:text-gray-400 transition-colors duration-300 w-full text-center"
+            >
+              Schedule
+            </a>
+          </div>
+        </div>
       </div>
     </nav>
   );
