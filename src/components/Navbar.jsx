@@ -9,7 +9,7 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
     setIsMenuOpen(false);
     setTimeout(() => {
       scrollToSection(ref);
-    }, 200);
+    }, 500);
   };
 
   return (
