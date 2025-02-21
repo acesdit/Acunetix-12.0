@@ -5,7 +5,7 @@ import LetterGlitch from '../components/LetterGlitch'
 import brainiacImg from "../assets/Brainiac.png";
 
 
-export const Brainiac = () => {
+const Brainiac = () => {
   return (
     <>
       {/* Fixed Navbar */}
@@ -96,4 +96,5 @@ export const Brainiac = () => {
     </>
   )
 }
+export default Brainiac;
 

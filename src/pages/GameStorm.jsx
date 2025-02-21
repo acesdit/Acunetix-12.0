@@ -1,11 +1,12 @@
 import React from 'react'
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-import LetterGlitch from '../components/LetterGlitch'
+// import LetterGlitch from '../components/LetterGlitch'
 import GameStormImg from '../assets/GameStorm.png'
+import Squares from '../components/Squares'
 
 
-export const GameStorm = () => {
+ const GameStorm = () => {
   return (
     <>
       {/* Fixed Navbar */}
@@ -17,12 +18,19 @@ export const GameStorm = () => {
       <div className="relative min-h-screen pt-24 pb-12">
         {/* Glitch Background with Dark Overlay */}
         <div className="absolute inset-0">
-          <LetterGlitch
+          {/* <LetterGlitch
             glitchSpeed={50}
             centerVignette={true}
             outerVignette={false}
             smooth={true}
-          />
+          /> */}
+           <Squares 
+  speed={0.5} 
+  squareSize={40}
+  direction='diagonal' // up, down, left, right, diagonal
+  borderColor='#fff'
+  hoverFillColor='#222'
+  />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
@@ -55,7 +63,7 @@ export const GameStorm = () => {
                 </div>
 
                 {/* Register Button - Centered */}
-                <button className="bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-900 hover:to-blue-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-blue-300 hover:scale-105 shadow-xl">
+                <button className="bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-slate-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-slate-300 hover:scale-105 shadow-xl">
                   Register Now
                 </button>
               </div>
@@ -73,7 +81,7 @@ export const GameStorm = () => {
 
                 {/* Centered Register Button */}
                 <div className="flex justify-center">
-                  <button className="bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-900 hover:to-blue-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-blue-300 hover:scale-105 shadow-xl">
+                  <button className="bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-slate-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-blue-300 hover:scale-105 shadow-xl">
                     Register Now
                   </button>
                 </div>
@@ -96,4 +104,5 @@ export const GameStorm = () => {
     </>
   )
 }
+export default GameStorm;
 
