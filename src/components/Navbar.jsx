@@ -9,19 +9,17 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
     setIsMenuOpen(false);
     setTimeout(() => {
       scrollToSection(ref);
-    }, 300); // Reduced delay to make it smoother
+    }, 500);
   };
 
   return (
-    <nav
-      className={`text-white py-6 max-sm:px-5 md:px-4 lg:px-12 fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/90 backdrop-blur-lg shadow-md" : "bg-transparent"
-      }`}
-    >
-      <div
-        className="flex items-center justify-between"
-        style={{ maxWidth: "1200px", margin: "0 auto" }}
-      >
+    <nav className={`text-white py-6 max-sm:px-5 md:px-4 lg:px-12 fixed w-full z-50 transition-all duration-300 ${
+      isScrolled 
+        ? "bg-black/90 backdrop-blur-lg shadow-md" 
+        : "bg-transparent"
+    }`}>
+
+      <div className="flex items-center justify-between" style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* Left as - Desktop */}
         <div className="hidden md:flex space-x-12 gap-16">
           <a
@@ -111,11 +109,12 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
         className={`fixed backdrop-blur-xl z-50 top-0 right-0 h-full text-white transition-transform duration-500 ease-in-out transform ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        style={{ width: "220px", background: "rgba(0, 0, 0, 0.95)" }}
+        style={{ width: "190px", background: "rgba(0, 0, 0, 0.971)" }}
       >
         <div className="flex flex-col space-y-4 text-center bg-[#0000006f]">
           <button
-            className="self-end focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white p-4"
+            className="self-end focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
+            style={{ padding: "1rem 1.5rem" }}
             onClick={() => setIsMenuOpen(false)}
             aria-label="Close menu"
           >
@@ -123,47 +122,53 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          <div className="flex flex-col justify-center items-center py-4 h-full">
-            <a
-              href="#home"
-              onClick={(e) => {
-                e.preventDefault();
-                handleLinkClick(scrollToRefs.heroRef);
-              }}
-              className="py-3 text-xl hover:text-gray-400 transition-colors duration-300 w-full text-center"
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              onClick={(e) => {
-                e.preventDefault();
-                handleLinkClick(scrollToRefs.aboutRef);
-              }}
-              className="py-3 text-xl hover:text-gray-400 transition-colors duration-300 w-full text-center"
-            >
-              About
-            </a>
-            <a
-              href="#events"
-              onClick={(e) => {
-                e.preventDefault();
-                handleLinkClick(scrollToRefs.eventRef);
-              }}
-              className="py-3 text-xl hover:text-gray-400 transition-colors duration-300 w-full text-center"
-            >
-              Events
-            </a>
-            <a
-              href="#schedule"
-              onClick={(e) => {
-                e.preventDefault();
-                handleLinkClick(scrollToRefs.scheduleRef);
-              }}
-              className="py-3 text-xl hover:text-gray-400 transition-colors duration-300 w-full text-center"
-            >
-              Schedule
-            </a>
+          <div className="flex  flex-col py-4" style={{ height: "90vh" }}>
+            <div className="flex justify-center align-middle  flex-col py-4" style={{ gap: "1rem" }}>
+              <a
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(scrollToRefs.heroRef);
+                }}
+                className="py-2 hover:text-gray-400 transition-colors duration-300"
+                style={{ fontSize: "1.5rem", padding: "1rem 2rem" }}
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(scrollToRefs.aboutRef);
+                }}
+                className="py-2 hover:text-gray-400 transition-colors duration-300"
+                style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
+              >
+                About
+              </a>
+              <a
+                href="#events"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(scrollToRefs.eventRef);
+                }}
+                className="py-2 hover:text-gray-400 transition-colors duration-300"
+                style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
+              >
+                Events
+              </a>
+              <a
+                href="#schedule"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(scrollToRefs.scheduleRef);
+                }}
+                className="py-2 hover:text-gray-400 transition-colors duration-300"
+                style={{ fontSize: "1.5rem", padding: "1rem 1rem" }}
+              >
+                Schedule
+              </a>
+            </div>
           </div>
         </div>
       </div>
