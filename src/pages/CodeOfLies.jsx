@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import LetterGlitch from '../components/LetterGlitch'
-import codeoflies from "../assets/CodeOfLies.png"
+import codeoflies from "../assets/codeOfLies.png"
 
 const CodeOfLies = () => {
   return (

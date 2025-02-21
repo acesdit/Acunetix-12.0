@@ -5,8 +5,7 @@ import Footer from "../components/Footer"
 import GameStormImg from '../assets/GameStorm.png'
 import Squares from '../components/Squares'
 
-
- const GameStorm = () => {
+const GameStorm = () => {
   return (
     <>
       {/* Fixed Navbar */}
@@ -18,19 +17,19 @@ import Squares from '../components/Squares'
       <div className="relative min-h-screen pt-24 pb-12">
         {/* Glitch Background with Dark Overlay */}
         <div className="absolute inset-0">
-          {/* <LetterGlitch
+            {/* <LetterGlitch
             glitchSpeed={50}
             centerVignette={true}
             outerVignette={false}
             smooth={true}
           /> */}
-           <Squares 
-  speed={0.5} 
-  squareSize={40}
-  direction='diagonal' // up, down, left, right, diagonal
-  borderColor='#fff'
-  hoverFillColor='#222'
-  />
+          <Squares
+            speed={0.5}
+            squareSize={40}
+            direction='diagonal' // up, down, left, right, diagonal
+            borderColor='#fff'
+            hoverFillColor='#222'
+          />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
@@ -41,13 +40,13 @@ import Squares from '../components/Squares'
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center h-full space-y-10">
               {/* Centered Heading */}
               <h1 className="text-5xl md:text-6xl font-bold text-white">
-            Game Storm
+                Game Storm
               </h1>
 
               {/* Mobile View: Poster + Centered Content */}
               <div className="md:hidden flex flex-col items-center space-y-6">
                 {/* Mobile Image */}
-                <img 
+                <img
                   src={GameStormImg}
                   alt="Event Poster"
                   className="rounded-xl shadow-2xl w-full max-w-sm max-h-[500px] object-contain transform hover:scale-105 transition-all duration-300"
@@ -56,8 +55,8 @@ import Squares from '../components/Squares'
                 {/* Description Card - Centered */}
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-10 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   </p>
                 </div>
@@ -73,8 +72,8 @@ import Squares from '../components/Squares'
                 {/* Description Card */}
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-10 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   </p>
                 </div>
@@ -90,7 +89,7 @@ import Squares from '../components/Squares'
 
             {/* Right Column: Desktop Image; hidden on mobile */}
             <div className="hidden md:flex md:w-1/2 justify-center">
-              <img 
+              <img
                 src={GameStormImg}
                 alt="Event Poster"
                 className="rounded-xl shadow-2xl w-full md:w-auto max-w-xl max-h-[500px] object-contain transform hover:scale-105 transition-all duration-300"
@@ -105,4 +104,5 @@ import Squares from '../components/Squares'
   )
 }
 export default GameStorm;
+
 
