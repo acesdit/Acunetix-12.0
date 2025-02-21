@@ -4,18 +4,20 @@ import Footer from "../components/Footer"
 import LetterGlitch from '../components/LetterGlitch'
 import brainiacImg from "../assets/Brainiac.png";
 
+const handleRegisterClick = () => {
 
-export const Brainiac = () => {
+ window.open("https://docs.google.com/forms/d/e/1FAIpQLSfSM7nRTYyJU2fP1lRIDcY7QjMfuykcglCo1DqH3pX9vn8rww/viewform?embedded=true", "_blank");
+
+};
+
+const Brainiac = () => {
   return (
     <>
       {/* Fixed Navbar */}
       <div className="fixed top-0 left-0 right-0 z-50">
         <Navbar />
       </div>
-
-      {/* Outer container with top and bottom padding */}
       <div className="relative min-h-screen pt-24 pb-12">
-        {/* Glitch Background with Dark Overlay */}
         <div className="absolute inset-0">
           <LetterGlitch
             glitchSpeed={50}
@@ -55,7 +57,7 @@ export const Brainiac = () => {
                 </div>
 
                 {/* Register Button - Centered */}
-                <button className="bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-900 hover:to-blue-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-blue-300 hover:scale-105 shadow-xl">
+                <button className="bg-gradient-to-r cursor-pointer from-violet-800 to-violet-900 hover:from-violet-900 hover:to-violet-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-violet-300 hover:scale-105 shadow-xl">
                   Register Now
                 </button>
               </div>
@@ -73,7 +75,7 @@ export const Brainiac = () => {
 
                 {/* Centered Register Button */}
                 <div className="flex justify-center">
-                  <button className="bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-900 hover:to-blue-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-blue-300 hover:scale-105 shadow-xl">
+                  <button onClick={handleRegisterClick} className="bg-gradient-to-r from-violet-800 to-violet-900 hover:from-violet-900 hover:to-violet-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-violet-300 hover:scale-105 shadow-xl">
                     Register Now
                   </button>
                 </div>
@@ -96,6 +98,6 @@ export const Brainiac = () => {
     </>
   )
 }
+export default Brainiac;
 
-export default Brainiac
 

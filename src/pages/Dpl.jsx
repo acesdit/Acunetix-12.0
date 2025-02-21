@@ -1,8 +1,9 @@
 import React from 'react'
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-import LetterGlitch from '../components/LetterGlitch'
+// import LetterGlitch from '../components/LetterGlitch'
 import dplImg from '../assets/dpl.png'
+import Squares from '../components/Squares';
 
 
 export const Dpl = () => {
@@ -17,12 +18,21 @@ export const Dpl = () => {
       <div className="relative min-h-screen pt-24 pb-12">
         {/* Glitch Background with Dark Overlay */}
         <div className="absolute inset-0">
-          <LetterGlitch
+          {/* <LetterGlitch
             glitchSpeed={50}
             centerVignette={true}
             outerVignette={false}
             smooth={true}
-          />
+          /> */}
+        
+  
+  <Squares 
+  speed={0.5} 
+  squareSize={40}
+  direction='diagonal' // up, down, left, right, diagonal
+  borderColor='#fff'
+  hoverFillColor='#222'
+  />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 

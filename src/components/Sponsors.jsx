@@ -30,20 +30,7 @@ const sponsors = [
     description: "Excellence in software development",
     website: "https://example.com",
   },
-  {
-    id: 5,
-    name: "DataDynamics",
-    logo: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=200&h=200&fit=crop",
-    description: "Data-driven solutions for tomorrow",
-    website: "https://example.com",
-  },
-  {
-    id: 6,
-    name: "CloudPeak",
-    logo: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&h=200&fit=crop",
-    description: "Cloud computing excellence",
-    website: "https://example.com",
-  },
+  
 ];
 
 const SponsorCard = ({ sponsor }) => {
@@ -166,7 +153,7 @@ const Sponsors = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {sponsors.map((sponsor, index) => (
             <motion.div
               key={sponsor.id}

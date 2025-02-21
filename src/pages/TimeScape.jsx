@@ -3,9 +3,10 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import LetterGlitch from '../components/LetterGlitch'
 import TimescapeImg from '../assets/timeScape.png'
+import Squares from '../components/Squares'
 
 
-export const Timescape = () => {
+const Timescape = () => {
   return (
     <>
       {/* Fixed Navbar */}
@@ -17,27 +18,35 @@ export const Timescape = () => {
       <div className="relative min-h-screen pt-24 pb-12">
         {/* Glitch Background with Dark Overlay */}
         <div className="absolute inset-0">
-          <LetterGlitch
+        <Squares 
+  speed={0.5} 
+  squareSize={40}
+  direction='diagonal' // up, down, left, right, diagonal
+  borderColor='#fff'
+  hoverFillColor='#222'
+  />
+          {/* <LetterGlitch
             glitchSpeed={50}
             centerVignette={true}
             outerVignette={false}
             smooth={true}
-          />
+          /> */}
+        
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
         {/* Content Container */}
         <div className="relative z-10 container mx-auto px-4 py-12 h-full">
-          <div className="flex flex-col md:flex-row items-center gap-8 h-full">
+          <div className="flex mx-auto flex-col md:flex-row items-center gap-8 h-full">
             {/* Left Column */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center h-full space-y-10">
+            <div className="w-full md:w-1/2 flex m-auto flex-col justify-center items-center text-center h-full space-y-10">
               {/* Centered Heading */}
               <h1 className="text-5xl md:text-6xl font-bold text-white">
              Time Scape
               </h1>
 
               {/* Mobile View: Poster + Centered Content */}
-              <div className="md:hidden flex flex-col items-center space-y-6">
+              <div className="md:hidden flex flex-col items-center space-y-8">
                 {/* Mobile Image */}
                 <img 
                   src={TimescapeImg}
@@ -73,7 +82,7 @@ export const Timescape = () => {
 
                 {/* Centered Register Button */}
                 <div className="flex justify-center">
-                  <button className="bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-900 hover:to-blue-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-blue-300 hover:scale-105 shadow-xl">
+                  <button className="bg-gradient-to-r from-violet-800 to-violet-900 hover:from-violet-900 hover:to-violet-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-blue-300 hover:scale-105 shadow-xl">
                     Register Now
                   </button>
                 </div>
@@ -85,7 +94,7 @@ export const Timescape = () => {
               <img 
                 src={TimescapeImg}
                 alt="Event Poster"
-                className="rounded-xl shadow-2xl w-full md:w-auto max-w-xl max-h-[500px] object-contain transform hover:scale-105 transition-all duration-300"
+                className="rounded-xl shadow-2xl w-full md:w-auto max-w-xl max-h-[550px] object-contain transform hover:scale-105 transition-all duration-300"
               />
             </div>
           </div>
@@ -97,5 +106,5 @@ export const Timescape = () => {
   )
 }
 
-export default Timescape
+export default Timescape;
 
