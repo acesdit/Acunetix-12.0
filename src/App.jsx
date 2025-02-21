@@ -51,7 +51,6 @@ function MainContent() {
           setIsScrolled(args.scroll.y > heroHeight);
         }
       };
-
       locomotiveScroll.current.on('scroll', handleScroll);
 
       return () => {
