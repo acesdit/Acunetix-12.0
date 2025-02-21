@@ -3,15 +3,49 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import LetterGlitch from '../components/LetterGlitch'
 import codeoflies from "../assets/codeOfLies.png"
+import logo from "../assets/logo.png";
+import { IoArrowBack } from "react-icons/io5"; // Import back icon
+import { useNavigate } from "react-router-dom";
 
 const CodeOfLies = () => {
+  const navigate = useNavigate();
+  const handleLinkClick = () =>{
+     navigate("/");
+   }
+   // Function to navigate back to the Event section in the main page
+   const handleBackClick = () => {
+     navigate("/", { state: { scrollToEvent: true } }); // Pass state for scrolling
+   };
   return (
     <>
       {/* Fixed Navbar */}
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <Navbar />
+      <div className="fixed top-6 left-0 right-0 z-50">
+      <div className="flex-1 flex justify-center">
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick();
+            }}
+          >
+            <img
+              src={logo}
+              alt="Logo"
+              width={48}
+              height={48}
+              className="transform hover:scale-105 ml-8 transition-transform duration-300 "
+            />
+          </a>
+        </div>
       </div>
 
+      {/* Back Button */}
+      <button
+        onClick={handleBackClick}
+        className="fixed top-6 left-6  text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 transition-all duration-200 z-50"
+      >
+        <IoArrowBack className="text-lg" /> 
+      </button>
       {/* Outer container with top and bottom padding */}
       <div className="relative min-h-screen pt-24 pb-12">
         {/* Glitch Background with Dark Overlay */}
