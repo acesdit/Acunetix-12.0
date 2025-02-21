@@ -6,8 +6,10 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLinkClick = (ref) => {
-    scrollToSection(ref);
-    setIsMenuOpen(false); // Close the mobile menu after clicking a link
+    setIsMenuOpen(false);
+    setTimeout(() => {
+      scrollToSection(ref);
+    }, 200);
   };
 
   return (
