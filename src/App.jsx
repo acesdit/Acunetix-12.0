@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import LocomotiveScroll from "locomotive-scroll";
 import { Routes, Route, useLocation } from "react-router-dom";
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './index.css';
