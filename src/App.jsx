@@ -46,6 +46,13 @@ function MainContent() {
         inertia: 0.75,
         getDirection: true,
       });
+      if (location.state?.scrollToEvent) {
+        setTimeout(() => {
+          if (locomotiveScroll.current && eventRef.current) {
+            locomotiveScroll.current.scrollTo(eventRef.current);
+          }
+        }, 100);
+      }
 
 
       
@@ -129,20 +136,8 @@ function App() {
     const timer = setTimeout(() => setStartAnimationComplete(true), 3900);
     return () => clearTimeout(timer);
   }, []);
-  useEffect(() => {
-    if (location.state?.scrollToEvent) {
-      // Add slight delay to ensure Locomotive Scroll is initialized
-      setTimeout(() => {
-        document.getElementById("event")?.scrollIntoView({ behavior: "instant" });
-      }, 100);
-    }
-  }, [location.state?.scrollToEvent]);
 
-  // useEffect(() => {
-  //   if (location.state?.scrollToEvent) {
-  //     document.getElementById("event")?.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // }, [location.state?.scrollToEvent]); 
+
   return (
     <>
       {!startAnimationComplete ? <Start /> : (
