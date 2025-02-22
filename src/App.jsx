@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import LocomotiveScroll from "locomotive-scroll";
+// import LocomotiveScroll from "locomotive-scroll";
 import { Routes, Route, useLocation } from "react-router-dom";
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './index.css';
@@ -37,31 +37,31 @@ function MainContent() {
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    if (location.pathname === '/') {
-      locomotiveScroll.current = new LocomotiveScroll({
-        el: scrollRef.current,
-        smooth: true,
-        smoothMobile: true,
-        inertia: 0.75,
-        getDirection: true,
-      });
+  // useEffect(() => {
+  //   if (location.pathname === '/') {
+  //     locomotiveScroll.current = new LocomotiveScroll({
+  //       el: scrollRef.current,
+  //       smooth: true,
+  //       smoothMobile: true,
+  //       inertia: 0.75,
+  //       getDirection: true,
+  //     });
 
-      const handleScroll = (args) => {
-        if (heroRef.current) {
-          const heroHeight = heroRef.current.offsetHeight;
-          setIsScrolled(args.scroll.y > heroHeight);
-        }
-      };
-      locomotiveScroll.current.on('scroll', handleScroll);
+  //     const handleScroll = (args) => {
+  //       if (heroRef.current) {
+  //         const heroHeight = heroRef.current.offsetHeight;
+  //         setIsScrolled(args.scroll.y > heroHeight);
+  //       }
+  //     };
+  //     locomotiveScroll.current.on('scroll', handleScroll);
 
-      return () => {
-        if (locomotiveScroll.current) {
-          locomotiveScroll.current.destroy();
-        }
-      };  
-    }
-  }, [location]);
+  //     return () => {
+  //       if (locomotiveScroll.current) {
+  //         locomotiveScroll.current.destroy();
+  //       }
+  //     };  
+  //   }
+  // }, [location]);
 
   const toggleChatbot = () => setIsChatbotVisible(!isChatbotVisible);
   const scrollToSection = (ref) => {
@@ -126,12 +126,20 @@ function App() {
     const timer = setTimeout(() => setStartAnimationComplete(true), 3900);
     return () => clearTimeout(timer);
   }, []);
-
   useEffect(() => {
     if (location.state?.scrollToEvent) {
-      document.getElementById("event")?.scrollIntoView({ behavior: "smooth" });
+      // Add slight delay to ensure Locomotive Scroll is initialized
+      setTimeout(() => {
+        document.getElementById("event")?.scrollIntoView({ behavior: "instant" });
+      }, 100);
     }
-  }, [location.state?.scrollToEvent]); 
+  }, [location.state?.scrollToEvent]);
+
+  // useEffect(() => {
+  //   if (location.state?.scrollToEvent) {
+  //     document.getElementById("event")?.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }, [location.state?.scrollToEvent]); 
   return (
     <>
       {!startAnimationComplete ? <Start /> : (
