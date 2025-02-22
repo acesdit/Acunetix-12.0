@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './index.css';
@@ -24,6 +24,7 @@ import Timescape from "./pages/TimeScape";
 import CtrlAltElite from "./pages/CtrlAltElite";
 import CinemaEyesLens from "./pages/CinemaEyesLens";
 
+
 function MainContent() {
   const scrollRef = useRef(null);
   const heroRef = useRef(null);
@@ -37,72 +38,72 @@ function MainContent() {
   const location = useLocation();
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const navigate = useNavigate();
+
 
   useEffect(() => {
-    let scrollInstance;
-    
-    const initLocomotiveScroll = () => {
-      if (typeof window === 'undefined' || !scrollRef.current) return;
-
-      scrollInstance = new LocomotiveScroll({
+    if (location.pathname === '/') {
+      window.scrollTo(0, 0); // Ensure the page starts at the top on refresh
+  
+      locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
-        inertia: 1.1, // Smoother momentum scrolling
-        smartphone: { smooth: true },
-        tablet: { smooth: true },
-        getSpeed: true,
-        multiplier: 0.8,
-        firefoxMultiplier: 50,
-        touchMultiplier: 1.2,
-      });
-
-      // Smooth element transitions
-      scrollInstance.on('scroll', ({ scroll }) => {
-        document.documentElement.setAttribute('data-scroll', scroll.y);
-        
-        if (heroRef.current) {
-          const heroHeight = heroRef.current.offsetHeight;
-          setIsScrolled(scroll.y > heroHeight);
+        smoothMobile: true,
+        inertia: 0.75,
+        getDirection: true,
+        smartphone: {
+          smooth: true
+        },
+        tablet: {
+          smooth: true
         }
       });
-
-      locomotiveScroll.current = scrollInstance;
-    };
-
-    const handleResize = () => {
-      if (locomotiveScroll.current) {
-        locomotiveScroll.current.update();
-      }
-    };
-
-    if (location.pathname === '/') {
-      window.requestAnimationFrame(() => {
-        initLocomotiveScroll();
-        window.scrollTo(0, 0);
-      });
-
-      window.addEventListener('resize', handleResize);
+  
+      // Mobile detection logic
+      const checkMobile = () => {
+        return window.matchMedia('(max-width: 768px)').matches;
+      };
+  
+      const handleInitialScroll = () => {
+        const shouldScroll = location.state?.scrollToEvent;
+  
+        if (shouldScroll && eventRef.current) {
+          const observer = new ResizeObserver(() => {
+            locomotiveScroll.current.update();
+            locomotiveScroll.current.scrollTo(eventRef.current);
+            observer.unobserve(eventRef.current);
+  
+            navigate(location.pathname, { replace: true, state: {} });
+          });
+  
+          observer.observe(eventRef.current);
+        }
+      };
+  
+      setTimeout(handleInitialScroll, 10);
+  
+      const handleScroll = (args) => {
+        if (heroRef.current) {
+          const heroHeight = heroRef.current.offsetHeight;
+          setIsScrolled(args.scroll.y > heroHeight);
+        }
+      };
+  
+      locomotiveScroll.current.on('scroll', handleScroll);
+  
+      return () => {
+        if (locomotiveScroll.current) {
+          locomotiveScroll.current.destroy();
+        }
+      };
     }
+  }, [location]);
+  
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (scrollInstance) {
-        scrollInstance.destroy();
-        locomotiveScroll.current = null;
-      }
-    };
-  }, [location.pathname]);
 
   const toggleChatbot = () => setIsChatbotVisible(!isChatbotVisible);
-
   const scrollToSection = (ref) => {
     if (locomotiveScroll.current && ref.current) {
-      locomotiveScroll.current.scrollTo(ref.current, {
-        offset: '-10%', // Adjust scroll position
-        duration: 1500, // Smoother scroll duration
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing
-      });
+      locomotiveScroll.current.scrollTo(ref.current);
     }
   };
 
@@ -147,21 +148,43 @@ function MainContent() {
       </div>
 
       {isChatbotVisible && <Chatbot onClose={toggleChatbot} />}
-      <div 
-        className="fixed bottom-5 right-5 z-50 cursor-pointer transition-all duration-500 hover:scale-110"
-        onClick={toggleChatbot}
-        data-scroll
-        data-scroll-sticky
-        data-scroll-target="[data-scroll-container]"
-      >
-        <img 
-          src={chatbotIcon} 
-          alt="Chatbot" 
-          className="w-16 h-16 rounded-full shadow-lg transition-transform duration-300 hover:rotate-12" 
-        />
+      <div className="fixed bottom-5 right-5 z-50 cursor-pointer" onClick={toggleChatbot}>
+        <img src={chatbotIcon} alt="Chatbot" className="w-15 h-15 rounded-full shadow-lg hover:scale-110 transition-transform" />
       </div>
     </>
   );
 }
 
-// Keep the App component the same as before
+function App() {
+  const [startAnimationComplete, setStartAnimationComplete] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const timer = setTimeout(() => setStartAnimationComplete(true), 3900);
+    return () => clearTimeout(timer);
+  }, []);
+
+
+  return (
+    <>
+      {!startAnimationComplete ? <Start /> : (
+        <Routes>
+          <Route path="/" element={<MainContent />} />
+          <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/codeOfLies" element={<CodeOfLies />} />
+          <Route path="/event/timeScape" element={<Timescape />} />
+          <Route path="/event/ctrlAltElite2" element={<CtrlAltElite />} />
+          <Route path="/event/ctrlAltElite" element={<CtrlAltElite />} />
+          <Route path="/event/cinemaEyesLens" element={<CinemaEyesLens />} />
+          <Route path="/event/timeScape2" element={<Timescape />} />
+          <Route path="/event/brainiac2" element={<Brainiac />} />
+          <Route path="/event/cinemaEyesLens2" element={<CinemaEyesLens />} />
+          <Route path="/event/codeOfLies2" element={<CodeOfLies />} />
+          <Route path="/event/:id" element={<EventCard />} />
+        </Routes>
+      )}
+    </>
+  );
+}
+
+export default App;
