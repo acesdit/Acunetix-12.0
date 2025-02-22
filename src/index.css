@@ -160,3 +160,19 @@ footer {
   margin-top: auto;
 }
 
+/* Add to your CSS */
+[data-scroll] {
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+              opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Smooth navbar transitions */
+.navbar {
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+/* Chatbot entry animation */
+.chatbot-container {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+}
