@@ -19,6 +19,9 @@ import Reel from "./components/Reel";
 import Brainiac from "./pages/Brainiac";
 import CodeOfLies from "./pages/CodeOfLies";
 import Timescape from "./pages/TimeScape";
+import CtrlAltElite from "./pages/CtrlAltElite";
+import CinemaEyesLens from "./pages/CinemaEyesLens";
+
 
 function MainContent() {
   const scrollRef = useRef(null);
@@ -96,15 +99,16 @@ function MainContent() {
         <section ref={sponsorsRef} data-scroll-section className="min-h-screen">
           <Sponsors />
         </section>
+
         <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 min-h-screen flex items-end">
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <Reel />
-        <Footer 
-            scrollToRefs={{ heroRef }} 
-            scrollToSection={scrollToSection} 
-        />
-    </div>
-</section>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <Reel />
+            <Footer 
+              scrollToRefs={{ heroRef }} 
+              scrollToSection={scrollToSection} 
+            />
+          </div>
+        </section>
       </div>
 
       {isChatbotVisible && <Chatbot onClose={toggleChatbot} />}
@@ -117,12 +121,18 @@ function MainContent() {
 
 function App() {
   const [startAnimationComplete, setStartAnimationComplete] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const timer = setTimeout(() => setStartAnimationComplete(true), 3900);
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (location.state?.scrollToEvent) {
+      document.getElementById("event")?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location.state?.scrollToEvent]); 
   return (
     <>
       {!startAnimationComplete ? <Start /> : (
@@ -130,12 +140,14 @@ function App() {
           <Route path="/" element={<MainContent />} />
           <Route path="/event/brainiac" element={<Brainiac />} />
           <Route path="/event/codeOfLies" element={<CodeOfLies />} />
-          <Route path="event/timeScape" element={<Timescape />} />
-          {/* <Route path="/event/brainiac" element={<Brainiac />} />
-          <Route path="/event/brainiac" element={<Brainiac />} />
-          <Route path="/event/brainiac" element={<Brainiac />} />
-          <Route path="/event/brainiac" element={<Brainiac />} />
-          <Route path="/event/brainiac" element={<Brainiac />} /> */}
+          <Route path="/event/timeScape" element={<Timescape />} />
+          <Route path="/event/ctrlAltElite2" element={<CtrlAltElite />} />
+          <Route path="/event/ctrlAltElite" element={<CtrlAltElite />} />
+          <Route path="/event/cinemaEyesLens" element={<CinemaEyesLens />} />
+          <Route path="/event/timeScape2" element={<Timescape />} />
+          <Route path="/event/brainiac2" element={<Brainiac />} />
+          <Route path="/event/cinemaEyesLens2" element={<CinemaEyesLens />} />
+          <Route path="/event/codeOfLies2" element={<CodeOfLies />} />
           <Route path="/event/:id" element={<EventCard />} />
         </Routes>
       )}
