@@ -55,7 +55,7 @@ export default function Chatbot({ onClose }) {
       };
       setMessages((prev) => [...prev, botMessage]);
       setIsTyping(false);
-    }, 1500); // Simulate a delay before the bot responds
+    }, 1500);
   };
 
   const generateResponse = (question) => {
@@ -76,19 +76,18 @@ export default function Chatbot({ onClose }) {
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.95, opacity: 0 }}
-        className="w-full max-w-md mx-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 relative"
+        className="w-full max-w-[95vw] mx-2 md:max-w-md bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl shadow-2xl overflow-hidden border border-gray-700/50 relative"
       >
-        {/* Glow effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-emerald-500/20 animate-pulse pointer-events-none" />
 
         {/* Header */}
-        <div className="bg-gradient-to-r from-gray-800 to-gray-900 p-4 border-b border-gray-700/50 flex justify-between items-center">
-          <h1 className="text-gray-100 text-xl font-semibold flex items-center gap-2">
+        <div className="bg-gradient-to-r from-gray-800 to-gray-900 p-3 md:p-4 border-b border-gray-700/50 flex justify-between items-center">
+          <h1 className="text-gray-100 text-lg md:text-xl font-semibold flex items-center gap-2">
             <motion.div
               animate={{ rotate: [0, 15, -15, 0] }}
               transition={{ repeat: Infinity, duration: 3 }}
             >
-              <Bot className="w-6 h-6 text-blue-400" />
+              <Bot className="w-5 h-5 md:w-6 md:h-6 text-blue-400" />
             </motion.div>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
               Acunetix AI
@@ -100,12 +99,12 @@ export default function Chatbot({ onClose }) {
             className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
             aria-label="Close chatbot"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5 md:w-6 md:h-6" />
           </motion.button>
         </div>
 
         {/* Chat Messages */}
-        <div className="h-[300px] overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-gray-900/80 to-gray-800/80 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
+        <div className="h-[40vh] md:h-[300px] overflow-y-auto p-2 md:p-4 space-y-3 bg-gradient-to-b from-gray-900/80 to-gray-800/80 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
           <AnimatePresence>
             {messages.map((message, index) => (
               <motion.div
@@ -117,27 +116,27 @@ export default function Chatbot({ onClose }) {
                 className={`flex ${message.isBot ? "justify-start" : "justify-end"}`}
               >
                 <div
-                  className={`flex items-start space-x-2 max-w-[80%] ${
+                  className={`flex items-start space-x-2 max-w-[90%] ${
                     message.isBot ? "flex-row" : "flex-row-reverse"
                   }`}
                 >
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    className={`w-8 h-8 rounded-full flex items-center justify-center shadow-lg ${
+                    className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-lg ${
                       message.isBot
                         ? "bg-gradient-to-br from-blue-500 to-blue-600"
                         : "bg-gradient-to-br from-emerald-500 to-emerald-600"
                     }`}
                   >
                     {message.isBot ? (
-                      <Bot className="w-5 h-5 text-gray-100" />
+                      <Bot className="w-4 h-4 md:w-5 md:h-5 text-gray-100" />
                     ) : (
-                      <User className="w-5 h-5 text-gray-100" />
+                      <User className="w-4 h-4 md:w-5 md:h-5 text-gray-100" />
                     )}
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className={`p-3 rounded-xl shadow-lg backdrop-blur-sm ${
+                    className={`p-2 md:p-3 text-sm md:text-base rounded-lg md:rounded-xl shadow-lg backdrop-blur-sm ${
                       message.isBot
                         ? "bg-gray-800/80 text-blue-300 border border-blue-400/30"
                         : "bg-gray-700/80 text-emerald-300 border border-emerald-400/30"
@@ -150,7 +149,6 @@ export default function Chatbot({ onClose }) {
             ))}
           </AnimatePresence>
 
-          {/* Typing Indicator */}
           {isTyping && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -158,14 +156,14 @@ export default function Chatbot({ onClose }) {
               className="flex justify-start"
             >
               <div className="flex items-center space-x-2 max-w-[80%]">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-gray-100" />
+                <div className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                  <Bot className="w-4 h-4 md:w-5 md:h-5 text-gray-100" />
                 </div>
-                <div className="flex space-x-2 p-3 bg-gray-800/80 text-blue-300 border border-blue-400/30 rounded-xl">
+                <div className="flex space-x-2 p-2 md:p-3 bg-gray-800/80 text-blue-300 border border-blue-400/30 rounded-lg md:rounded-xl">
                   {[...Array(3)].map((_, i) => (
                     <motion.div
                       key={i}
-                      animate={{ y: [0, -10, 0] }}
+                      animate={{ y: [0, -8, 0] }}
                       transition={{
                         repeat: Infinity,
                         duration: 0.8,
@@ -182,19 +180,19 @@ export default function Chatbot({ onClose }) {
         </div>
 
         {/* Suggested Queries */}
-        <div className="p-4 bg-gradient-to-r from-gray-800 to-gray-900 border-t border-gray-700/50">
-          <div className="flex items-center gap-2 mb-3">
-            <HelpCircle className="w-5 h-5 text-blue-400 animate-pulse" />
-            <span className="text-blue-300 text-sm font-medium">Suggested Queries:</span>
+        <div className="p-2 md:p-4 bg-gradient-to-r from-gray-800 to-gray-900 border-t border-gray-700/50">
+          <div className="flex items-center gap-1 md:gap-2 mb-2 md:mb-3">
+            <HelpCircle className="w-4 h-4 md:w-5 md:h-5 text-blue-400 animate-pulse" />
+            <span className="text-blue-300 text-xs md:text-sm font-medium">Suggested Queries:</span>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1 md:gap-2">
             {DEFAULT_QUESTIONS.map((question, index) => (
               <motion.button
                 key={index}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => processUserInput(question)}
-                className="px-3 py-1.5 bg-gray-700/80 text-blue-300 rounded-xl text-sm hover:bg-gray-600/80 transition-all duration-200 border border-blue-400/30 backdrop-blur-sm"
+                className="px-2 py-1 md:px-3 md:py-1.5 text-xs md:text-sm bg-gray-700/80 text-blue-300 rounded-lg md:rounded-xl hover:bg-gray-600/80 transition-all duration-200 border border-blue-400/30 backdrop-blur-sm"
                 aria-label={`Ask: ${question}`}
               >
                 {question}
@@ -204,14 +202,14 @@ export default function Chatbot({ onClose }) {
         </div>
 
         {/* Input Form */}
-        <form onSubmit={handleSend} className="p-4 border-t border-gray-700/50 bg-gradient-to-r from-gray-800 to-gray-900">
-          <div className="flex space-x-2">
+        <form onSubmit={handleSend} className="p-2 md:p-4 border-t border-gray-700/50 bg-gradient-to-r from-gray-800 to-gray-900">
+          <div className="flex space-x-1 md:space-x-2">
             <motion.input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type your query..."
-              className="flex-1 p-3 bg-gray-700/80 text-blue-300 border border-blue-400/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent placeholder-blue-300/50 backdrop-blur-sm"
+              className="flex-1 p-2 md:p-3 text-sm md:text-base bg-gray-700/80 text-blue-300 border border-blue-400/30 rounded-lg md:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent placeholder-blue-300/50 backdrop-blur-sm"
               whileFocus={{ scale: 1.02 }}
               maxLength={200}
               aria-label="Type your message"
@@ -220,11 +218,11 @@ export default function Chatbot({ onClose }) {
               type="submit"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="bg-gradient-to-br from-blue-500 to-blue-600 text-gray-100 p-3 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-gradient-to-br from-blue-500 to-blue-600 text-gray-100 p-2 md:p-3 rounded-lg md:rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={!input.trim() || input.length > 200}
               aria-label="Send message"
             >
-              <Send className="w-5 h-5" />
+              <Send className="w-4 h-4 md:w-5 md:h-5" />
             </motion.button>
           </div>
         </form>
