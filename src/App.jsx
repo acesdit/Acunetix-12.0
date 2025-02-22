@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './index.css';
@@ -24,6 +24,7 @@ import Timescape from "./pages/TimeScape";
 import CtrlAltElite from "./pages/CtrlAltElite";
 import CinemaEyesLens from "./pages/CinemaEyesLens";
 
+
 function MainContent() {
   const scrollRef = useRef(null);
   const heroRef = useRef(null);
@@ -35,111 +36,74 @@ function MainContent() {
   const footerRef = useRef(null);
   const locomotiveScroll = useRef(null);
   const location = useLocation();
-  const navigate = useNavigate();
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+
 
   useEffect(() => {
-    const checkMobile = () => window.matchMedia('(max-width: 768px)').matches;
-    setIsMobile(checkMobile());
-  }, []);
-
-  useEffect(() => {
-    const handleHash = () => {
-      if (window.location.hash) {
-        const target = document.querySelector(window.location.hash);
-        target?.scrollIntoView({ behavior: 'instant' });
-      }
-    };
-
     if (location.pathname === '/') {
-      window.scrollTo(0, 0);
-
-      if (!isMobile) {
-        locomotiveScroll.current = new LocomotiveScroll({
-          el: scrollRef.current,
-          smooth: true,
-          smoothMobile: false,
-          inertia: 0.8,
-          lerp: 0.1,
-          getDirection: true,
-          smartphone: { smooth: false },
-          tablet: { smooth: false }
-        });
-
-        // Initialize scroll after elements are mounted
-        setTimeout(() => {
-          locomotiveScroll.current.update();
-          handleHash();
-          
-          // Add resize observer for container changes
-          const resizeObserver = new ResizeObserver(() => {
-            locomotiveScroll.current.update();
-          });
-          
-          if (scrollRef.current) {
-            resizeObserver.observe(scrollRef.current);
-          }
-
-          return () => resizeObserver.disconnect();
-        }, 1000);
-
-        const handleScroll = (args) => {
-          if (heroRef.current) {
-            const heroHeight = heroRef.current.offsetHeight;
-            setIsScrolled(args.scroll.y > heroHeight);
-          }
-        };
-
-        locomotiveScroll.current.on('scroll', handleScroll);
-
-        const handleInitialScroll = () => {
-          const shouldScroll = location.state?.scrollToEvent;
-          if (shouldScroll && eventRef.current) {
-            const observer = new ResizeObserver(() => {
-              locomotiveScroll.current.update();
-              locomotiveScroll.current.scrollTo(eventRef.current);
-              observer.unobserve(eventRef.current);
-              navigate(location.pathname, { replace: true, state: {} });
-            });
-            observer.observe(eventRef.current);
-          }
-        };
-
-        setTimeout(handleInitialScroll, 10);
-
-        return () => {
-          if (locomotiveScroll.current) {
-            locomotiveScroll.current.destroy();
-          }
-        };
-      } else {
-        const handleScroll = () => {
-          const heroHeight = heroRef.current?.offsetHeight || 0;
-          setIsScrolled(window.scrollY > heroHeight);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        
-        const shouldScroll = location.state?.scrollToEvent;
-        if (shouldScroll && eventRef.current) {
-          eventRef.current.scrollIntoView({ behavior: 'smooth' });
-          navigate(location.pathname, { replace: true, state: {} });
+      // Initialize Locomotive Scroll
+      locomotiveScroll.current = new LocomotiveScroll({
+        el: scrollRef.current,
+        smooth: true,
+        smoothMobile: true,
+        inertia: 0.75,
+        getDirection: true,
+        smartphone: {
+          smooth: true
+        },
+        tablet: {
+          smooth: true
         }
+      });
 
-        return () => window.removeEventListener('scroll', handleScroll);
-      }
+      // Mobile detection logic
+      const checkMobile = () => {
+        return window.matchMedia('(max-width: 768px)').matches;
+      };
+
+      const handleInitialScroll = () => {
+        const shouldScroll = location.state?.scrollToEvent;
+      
+        if (shouldScroll && eventRef.current) {
+          const observer = new ResizeObserver(() => {
+            locomotiveScroll.current.update();
+            locomotiveScroll.current.scrollTo(eventRef.current);
+            observer.unobserve(eventRef.current);
+      
+            // Fix: Use navigate inside the function
+            navigate(location.pathname, { replace: true, state: {} });
+          });
+      
+          observer.observe(eventRef.current);
+        }
+      };
+      
+      setTimeout(handleInitialScroll, 150);
+      
+
+      
+      const handleScroll = (args) => {
+        if (heroRef.current) {
+          const heroHeight = heroRef.current.offsetHeight;
+          setIsScrolled(args.scroll.y > heroHeight);
+        }
+      };
+      locomotiveScroll.current.on('scroll', handleScroll);
+
+      return () => {
+        if (locomotiveScroll.current) {
+          locomotiveScroll.current.destroy();
+        }
+      };
     }
-  }, [location, isMobile, navigate]);
+  }, [location]);
+
 
   const toggleChatbot = () => setIsChatbotVisible(!isChatbotVisible);
-  
   const scrollToSection = (ref) => {
     if (locomotiveScroll.current && ref.current) {
       locomotiveScroll.current.scrollTo(ref.current);
-    } else if (ref.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -172,7 +136,7 @@ function MainContent() {
           <Sponsors />
         </section>
 
-        <section ref={footerRef} data-scroll-section className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 flex items-end">
+        <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 min-h-screen flex items-end">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <Reel />
             <Footer 
@@ -199,6 +163,7 @@ function App() {
     const timer = setTimeout(() => setStartAnimationComplete(true), 3900);
     return () => clearTimeout(timer);
   }, []);
+
 
   return (
     <>
