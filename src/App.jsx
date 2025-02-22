@@ -47,7 +47,7 @@ function MainContent() {
         el: scrollRef.current,
         smooth: true,
         smoothMobile: true,
-        inertia: 1,
+        inertia: 2.5,
         getDirection: true,
         smartphone: {
           smooth: true
