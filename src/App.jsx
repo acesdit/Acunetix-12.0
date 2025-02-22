@@ -20,9 +20,8 @@ import Brainiac from "./pages/Brainiac";
 import CodeOfLies from "./pages/CodeOfLies";
 import Timescape from "./pages/TimeScape";
 import CtrlAltElite from "./pages/CtrlAltElite";
-import CinemaEyesLens from "./pages/cinemaEyesLens";
-import InsightOPS from "./pages/Event9";
-import UxHunt from "./pages/Event10";
+import CinemaEyesLens from "./pages/CinemaEyesLens";
+
 
 function MainContent() {
   const scrollRef = useRef(null);
@@ -61,7 +60,7 @@ function MainContent() {
         if (locomotiveScroll.current) {
           locomotiveScroll.current.destroy();
         }
-      };
+      };  
     }
   }, [location]);
 
