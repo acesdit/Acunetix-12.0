@@ -42,7 +42,8 @@ function MainContent() {
 
   useEffect(() => {
     if (location.pathname === '/') {
-      // Initialize Locomotive Scroll
+      window.scrollTo(0, 0); // Ensure the page starts at the top on refresh
+  
       locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
@@ -56,41 +57,39 @@ function MainContent() {
           smooth: true
         }
       });
-
+  
       // Mobile detection logic
       const checkMobile = () => {
         return window.matchMedia('(max-width: 768px)').matches;
       };
-
+  
       const handleInitialScroll = () => {
         const shouldScroll = location.state?.scrollToEvent;
-      
+  
         if (shouldScroll && eventRef.current) {
           const observer = new ResizeObserver(() => {
             locomotiveScroll.current.update();
             locomotiveScroll.current.scrollTo(eventRef.current);
             observer.unobserve(eventRef.current);
-      
-            // Fix: Use navigate inside the function
+  
             navigate(location.pathname, { replace: true, state: {} });
           });
-      
+  
           observer.observe(eventRef.current);
         }
       };
-      
+  
       setTimeout(handleInitialScroll, 150);
-      
-
-      
+  
       const handleScroll = (args) => {
         if (heroRef.current) {
           const heroHeight = heroRef.current.offsetHeight;
           setIsScrolled(args.scroll.y > heroHeight);
         }
       };
+  
       locomotiveScroll.current.on('scroll', handleScroll);
-
+  
       return () => {
         if (locomotiveScroll.current) {
           locomotiveScroll.current.destroy();
@@ -98,6 +97,7 @@ function MainContent() {
       };
     }
   }, [location]);
+  
 
 
   const toggleChatbot = () => setIsChatbotVisible(!isChatbotVisible);
