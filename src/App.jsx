@@ -46,7 +46,24 @@ function MainContent() {
   //       inertia: 0.75,
   //       getDirection: true,
   //     });
+  // useEffect(() => {
+  //   if (location.pathname === '/') {
+  //     locomotiveScroll.current = new LocomotiveScroll({
+  //       el: scrollRef.current,
+  //       smooth: true,
+  //       smoothMobile: true,
+  //       inertia: 0.75,
+  //       getDirection: true,
+  //     });
 
+  //     // Add scroll handler for navbar color change
+  //     const handleScroll = (args) => {
+  //       if (heroRef.current) {
+  //         const heroHeight = heroRef.current.offsetHeight;
+  //         setIsScrolled(args.scroll.y > heroHeight);
+  //       }
+  //     };
+  //     locomotiveScroll.current.on('scroll', handleScroll);
   //     const handleScroll = (args) => {
   //       if (heroRef.current) {
   //         const heroHeight = heroRef.current.offsetHeight;
@@ -55,6 +72,13 @@ function MainContent() {
   //     };
   //     locomotiveScroll.current.on('scroll', handleScroll);
 
+  //     return () => {
+  //       if (locomotiveScroll.current) {
+  //         locomotiveScroll.current.destroy();
+  //       }
+  //     };
+  //   }
+  // }, [location]);
   //     return () => {
   //       if (locomotiveScroll.current) {
   //         locomotiveScroll.current.destroy();
