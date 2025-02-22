@@ -50,7 +50,7 @@ function MainContent() {
         inertia: 2.5,
         getDirection: true,
         smartphone: {
-          smooth: false
+          smooth: true
         },
         tablet: {
           smooth: true
