@@ -14,13 +14,17 @@ const Brainiac = () => {
     navigate("/");
   };
 
-  // Modified back click handler
-  const handleBackClick = () => {
-    navigate("/", { 
-      state: { scrollToEvent: true },
-      replace: true  // Add replace to prevent history stacking
-    });
-  };
+// In your event page component (e.g. Brainiac.jsx)
+const handleBackClick = () => {
+  navigate("/", { 
+    state: { 
+      scrollToEvent: true,
+      // Add cache buster for mobile
+      timestamp: Date.now() 
+    },
+    replace: true  
+  });
+};
 
   const handleRegisterClick = () => {
     window.open(
