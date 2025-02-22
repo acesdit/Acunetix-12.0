@@ -28,7 +28,7 @@ const handleBackClick = () => {
 
   const handleRegisterClick = () => {
     window.open(
-      "https://docs.google.com/forms/d/e/1FAIpQLSfSM7nRTYyJU2fP1lRIDcY7QjMfuykcglCo1DqH3pX9vn8rww/viewform?embedded=true",
+     " https://forms.gle/VP6Ti6g6JSLWnqnx9",
       "_blank"
     );
   };
@@ -98,7 +98,7 @@ const handleBackClick = () => {
 
                 <button
                   onClick={handleRegisterClick}
-                  className="bg-gradient-to-r from-violet-800 to-violet-900 hover:from-violet-900 hover:to-violet-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-violet-300 hover:scale-105 shadow-xl"
+                  className="bg-gradient-to-r from-gray-600 to-gray-900 hover:from-gray-900 hover:to-gray-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-gray-300 hover:scale-105 shadow-xl cursor-pointer"
                 >
                   Register Now
                 </button>
@@ -113,12 +113,12 @@ const handleBackClick = () => {
                 </div>
 
                 <div className="flex justify-center">
-                  <button
-                    onClick={handleRegisterClick}
-                    className="bg-gradient-to-r from-violet-800 to-violet-900 hover:from-violet-900 hover:to-violet-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-violet-300 hover:scale-105 shadow-xl"
-                  >
-                    Register Now
-                  </button>
+                <button
+                  onClick={handleRegisterClick}
+                  className="bg-gradient-to-r from-gray-600 to-gray-900 hover:from-gray-900 hover:to-gray-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-gray-300 hover:scale-105 shadow-xl cursor-pointer"
+                >
+                  Register Now
+                </button>
                 </div>
               </div>
             </div>
