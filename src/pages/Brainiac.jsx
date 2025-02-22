@@ -1,21 +1,25 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { IoArrowBack } from "react-icons/io5"; // Import back icon
+import { IoArrowBack } from "react-icons/io5";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import LetterGlitch from "../components/LetterGlitch";
 import brainiacImg from "../assets/Brainiac.png";
 import logo from "../assets/logo.png";
 
-
 const Brainiac = () => {
   const navigate = useNavigate();
- const handleLinkClick = () =>{
+
+  const handleLinkClick = () => {
     navigate("/");
-  }
-  // Function to navigate back to the Event section in the main page
+  };
+
+  // Modified back click handler
   const handleBackClick = () => {
-    navigate("/", { state: { scrollToEvent: true } }); // Pass state for scrolling
+    navigate("/", { 
+      state: { scrollToEvent: true },
+      replace: true  // Add replace to prevent history stacking
+    });
   };
 
   const handleRegisterClick = () => {
@@ -29,7 +33,7 @@ const Brainiac = () => {
     <>
       {/* Fixed Navbar */}
       <div className="fixed top-6 left-0 right-0 z-50">
-      <div className="flex-1 flex justify-center">
+        <div className="flex-1 flex justify-center">
           <a
             href="#home"
             onClick={(e) => {
@@ -51,7 +55,7 @@ const Brainiac = () => {
       {/* Back Button */}
       <button
         onClick={handleBackClick}
-        className="fixed top-6 left-6 700 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 transition-all duration-200 z-50"
+        className="fixed top-6 left-6 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 transition-all duration-200 z-50"
       >
         <IoArrowBack className="text-lg" /> 
       </button>
