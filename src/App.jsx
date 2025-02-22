@@ -46,7 +46,7 @@ function MainContent() {
       locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
-         multiplier: 1.5, // Reduced scroll speed
+         multiplier: 2.5, // Reduced scroll speed
         inertia: 0.75,
         getDirection: true,
         smartphone: {
