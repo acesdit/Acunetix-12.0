@@ -18,6 +18,13 @@ const Timescape = () => {
    const handleBackClick = () => {
      navigate("/", { state: { scrollToEvent: true } }); // Pass state for scrolling
    };
+   //function for when clicked on register button
+   const handleRegisterClick = () => {
+    window.open(
+     " https://forms.gle/VP6Ti6g6JSLWnqnx9",
+      "_blank"
+    );
+  };
   return (
     <>
       {/* Fixed Navbar */}
@@ -99,7 +106,10 @@ const Timescape = () => {
                 </div>
 
                 {/* Register Button - Centered */}
-                <button className="bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-900 hover:to-blue-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-blue-300 hover:scale-105 shadow-xl">
+                <button
+                  onClick={handleRegisterClick}
+                  className="bg-gradient-to-r from-gray-600 to-gray-900 hover:from-gray-900 hover:to-gray-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-gray-300 hover:scale-105 shadow-xl cursor-pointer"
+                >
                   Register Now
                 </button>
               </div>
@@ -117,9 +127,12 @@ const Timescape = () => {
 
                 {/* Centered Register Button */}
                 <div className="flex justify-center">
-                  <button className="bg-gradient-to-r from-violet-800 to-violet-900 hover:from-violet-900 hover:to-violet-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-blue-300 hover:scale-105 shadow-xl">
-                    Register Now
-                  </button>
+                <button
+                  onClick={handleRegisterClick}
+                  className="bg-gradient-to-r from-gray-600 to-gray-900 hover:from-gray-900 hover:to-gray-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-gray-300 hover:scale-105 shadow-xl cursor-pointer"
+                >
+                  Register Now
+                </button>
                 </div>
               </div>
             </div>
