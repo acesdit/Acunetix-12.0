@@ -18,7 +18,7 @@ const Brainiac = () => {
   const handleBackClick = () => {
     navigate("/", { 
       state: { scrollToEvent: true },
-      replace: true  
+      replace: true  // Add replace to prevent history stacking
     });
   };
 
