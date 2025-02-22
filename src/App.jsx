@@ -53,11 +53,11 @@ function MainContent() {
       locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
-        multiplier: isMobile ? 1 : 3.5, // Slower on desktop (0.5), normal on mobile (1)
-        inertia: 0.75,
+        multiplier: isMobile ? 0.5 : 3.5, // Slower on desktop (0.5), normal on mobile (1)
+        inertia: 2.1,
         getDirection: true,
         smartphone: {
-          smooth: 1.5
+          smooth: 0.1
         },
         tablet: {
           smooth: 0.6
