@@ -42,11 +42,18 @@ function MainContent() {
 
   useEffect(() => {
     if (location.pathname === '/') {
-      // Initialize Locomotive Scroll
+      // Mobile detection logic
+      const checkMobile = () => {
+        return window.matchMedia('(max-width: 768px)').matches;
+      };
+  
+      const isMobile = checkMobile();
+  
+      // Initialize Locomotive Scroll with conditional multiplier
       locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
-         multiplier: 2.5, // Reduced scroll speed
+        multiplier: isMobile ? 1 : 2.5, // Slower on desktop (0.5), normal on mobile (1)
         inertia: 0.75,
         getDirection: true,
         smartphone: {
@@ -56,11 +63,6 @@ function MainContent() {
           smooth: 0.6
         }
       });
-
-      // Mobile detection logic
-      const checkMobile = () => {
-        return window.matchMedia('(max-width: 768px)').matches;
-      };
 
       const handleInitialScroll = () => {
         const shouldScroll = location.state?.scrollToEvent;
