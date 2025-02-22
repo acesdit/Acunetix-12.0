@@ -46,6 +46,13 @@ function MainContent() {
   }, []);
 
   useEffect(() => {
+    const handleHash = () => {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        target?.scrollIntoView({ behavior: 'instant' });
+      }
+    };
+
     if (location.pathname === '/') {
       window.scrollTo(0, 0);
 
@@ -55,10 +62,28 @@ function MainContent() {
           smooth: true,
           smoothMobile: false,
           inertia: 0.8,
+          lerp: 0.1,
           getDirection: true,
           smartphone: { smooth: false },
           tablet: { smooth: false }
         });
+
+        // Initialize scroll after elements are mounted
+        setTimeout(() => {
+          locomotiveScroll.current.update();
+          handleHash();
+          
+          // Add resize observer for container changes
+          const resizeObserver = new ResizeObserver(() => {
+            locomotiveScroll.current.update();
+          });
+          
+          if (scrollRef.current) {
+            resizeObserver.observe(scrollRef.current);
+          }
+
+          return () => resizeObserver.disconnect();
+        }, 1000);
 
         const handleScroll = (args) => {
           if (heroRef.current) {
@@ -147,7 +172,7 @@ function MainContent() {
           <Sponsors />
         </section>
 
-        <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 min-h-screen flex items-end">
+        <section ref={footerRef} data-scroll-section className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 flex items-end">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <Reel />
             <Footer 
