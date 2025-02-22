@@ -34,32 +34,32 @@ function MainContent() {
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    if (location.pathname === '/') {
-      locomotiveScroll.current = new LocomotiveScroll({
-        el: scrollRef.current,
-        smooth: true,
-        smoothMobile: true,
-        inertia: 0.75,
-        getDirection: true,
-      });
+  // useEffect(() => {
+  //   if (location.pathname === '/') {
+  //     locomotiveScroll.current = new LocomotiveScroll({
+  //       el: scrollRef.current,
+  //       smooth: true,
+  //       smoothMobile: true,
+  //       inertia: 0.75,
+  //       getDirection: true,
+  //     });
 
-      // Add scroll handler for navbar color change
-      const handleScroll = (args) => {
-        if (heroRef.current) {
-          const heroHeight = heroRef.current.offsetHeight;
-          setIsScrolled(args.scroll.y > heroHeight);
-        }
-      };
-      locomotiveScroll.current.on('scroll', handleScroll);
+  //     // Add scroll handler for navbar color change
+  //     const handleScroll = (args) => {
+  //       if (heroRef.current) {
+  //         const heroHeight = heroRef.current.offsetHeight;
+  //         setIsScrolled(args.scroll.y > heroHeight);
+  //       }
+  //     };
+  //     locomotiveScroll.current.on('scroll', handleScroll);
 
-      return () => {
-        if (locomotiveScroll.current) {
-          locomotiveScroll.current.destroy();
-        }
-      };
-    }
-  }, [location]);
+  //     return () => {
+  //       if (locomotiveScroll.current) {
+  //         locomotiveScroll.current.destroy();
+  //       }
+  //     };
+  //   }
+  // }, [location]);
 
   const toggleChatbot = () => setIsChatbotVisible(!isChatbotVisible);
   const scrollToSection = (ref) => {
