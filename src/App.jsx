@@ -45,6 +45,7 @@ function MainContent() {
       // Initialize Locomotive Scroll
       locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
+        window:scrollRef.current,
         smooth: true,
         getDirection: true,
         smartphone: {
