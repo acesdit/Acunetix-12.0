@@ -1,15 +1,15 @@
 import React from 'react'
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-import LetterGlitch from '../components/LetterGlitch'
-import ctrlAltEliteImg from '../assets/CtrlAltElite.png'
+// import LetterGlitch from '../components/LetterGlitch'
+import cinemaEyeLensImg from "../assets/cinemaEyesLens.png"
+import Squares from '../components/Squares';
 import logo from "../assets/logo.png";
 import { IoArrowBack } from "react-icons/io5"; // Import back icon
 import { useNavigate } from "react-router-dom";
 
 
-
-export const CtrlAltElite = () => {
+ const CinemaEyeLens = () => {
   const navigate = useNavigate();
   const handleLinkClick = () =>{
      navigate("/");
@@ -53,12 +53,21 @@ export const CtrlAltElite = () => {
       <div className="relative min-h-screen pt-24 pb-12">
         {/* Glitch Background with Dark Overlay */}
         <div className="absolute inset-0">
-          <LetterGlitch
+          {/* <LetterGlitch
             glitchSpeed={50}
             centerVignette={true}
             outerVignette={false}
             smooth={true}
-          />
+          /> */}
+        
+  
+  <Squares 
+  speed={0.5} 
+  squareSize={40}
+  direction='diagonal' // up, down, left, right, diagonal
+  borderColor='#fff'
+  hoverFillColor='#222'
+  />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
@@ -69,14 +78,14 @@ export const CtrlAltElite = () => {
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center h-full space-y-10">
               {/* Centered Heading */}
               <h1 className="text-5xl md:text-6xl font-bold text-white">
-              Ctrl Alt Elite
+              Cinema Eyes Lens
               </h1>
 
               {/* Mobile View: Poster + Centered Content */}
               <div className="md:hidden flex flex-col items-center space-y-6">
                 {/* Mobile Image */}
                 <img 
-                  src={ctrlAltEliteImg}
+                  src={cinemaEyeLensImg}
                   alt="Event Poster"
                   className="rounded-xl shadow-2xl w-full max-w-sm max-h-[500px] object-contain transform hover:scale-105 transition-all duration-300"
                 />
@@ -119,7 +128,7 @@ export const CtrlAltElite = () => {
             {/* Right Column: Desktop Image; hidden on mobile */}
             <div className="hidden md:flex md:w-1/2 justify-center">
               <img 
-                src={ctrlAltEliteImg}
+                src={cinemaEyeLensImg}
                 alt="Event Poster"
                 className="rounded-xl shadow-2xl w-full md:w-auto max-w-xl max-h-[500px] object-contain transform hover:scale-105 transition-all duration-300"
               />
@@ -132,6 +141,5 @@ export const CtrlAltElite = () => {
     </>
   )
 }
-
-export default CtrlAltElite
+export default CinemaEyeLens;
 
