@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './index.css';
@@ -24,6 +24,7 @@ import Timescape from "./pages/TimeScape";
 import CtrlAltElite from "./pages/CtrlAltElite";
 import CinemaEyesLens from "./pages/CinemaEyesLens";
 
+
 function MainContent() {
   const scrollRef = useRef(null);
   const heroRef = useRef(null);
@@ -35,13 +36,13 @@ function MainContent() {
   const footerRef = useRef(null);
   const locomotiveScroll = useRef(null);
   const location = useLocation();
-  const navigate = useNavigate();
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+
   useEffect(() => {
     if (location.pathname === '/') {
-      // Initialize Locomotive Scroll for all devices
+      // Initialize Locomotive Scroll
       locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
@@ -50,34 +51,45 @@ function MainContent() {
           smooth: true
         },
         tablet: {
-          smooth: true
+          smooth: false
         }
       });
 
-      // Handle scroll event
+      // Mobile detection logic
+      const checkMobile = () => {
+        return window.matchMedia('(max-width: 768px)').matches;
+      };
+
+      // Handle scroll after initialization
+      const handleInitialScroll = () => {
+        // Check if we need to scroll to event section
+        const shouldScroll = location.state?.scrollToEvent || checkMobile();
+        
+        if (shouldScroll && eventRef.current) {
+          // Use ResizeObserver to wait for content
+          const observer = new ResizeObserver(() => {
+            locomotiveScroll.current.update();
+            locomotiveScroll.current.scrollTo(eventRef.current);
+            observer.unobserve(eventRef.current);
+          });
+
+          observer.observe(eventRef.current);
+        }
+      };
+        // Wait for initial scroll instance to be ready
+        setTimeout(handleInitialScroll, 150);
+      
+      setTimeout(handleInitialScroll, 150);
+      
+
+      
       const handleScroll = (args) => {
         if (heroRef.current) {
           const heroHeight = heroRef.current.offsetHeight;
           setIsScrolled(args.scroll.y > heroHeight);
         }
       };
-
-      // Handle initial scroll to event
-      const handleInitialScroll = () => {
-        const shouldScroll = location.state?.scrollToEvent;
-        if (shouldScroll && eventRef.current) {
-          const observer = new ResizeObserver(() => {
-            locomotiveScroll.current.update();
-            locomotiveScroll.current.scrollTo(eventRef.current);
-            observer.unobserve(eventRef.current);
-            navigate(location.pathname, { replace: true, state: {} });
-          });
-          observer.observe(eventRef.current);
-        }
-      };
-
       locomotiveScroll.current.on('scroll', handleScroll);
-      setTimeout(handleInitialScroll, 150);
 
       return () => {
         if (locomotiveScroll.current) {
@@ -85,10 +97,10 @@ function MainContent() {
         }
       };
     }
-  }, [location, navigate]);
+  }, [location]);
+
 
   const toggleChatbot = () => setIsChatbotVisible(!isChatbotVisible);
-
   const scrollToSection = (ref) => {
     if (locomotiveScroll.current && ref.current) {
       locomotiveScroll.current.scrollTo(ref.current);
@@ -145,11 +157,13 @@ function MainContent() {
 
 function App() {
   const [startAnimationComplete, setStartAnimationComplete] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const timer = setTimeout(() => setStartAnimationComplete(true), 3900);
     return () => clearTimeout(timer);
   }, []);
+
 
   return (
     <>
