@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import 
+import "@videojs-player/react";
 import video from '../assets/Background.mp4';
 
 const Hero = () => {
