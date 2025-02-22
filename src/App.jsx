@@ -53,7 +53,34 @@ function MainContent() {
           }
         }, 100);
       }
-
+      const isMobile = () => 
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+      useEffect(() => {
+        if (location.pathname === '/') {
+          locomotiveScroll.current = new LocomotiveScroll({
+            el: scrollRef.current,
+            smooth: true,
+            smoothMobile: true,
+            inertia: 0.75,
+            getDirection: true,
+          });
+    
+          // Combined scroll logic for both mobile detection and state-based navigation
+          const shouldScrollToEvent = location.state?.scrollToEvent || isMobile();
+          
+          if (shouldScrollToEvent) {
+            setTimeout(() => {
+              if (locomotiveScroll.current && eventRef.current) {
+                locomotiveScroll.current.scrollTo(eventRef.current);
+              }
+            }, 100);
+          }
+    
+          // ... existing scroll handler
+        }
+      }, [location]);
+    
 
       
       const handleScroll = (args) => {
