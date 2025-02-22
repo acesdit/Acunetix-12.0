@@ -42,13 +42,12 @@ function MainContent() {
 
   useEffect(() => {
     if (location.pathname === '/') {
-      window.scrollTo(0, 0); // Ensure the page starts at the top on refresh
-  
+      window.scrollTo(0, 0);
       locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
         smoothMobile: true,
-        inertia: 0.75,
+        inertia: 1,
         getDirection: true,
         smartphone: {
           smooth: true
