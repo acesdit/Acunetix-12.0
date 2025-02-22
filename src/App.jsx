@@ -45,7 +45,6 @@ function MainContent() {
       // Initialize Locomotive Scroll
       locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
-        window:scrollRef.current,
         smooth: true,
         getDirection: true,
         smartphone: {
@@ -55,16 +54,25 @@ function MainContent() {
           smooth: false
         }
       });
+      const timeoutId = setTimeout(() => {
+        if (locomotiveScroll.current) {
+          locomotiveScroll.current.scrollTo(0, { 
+            immediate: true,
+            duration: 0
+          });
+        }
+      }, 200);
 
       // Mobile detection logic
       const checkMobile = () => {
         return window.matchMedia('(max-width: 768px)').matches;
+        
       };
 
       // Handle scroll after initialization
       const handleInitialScroll = () => {
         // Check if we need to scroll to event section
-        const shouldScroll = location.state?.scrollToEvent || checkMobile();
+        const shouldScroll = location.state?.scrollToEvent;
         
         if (shouldScroll && eventRef.current) {
           // Use ResizeObserver to wait for content
@@ -79,8 +87,6 @@ function MainContent() {
       };
         // Wait for initial scroll instance to be ready
         setTimeout(handleInitialScroll, 150);
-      
-      setTimeout(handleInitialScroll, 150);
       
 
       
