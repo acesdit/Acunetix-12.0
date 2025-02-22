@@ -33,9 +33,9 @@ export default function Footer({ scrollToRefs, scrollToSection }) {
         <div className="footer-section">
           <h4 className='text-xl'>Socials</h4>
           <ul className='flex justify-center items-center gap-3'>
-            <li><a href="https://www.instagram.com/acunetix.dit/"><img src={instagram} alt="insta logo" height={39} width={39} /></a></li>
-            <li><a href="https://www.linkedin.com/company/acunetix-dit/"><img src={linkedin} alt="linkedin" height={35} width={35} /></a></li>
-            <li><a href="https://www.youtube.com/@AcunetixDIT"><img src={youtube} height={42} width={42} /></a></li>
+            <li><a href="https://www.instagram.com/acunetix.dit/" target='_blank'><img src={instagram} alt="insta logo" height={39} width={39} /></a></li>
+            <li><a href="https://www.linkedin.com/company/acunetix-dit/" target='_blank'><img src={linkedin} alt="linkedin" height={35} width={35} /></a></li>
+            <li><a href="https://www.youtube.com/@AcunetixDIT" target='_blank'><img src={youtube} height={42} width={42} /></a></li>
           </ul>
         </div>
       </div>
