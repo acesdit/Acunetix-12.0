@@ -16,7 +16,7 @@ function Reel() {
         <div className="flex overflow-x-auto pb-4 scrollbar-hide md:grid md:grid-cols-3 md:gap-6 lg:gap-8 md:overflow-visible">
           {/* First Reel */}
           <a
-          href="https://www.instagram.com/reel/DGFQyUtKCLu/"
+          href="https://www.instagram.com/reel/DGZ-W7GI9jw/"
             
             target="_blank"
             rel="noopener noreferrer"
