@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './index.css';
@@ -24,6 +24,7 @@ import Timescape from "./pages/TimeScape";
 import CtrlAltElite from "./pages/CtrlAltElite";
 import CinemaEyesLens from "./pages/CinemaEyesLens";
 
+
 function MainContent() {
   const scrollRef = useRef(null);
   const heroRef = useRef(null);
@@ -35,9 +36,9 @@ function MainContent() {
   const footerRef = useRef(null);
   const locomotiveScroll = useRef(null);
   const location = useLocation();
-  const navigate = useNavigate();
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
 
   useEffect(() => {
     if (location.pathname === '/') {
@@ -103,10 +104,10 @@ function MainContent() {
         }
       };
     }
-  }, [location, navigate]);
+  }, [location]);
+
 
   const toggleChatbot = () => setIsChatbotVisible(!isChatbotVisible);
-
   const scrollToSection = (ref) => {
     if (locomotiveScroll.current && ref.current) {
       locomotiveScroll.current.scrollTo(ref.current);
@@ -169,6 +170,7 @@ function App() {
     const timer = setTimeout(() => setStartAnimationComplete(true), 3900);
     return () => clearTimeout(timer);
   }, []);
+
 
   return (
     <>
