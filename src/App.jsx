@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './index.css';
@@ -24,7 +24,6 @@ import Timescape from "./pages/TimeScape";
 import CtrlAltElite from "./pages/CtrlAltElite";
 import CinemaEyesLens from "./pages/CinemaEyesLens";
 
-
 function MainContent() {
   const scrollRef = useRef(null);
   const heroRef = useRef(null);
@@ -39,78 +38,57 @@ function MainContent() {
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const checkMobile = () => window.matchMedia('(max-width: 768px)').matches;
 
   useEffect(() => {
     if (location.pathname === '/') {
-      // Initialize Locomotive Scroll
-      locomotiveScroll.current = new LocomotiveScroll({
-        el: scrollRef.current,
-        smooth: true,
-        getDirection: true,
-        smartphone: {
-          smooth: true
-        },
-        tablet: {
-          smooth: false
-        }
-      });
-      const timeoutId = setTimeout(() => {
-        if (locomotiveScroll.current) {
-          locomotiveScroll.current.scrollTo(0, { 
-            immediate: true,
-            duration: 0
-          });
-        }
-      }, 200);
+      if (!checkMobile()) {
+        locomotiveScroll.current = new LocomotiveScroll({
+          el: scrollRef.current,
+          smooth: true,
+          getDirection: true,
+          smartphone: { smooth: false },
+          tablet: { smooth: false }
+        });
 
-      // Mobile detection logic
-      const checkMobile = () => {
-        return window.matchMedia('(max-width: 768px)').matches;
-        
-      };
+        const handleScroll = (args) => {
+          if (heroRef.current) {
+            const heroHeight = heroRef.current.offsetHeight;
+            setIsScrolled(args.scroll.y > heroHeight);
+          }
+        };
 
-      // Handle scroll after initialization
-      const handleInitialScroll = () => {
-        // Check if we need to scroll to event section
-        const shouldScroll = location.state?.scrollToEvent;
-        
-        if (shouldScroll && eventRef.current) {
-          // Use ResizeObserver to wait for content
-          const observer = new ResizeObserver(() => {
-            locomotiveScroll.current.update();
-            locomotiveScroll.current.scrollTo(eventRef.current);
-            observer.unobserve(eventRef.current);
-          });
+        locomotiveScroll.current.on('scroll', handleScroll);
 
-          observer.observe(eventRef.current);
-        }
-      };
-        // Wait for initial scroll instance to be ready
-        setTimeout(handleInitialScroll, 150);
-      
+        return () => {
+          if (locomotiveScroll.current) {
+            locomotiveScroll.current.destroy();
+          }
+        };
+      } else {
+        const handleNativeScroll = () => {
+          const heroHeight = heroRef.current?.offsetHeight || 0;
+          setIsScrolled(window.scrollY > heroHeight);
+        };
 
-      
-      const handleScroll = (args) => {
-        if (heroRef.current) {
-          const heroHeight = heroRef.current.offsetHeight;
-          setIsScrolled(args.scroll.y > heroHeight);
-        }
-      };
-      locomotiveScroll.current.on('scroll', handleScroll);
-
-      return () => {
-        if (locomotiveScroll.current) {
-          locomotiveScroll.current.destroy();
-        }
-      };
+        window.addEventListener('scroll', handleNativeScroll);
+        return () => window.removeEventListener('scroll', handleNativeScroll);
+      }
     }
   }, [location]);
 
-
   const toggleChatbot = () => setIsChatbotVisible(!isChatbotVisible);
+
   const scrollToSection = (ref) => {
-    if (locomotiveScroll.current && ref.current) {
-      locomotiveScroll.current.scrollTo(ref.current);
+    if (ref.current) {
+      if (locomotiveScroll.current && !checkMobile()) {
+        locomotiveScroll.current.scrollTo(ref.current);
+      } else {
+        const offset = -80;
+        const elementPosition = ref.current.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset + offset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
     }
   };
 
@@ -146,10 +124,7 @@ function MainContent() {
         <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 min-h-screen flex items-end">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <Reel />
-            <Footer 
-              scrollToRefs={{ heroRef }} 
-              scrollToSection={scrollToSection} 
-            />
+            <Footer scrollToRefs={{ heroRef }} scrollToSection={scrollToSection} />
           </div>
         </section>
       </div>
@@ -171,22 +146,21 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-
   return (
     <>
       {!startAnimationComplete ? <Start /> : (
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<MainContent />} />
           <Route path="/event/brainiac" element={<Brainiac />} />
           <Route path="/event/codeOfLies" element={<CodeOfLies />} />
           <Route path="/event/timeScape" element={<Timescape />} />
-          <Route path="/event/ctrlAltElite2" element={<CtrlAltElite />} />
           <Route path="/event/ctrlAltElite" element={<CtrlAltElite />} />
           <Route path="/event/cinemaEyesLens" element={<CinemaEyesLens />} />
-          <Route path="/event/timeScape2" element={<Timescape />} />
           <Route path="/event/brainiac2" element={<Brainiac />} />
+          <Route path="/event/timeScape2" element={<Timescape />} />
           <Route path="/event/cinemaEyesLens2" element={<CinemaEyesLens />} />
           <Route path="/event/codeOfLies2" element={<CodeOfLies />} />
+          <Route path="/event/ctrlAltElite2" element={<CtrlAltElite />} />
           <Route path="/event/:id" element={<EventCard />} />
         </Routes>
       )}
