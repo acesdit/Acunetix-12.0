@@ -41,7 +41,7 @@ function MainContent() {
 
   useEffect(() => {
     if (location.pathname === '/') {
-      // Initialize Locomotive Scroll for all devices
+      // Initialize Locomotive Scroll
       locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
@@ -50,22 +50,28 @@ function MainContent() {
           smooth: true
         },
         tablet: {
-          smooth: true
+          smooth: false
         }
       });
-
-      // Handle scroll event
-      const handleScroll = (args) => {
-        if (heroRef.current) {
-          const heroHeight = heroRef.current.offsetHeight;
-          setIsScrolled(args.scroll.y > heroHeight);
+      const timeoutId = setTimeout(() => {
+        if (locomotiveScroll.current) {
+          locomotiveScroll.current.scrollTo(0, { 
+            immediate: true,
+            duration: 0
+          });
         }
+      }, 200);
+
+      // Mobile detection logic
+      const checkMobile = () => {
+        return window.matchMedia('(max-width: 768px)').matches;
+        
       };
 
-      // Handle initial scroll to event
+      // Handle scroll after initialization
       const handleInitialScroll = () => {
         // Check if we need to scroll to event section
-        const shouldScroll = location.state?.scrollToEvent || checkMobile();
+        const shouldScroll = location.state?.scrollToEvent;
         
         if (shouldScroll && eventRef.current) {
           // Use ResizeObserver to wait for content
@@ -78,9 +84,18 @@ function MainContent() {
           observer.observe(eventRef.current);
         }
       };
+        // Wait for initial scroll instance to be ready
+        setTimeout(handleInitialScroll, 150);
+      
 
+      
+      const handleScroll = (args) => {
+        if (heroRef.current) {
+          const heroHeight = heroRef.current.offsetHeight;
+          setIsScrolled(args.scroll.y > heroHeight);
+        }
+      };
       locomotiveScroll.current.on('scroll', handleScroll);
-      setTimeout(handleInitialScroll, 150);
 
       return () => {
         if (locomotiveScroll.current) {
