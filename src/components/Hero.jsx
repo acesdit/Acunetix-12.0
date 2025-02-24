@@ -38,9 +38,6 @@ const Hero = () => {
                 muted
                 playsInline
                 preload="auto"
-                aria-label="Background video"
-                disablePictureInPicture
-                disableRemotePlayback
             >
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
