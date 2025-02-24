@@ -3,14 +3,14 @@ import { Helmet } from "react-helmet";
 
 const AcunetixMetaTags = () => {
   const eventUrl = "https://acunetix12.tech/";
-  const highResImage = "./assets/acunetix-logo.png";
+  const highResImage = "https://github.com/Tejas-Santosh-Nalawade/Acunetix-12.0/blob/main/src/assets/logo.png";
   const linkedinProfile = "https://www.linkedin.com/company/acunetix-dit/";
   const instagramHandle = "@acunetix.dit";
 
   return (
     <Helmet>
       {/* Primary Meta Tags */}
-      <title>Acunetix 12.0 Tech Fest 2025 | Cybersecurity & AI Competitions | DY Patil Pune</title>
+      <title>Acunetix 12.0</title>
       <meta name="description" content="Join 2000+ tech enthusiasts at India's premier student tech conference! Featuring ₹5L+ prizes, national competitions, and industry expert sessions. March 15-16, 2025." />
       
       {/* Keywords & Categories */}
