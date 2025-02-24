@@ -1,5 +1,5 @@
 import React from "react";
-// import "./styles.css";
+import "./styles.css";
 import reel from "../assets/Reel Acunetix.mp4";
 import reel2 from "../assets/Reel Acunetix2.mp4";
 import reel3 from "../assets/Reel Acunetix3.mp4";
