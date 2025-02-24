@@ -3,6 +3,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import { Routes, Route, useLocation } from "react-router-dom";
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './index.css';
+import AcunetixMetaTags from "./components/AcunetixMetaTags"; // Import the meta tags component
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -172,6 +173,7 @@ function App() {
 
   return (
     <>
+     <AcunetixMetaTags /> 
       {!startAnimationComplete ? <Start /> : (
         <Routes>
           <Route path="/" element={<MainContent />} />
