@@ -2,16 +2,23 @@ import { useState } from "react";
 import React from "react";
 import logo from "../assets/logo.png";
 
-const Navbar = ({ scrollToRefs, scrollToSection }) => {
+const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLinkClick = (ref) => {
-    scrollToSection(ref);
-    setIsMenuOpen(false); // Close the mobile menu after clicking a link
+    setIsMenuOpen(false);
+    setTimeout(() => {
+      scrollToSection(ref);
+    }, 300);
   };
 
   return (
-    <nav className="text-white py-6 max-sm:px-5 md:px-4 lg:px-12 fixed w-full z-5 ">
+    <nav className={`text-white py-6 max-sm:px-5 md:px-4 lg:px-12 fixed w-full z-50 transition-all duration-300 ${
+      isScrolled 
+        ? "bg-black/90 backdrop-blur-lg shadow-md" 
+        : "bg-transparent"
+    }`}>
+
       <div className="flex items-center justify-between" style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* Left as - Desktop */}
         <div className="hidden md:flex space-x-12 gap-16">
@@ -46,13 +53,13 @@ const Navbar = ({ scrollToRefs, scrollToSection }) => {
               handleLinkClick(scrollToRefs.heroRef);
             }}
           >
-          <img
-            src={logo}
-            alt="Logo"
-            width={48}
-            height={48}
-            className="transform hover:scale-105 ml-8 transition-transform duration-300 "
-          />
+            <img
+              src={logo}
+              alt="Logo"
+              width={48}
+              height={48}
+              className="transform hover:scale-105 ml-8 transition-transform duration-300 "
+            />
           </a>
         </div>
 
@@ -99,8 +106,10 @@ const Navbar = ({ scrollToRefs, scrollToSection }) => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed backdrop-blur-xl z-50 top-0 right-0 h-full text-white transition-transform duration-500 ease-in-out transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
-        style={{ width: "190px", background: "rgba(0, 0, 0, 0.92)" }}
+        className={`fixed backdrop-blur-xl z-50 top-0 right-0 h-full text-white transition-transform duration-500 ease-in-out transform ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+        style={{ width: "190px", background: "rgba(0, 0, 0, 0.971)" }}
       >
         <div className="flex flex-col space-y-4 text-center bg-[#0000006f]">
           <button

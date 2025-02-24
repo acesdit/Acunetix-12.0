@@ -3,6 +3,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import { Routes, Route, useLocation } from "react-router-dom";
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './index.css';
+import AcunetixMetaTags from "./components/AcunetixMetaTags"; // Import the meta tags component
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -16,6 +17,13 @@ import SchedulePage from "./components/SchedulePage";
 import chatbotIcon from "./assets/AcunetixChatbot.png";
 import EventCard from "./pages/EventCard";
 import Reel from "./components/Reel";
+import Brainiac from "./pages/Brainiac";
+import CodeOfLies from "./pages/CodeOfLies";
+import Timescape from "./pages/TimeScape";
+import CtrlAltElite from "./pages/CtrlAltElite";
+import CinemaEyesLens from "./pages/CinemaEyesLens";
+import ReactGA from "react-ga4";
+ReactGA.initialize("G-LKRS84TD11");
 
 function MainContent() {
   const scrollRef = useRef(null);
@@ -29,16 +37,65 @@ function MainContent() {
   const locomotiveScroll = useRef(null);
   const location = useLocation();
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
 
   useEffect(() => {
     if (location.pathname === '/') {
       locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
-        smoothMobile: true,
-        inertia: 0.75,
         getDirection: true,
+        smartphone: {
+          smooth: true
+        },
+        tablet: {
+          smooth: false
+        }
       });
+      const timeoutId = setTimeout(() => {
+        if (locomotiveScroll.current) {
+          locomotiveScroll.current.scrollTo(0, { 
+            immediate: true,
+            duration: 0
+          });
+        }
+      }, 200);
+
+      // Mobile detection logic
+      const checkMobile = () => {
+        return window.matchMedia('(max-width: 768px)').matches;
+        
+      };
+
+      // Handle scroll after initialization
+      const handleInitialScroll = () => {
+        // Check if we need to scroll to event section
+        const shouldScroll = location.state?.scrollToEvent;
+        
+        if (shouldScroll && eventRef.current) {
+          // Use ResizeObserver to wait for content
+          const observer = new ResizeObserver(() => {
+            locomotiveScroll.current.update();
+            locomotiveScroll.current.scrollTo(eventRef.current);
+            observer.unobserve(eventRef.current);
+          });
+
+          observer.observe(eventRef.current);
+        }
+      };
+        // Wait for initial scroll instance to be ready
+        setTimeout(handleInitialScroll, 150);
+      
+
+      
+      const handleScroll = (args) => {
+        if (heroRef.current) {
+          const heroHeight = heroRef.current.offsetHeight;
+          setIsScrolled(args.scroll.y > heroHeight);
+        }
+      };
+      locomotiveScroll.current.on('scroll', handleScroll);
 
       return () => {
         if (locomotiveScroll.current) {
@@ -47,6 +104,7 @@ function MainContent() {
       };
     }
   }, [location]);
+
 
   const toggleChatbot = () => setIsChatbotVisible(!isChatbotVisible);
   const scrollToSection = (ref) => {
@@ -57,7 +115,11 @@ function MainContent() {
 
   return (
     <>
-      <Navbar scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef, scheduleRef, reelRef, footerRef }} scrollToSection={scrollToSection} />
+      <Navbar  
+        isScrolled={isScrolled}
+        scrollToRefs={{ heroRef, aboutRef, eventRef, sponsorsRef, scheduleRef, reelRef, footerRef }} 
+        scrollToSection={scrollToSection} 
+      />
       
       <div ref={scrollRef} data-scroll-container style={{ minHeight: '100vh' }}>
         <section ref={heroRef} data-scroll-section className="flex flex-col items-center justify-center h-screen w-full bg-cover bg-center">
@@ -79,14 +141,16 @@ function MainContent() {
         <section ref={sponsorsRef} data-scroll-section className="min-h-screen">
           <Sponsors />
         </section>
-        
 
         <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 min-h-screen flex items-end">
-              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <Reel></Reel>
-                <Footer />
-              </div>
-            </section>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <Reel />
+            <Footer 
+              scrollToRefs={{ heroRef }} 
+              scrollToSection={scrollToSection} 
+            />
+          </div>
+        </section>
       </div>
 
       {isChatbotVisible && <Chatbot onClose={toggleChatbot} />}
@@ -99,17 +163,30 @@ function MainContent() {
 
 function App() {
   const [startAnimationComplete, setStartAnimationComplete] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const timer = setTimeout(() => setStartAnimationComplete(true), 3900);
     return () => clearTimeout(timer);
   }, []);
 
+
   return (
     <>
+     <AcunetixMetaTags /> 
       {!startAnimationComplete ? <Start /> : (
         <Routes>
           <Route path="/" element={<MainContent />} />
+          <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/codeOfLies" element={<CodeOfLies />} />
+          <Route path="/event/timeScape" element={<Timescape />} />
+          <Route path="/event/ctrlAltElite2" element={<CtrlAltElite />} />
+          <Route path="/event/ctrlAltElite" element={<CtrlAltElite />} />
+          <Route path="/event/cinemaEyesLens" element={<CinemaEyesLens />} />
+          <Route path="/event/timeScape2" element={<Timescape />} />
+          <Route path="/event/brainiac2" element={<Brainiac />} />
+          <Route path="/event/cinemaEyesLens2" element={<CinemaEyesLens />} />
+          <Route path="/event/codeOfLies2" element={<CodeOfLies />} />
           <Route path="/event/:id" element={<EventCard />} />
         </Routes>
       )}

@@ -9,7 +9,7 @@ const Hero = () => {
         seconds: 0
     });
 
-    const targetDate = new Date('2025-02-21T10:00:00');
+    const targetDate = new Date('2025-03-20T10:00:00');
 
     useEffect(() => {
         const timer = setInterval(() => {
