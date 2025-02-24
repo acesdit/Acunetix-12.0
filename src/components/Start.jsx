@@ -29,25 +29,25 @@ export default function LogoAnimation() {
 
     <div className="fixed top-0 left-0 w-full h-full bg-black overflow-hidden flex items-center justify-center">
       {/* Logo Container */}
-      {showLogo && (
-        <div
-          className={`relative flex flex-col items-center transition-all duration-1000 ${
-            moveUp ? "mt-[-40vh]" : "mt-0"
-          }`}
-        >
-          <img
-            src={img}
-            alt="Logo"
-            className={`w-24 h-24 sm:w-32 sm:h-32 transition-transform duration-1000 ${
-              moveUp
-                ? "translate-y-[-24vh] max-sm:translate-y-[-18vh] scale-40 rotate-360"
-                : ""
+        {showLogo && (
+          <div
+            className={`relative flex flex-col items-center transition-all duration-1000 ${
+          moveUp ? "mt-[-40vh]" : "mt-0"
             }`}
-          />
-        </div>
-      )}
+          >
+            <img
+          src={img}
+          alt="Acunetix Logo"
+          className={`w-24 h-24 sm:w-32 sm:h-32 transition-transform duration-1000 ${
+            moveUp
+              ? "translate-y-[-24vh] max-sm:translate-y-[-18vh] scale-40 rotate-360"
+              : ""
+          }`}
+            />
+          </div>
+        )}
 
-      {/* Heading Container */}
+        {/* Heading Container */}
       {showHeading && (
         <div className="absolute flex flex-col pt-5 items-center justify-center text-center animate-fadeIn">
           <h1 className="text-4xl md:text-8xl font-bold text-white">

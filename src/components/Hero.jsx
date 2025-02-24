@@ -31,14 +31,14 @@ const Hero = () => {
 
     return (
         <div className="relative w-full flex items-center justify-center h-screen">
-            <video>
+            <video
                 className="absolute inset-0 w-full h-full object-cover"
                 autoPlay
                 loop
                 muted
                 playsInline
                 preload="auto"
-                <track kind="subtitles" src={video} srclang="en" label="English" default />
+            >
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
