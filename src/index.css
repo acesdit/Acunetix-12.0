@@ -340,21 +340,3 @@ footer {
   scrollbar-width: none;  /* Firefox */
 }
 
-@supports (backdrop-filter: blur(10px)) {
-  .video-overlay::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    backdrop-filter: blur(2px);
-    pointer-events: none;
-  }
-}
-
-video {
-  will-change: transform;
-  backface-visibility: hidden;
-}
-
-.text-shadow {
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
