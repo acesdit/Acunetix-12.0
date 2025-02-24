@@ -35,7 +35,7 @@ const Hero = () => {
         };
 
         updateTimer();
-        const rafId = requestAnimationFrame(function update() {
+        let rafId = requestAnimationFrame(function update() {
             updateTimer();
             rafId = requestAnimationFrame(update);
         });
