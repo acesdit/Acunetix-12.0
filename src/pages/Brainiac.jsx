@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoArrowBack } from "react-icons/io5";
 import Navbar from "../components/Navbar";
@@ -14,24 +14,25 @@ const Brainiac = () => {
     navigate("/");
   };
 
-// In your event page component (e.g. Brainiac.jsx)
-const handleBackClick = () => {
-  navigate("/", { 
-    state: { 
-      scrollToEvent: true,
-      // Add cache buster for mobile
-      timestamp: Date.now() 
-    },
-    replace: true  
-  });
-};
+  // Back button click navigates to home with state for scrolling to Event section
+  const handleBackClick = () => {
+    navigate("/", {
+      state: {
+        scrollToEvent: true,
+        timestamp: Date.now(), // Cache buster for mobile
+      },
+      replace: true,
+    });
+  };
 
   const handleRegisterClick = () => {
-    window.open(
-     " https://forms.gle/VP6Ti6g6JSLWnqnx9",
-      "_blank"
-    );
+    window.open("https://forms.gle/VP6Ti6g6JSLWnqnx9", "_blank");
   };
+
+  // Scroll to top on component mount (especially for mobile)
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, []);
 
   return (
     <>
@@ -50,7 +51,7 @@ const handleBackClick = () => {
               alt="Logo"
               width={48}
               height={48}
-              className="transform hover:scale-105 ml-8 transition-transform duration-300 "
+              className="transform hover:scale-105 ml-8 transition-transform duration-300"
             />
           </a>
         </div>
@@ -61,7 +62,7 @@ const handleBackClick = () => {
         onClick={handleBackClick}
         className="fixed top-6 left-6 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 transition-all duration-200 z-50"
       >
-        <IoArrowBack className="text-lg" /> 
+        <IoArrowBack className="text-lg" />
       </button>
 
       <div className="relative min-h-screen pt-24 pb-12">
@@ -89,13 +90,11 @@ const handleBackClick = () => {
                   alt="Event Poster"
                   className="rounded-xl shadow-2xl w-full max-w-sm max-h-[500px] object-contain transform hover:scale-105 transition-all duration-300"
                 />
-
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-10 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm">
                   <p className="text-gray-200 text-lg leading-relaxed">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   </p>
                 </div>
-
                 <button
                   onClick={handleRegisterClick}
                   className="bg-gradient-to-r from-gray-600 to-gray-900 hover:from-gray-900 hover:to-gray-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-gray-300 hover:scale-105 shadow-xl cursor-pointer"
@@ -111,14 +110,13 @@ const handleBackClick = () => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   </p>
                 </div>
-
                 <div className="flex justify-center">
-                <button
-                  onClick={handleRegisterClick}
-                  className="bg-gradient-to-r from-gray-600 to-gray-900 hover:from-gray-900 hover:to-gray-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-gray-300 hover:scale-105 shadow-xl cursor-pointer"
-                >
-                  Register Now
-                </button>
+                  <button
+                    onClick={handleRegisterClick}
+                    className="bg-gradient-to-r from-gray-600 to-gray-900 hover:from-gray-900 hover:to-gray-950 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all hover:ring-2 hover:ring-gray-300 hover:scale-105 shadow-xl cursor-pointer"
+                  >
+                    Register Now
+                  </button>
                 </div>
               </div>
             </div>

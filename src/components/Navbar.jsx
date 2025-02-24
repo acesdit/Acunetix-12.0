@@ -18,7 +18,6 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
         ? "bg-black/90 backdrop-blur-lg shadow-md" 
         : "bg-transparent"
     }`}>
-
       <div className="flex items-center justify-between" style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* Left as - Desktop */}
         <div className="hidden md:flex space-x-12 gap-16">
