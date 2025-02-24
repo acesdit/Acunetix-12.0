@@ -23,6 +23,7 @@ import Timescape from "./pages/TimeScape";
 import CtrlAltElite from "./pages/CtrlAltElite";
 import CinemaEyesLens from "./pages/CinemaEyesLens";
 
+
 function MainContent() {
   const scrollRef = useRef(null);
   const heroRef = useRef(null);
