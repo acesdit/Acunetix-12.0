@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './index.css';
-import AcunetixMetaTags from "./components/AcunetixMetaTags";
+import AcunetixMetaTags from "./components/AcunetixMetaTags"; // Import the meta tags component
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -37,80 +37,78 @@ function MainContent() {
   const location = useLocation();
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
-  // Check if device is mobile
-  useEffect(() => {
-    const checkMobile = () => {
-      const isMobileDevice = window.matchMedia('(max-width: 768px)').matches;
-      setIsMobile(isMobileDevice);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
-  // Update navbar scroll state on window scroll
-  useEffect(() => {
-    const handleWindowScroll = () => {
-      const scrollPosition = window.scrollY;
-      const threshold = window.innerHeight * 0.1; // 10% of viewport height
-      setIsScrolled(scrollPosition > threshold);
-    };
-    window.addEventListener('scroll', handleWindowScroll);
-    return () => window.removeEventListener('scroll', handleWindowScroll);
-  }, []);
-
-  // Initialize Locomotive Scroll on main page and, if requested, scroll to Event section
   useEffect(() => {
     if (location.pathname === '/') {
-      window.scrollTo(0, 0);
-
-      if (!isMobile) {
-        locomotiveScroll.current = new LocomotiveScroll({
-          el: scrollRef.current,
-          smooth: true,
-          getDirection: true,
-          smartphone: { smooth: false },
-          tablet: { smooth: false },
-        });
-
-        const scrollToTopTimeout = setTimeout(() => {
-          locomotiveScroll.current?.scrollTo(0, { immediate: true, duration: 0 });
-        }, 200);
-
-        // If returning with state scrollToEvent, scroll to the Event section after a short delay.
-        if (location.state?.scrollToEvent && eventRef.current) {
-          setTimeout(() => {
-            locomotiveScroll.current?.scrollTo(eventRef.current, { offset: -50, duration: 1000 });
-          }, 300);
+      locomotiveScroll.current = new LocomotiveScroll({
+        el: scrollRef.current,
+        smooth: true,
+        getDirection: true,
+        smartphone: {
+          smooth: true
+        },
+        tablet: {
+          smooth: false
         }
-
-        return () => {
-          clearTimeout(scrollToTopTimeout);
-          locomotiveScroll.current?.destroy();
-        };
-      } else {
-        // For mobile devices, use native smooth scrolling
-        if (location.state?.scrollToEvent && eventRef.current) {
-          setTimeout(() => {
-            eventRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-          }, 100);
+      });
+      const timeoutId = setTimeout(() => {
+        if (locomotiveScroll.current) {
+          locomotiveScroll.current.scrollTo(0, { 
+            immediate: true,
+            duration: 0
+          });
         }
-      }
+      }, 200);
+
+      // Mobile detection logic
+      const checkMobile = () => {
+        return window.matchMedia('(max-width: 768px)').matches;
+        
+      };
+
+      // Handle scroll after initialization
+      const handleInitialScroll = () => {
+        // Check if we need to scroll to event section
+        const shouldScroll = location.state?.scrollToEvent;
+        
+        if (shouldScroll && eventRef.current) {
+          // Use ResizeObserver to wait for content
+          const observer = new ResizeObserver(() => {
+            locomotiveScroll.current.update();
+            locomotiveScroll.current.scrollTo(eventRef.current);
+            observer.unobserve(eventRef.current);
+          });
+
+          observer.observe(eventRef.current);
+        }
+      };
+        // Wait for initial scroll instance to be ready
+        setTimeout(handleInitialScroll, 150);
+      
+
+      
+      const handleScroll = (args) => {
+        if (heroRef.current) {
+          const heroHeight = heroRef.current.offsetHeight;
+          setIsScrolled(args.scroll.y > heroHeight);
+        }
+      };
+      locomotiveScroll.current.on('scroll', handleScroll);
+
+      return () => {
+        if (locomotiveScroll.current) {
+          locomotiveScroll.current.destroy();
+        }
+      };
     }
-  }, [location, isMobile]);
+  }, [location]);
+
 
   const toggleChatbot = () => setIsChatbotVisible(!isChatbotVisible);
-
   const scrollToSection = (ref) => {
-    if (isMobile) {
-      ref.current?.scrollIntoView({ behavior: 'smooth' });
-    } else if (locomotiveScroll.current && ref.current) {
-      locomotiveScroll.current.scrollTo(ref.current, {
-        offset: -50, // Adjust offset for navbar height
-        duration: 1000, // Smooth scroll duration
-      });
+    if (locomotiveScroll.current && ref.current) {
+      locomotiveScroll.current.scrollTo(ref.current);
     }
   };
 
@@ -122,57 +120,28 @@ function MainContent() {
         scrollToSection={scrollToSection} 
       />
       
-      <div 
-        ref={scrollRef} 
-        data-scroll-container={!isMobile}
-        style={{ minHeight: '100vh' }}
-      >
-        <section 
-          ref={heroRef} 
-          data-scroll-section={!isMobile} 
-          className="flex flex-col items-center justify-center h-screen w-full bg-cover bg-center"
-        >
+      <div ref={scrollRef} data-scroll-container style={{ minHeight: '100vh' }}>
+        <section ref={heroRef} data-scroll-section className="flex flex-col items-center justify-center h-screen w-full bg-cover bg-center">
           <Hero />
         </section>
 
-        <section 
-          ref={aboutRef} 
-          data-scroll-section={!isMobile} 
-          className='flex bg-black text-white flex-col items-center justify-center min-h-screen w-full'
-        >
+        <section ref={aboutRef} data-scroll-section className='flex bg-black text-white flex-col items-center justify-center min-h-screen w-full'>
           <About />
         </section>
 
-        <section 
-          ref={eventRef} 
-          data-scroll-section={!isMobile} 
-          className='min-h-screen mt-6'
-        >
+        <section ref={eventRef} data-scroll-section className='min-h-screen mt-6'>
           <Event />
         </section>
 
-        <section 
-          ref={scheduleRef} 
-          data-scroll-section={!isMobile} 
-          className="min-h-screen py-16"
-        >
+        <section ref={scheduleRef} data-scroll-section className="min-h-screen">
           <SchedulePage/>
         </section>
 
-        <section 
-          ref={sponsorsRef} 
-          data-scroll-section={!isMobile} 
-          className="min-h-screen"
-        >
+        <section ref={sponsorsRef} data-scroll-section className="min-h-screen">
           <Sponsors />
         </section>
 
-        <section 
-          ref={footerRef} 
-          data-scroll-section={!isMobile} 
-          data-scroll-speed={!isMobile ? "2" : "0"} 
-          className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 min-h-screen flex items-end"
-        >
+        <section ref={footerRef} data-scroll-section data-scroll-speed="2" className="bg-black/90 backdrop-blur-lg pt-16 pb-8 relative z-20 border-t border-white/10 min-h-screen flex items-end">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <Reel />
             <Footer 
@@ -191,46 +160,6 @@ function MainContent() {
   );
 }
 
-function EventWrapper({ Component }) {
-  const navigate = useNavigate();
-  const location = useLocation();
-  
-  useEffect(() => {
-    // Force scroll to top when event page loads
-    const scrollToTop = () => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    };
-    scrollToTop();
-    const timeoutId = setTimeout(scrollToTop, 100);
-    return () => clearTimeout(timeoutId);
-  }, [location.pathname]);
-
-  const handleBack = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // Navigate back to home and pass state to scroll to event section
-    navigate('/', { 
-      state: { scrollToEvent: true },
-      replace: true
-    });
-  };
-
-  return (
-    <div className="relative min-h-screen bg-black">
-      {/* <button
-        onClick={handleBack}
-        className="fixed top-4 left-4 z-50 bg-black/50 backdrop-blur-sm p-3 rounded-full hover:bg-black/70 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
-        aria-label="Back to events"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
-      </button> */}
-      <Component />
-    </div>
-  );
-}
-
 function App() {
   const [startAnimationComplete, setStartAnimationComplete] = useState(false);
   const location = useLocation();
@@ -240,23 +169,24 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+
   return (
     <>
-      <AcunetixMetaTags /> 
+     <AcunetixMetaTags /> 
       {!startAnimationComplete ? <Start /> : (
         <Routes>
           <Route path="/" element={<MainContent />} />
-          <Route path="/event/brainiac" element={<EventWrapper Component={Brainiac} />} />
-          <Route path="/event/codeOfLies" element={<EventWrapper Component={CodeOfLies} />} />
-          <Route path="/event/timeScape" element={<EventWrapper Component={Timescape} />} />
-          <Route path="/event/ctrlAltElite2" element={<EventWrapper Component={CtrlAltElite} />} />
-          <Route path="/event/ctrlAltElite" element={<EventWrapper Component={CtrlAltElite} />} />
-          <Route path="/event/cinemaEyesLens" element={<EventWrapper Component={CinemaEyesLens} />} />
-          <Route path="/event/timeScape2" element={<EventWrapper Component={Timescape} />} />
-          <Route path="/event/brainiac2" element={<EventWrapper Component={Brainiac} />} />
-          <Route path="/event/cinemaEyesLens2" element={<EventWrapper Component={CinemaEyesLens} />} />
-          <Route path="/event/codeOfLies2" element={<EventWrapper Component={CodeOfLies} />} />
-          <Route path="/event/:id" element={<EventWrapper Component={EventCard} />} />
+          <Route path="/event/brainiac" element={<Brainiac />} />
+          <Route path="/event/codeOfLies" element={<CodeOfLies />} />
+          <Route path="/event/timeScape" element={<Timescape />} />
+          <Route path="/event/ctrlAltElite2" element={<CtrlAltElite />} />
+          <Route path="/event/ctrlAltElite" element={<CtrlAltElite />} />
+          <Route path="/event/cinemaEyesLens" element={<CinemaEyesLens />} />
+          <Route path="/event/timeScape2" element={<Timescape />} />
+          <Route path="/event/brainiac2" element={<Brainiac />} />
+          <Route path="/event/cinemaEyesLens2" element={<CinemaEyesLens />} />
+          <Route path="/event/codeOfLies2" element={<CodeOfLies />} />
+          <Route path="/event/:id" element={<EventCard />} />
         </Routes>
       )}
     </>
