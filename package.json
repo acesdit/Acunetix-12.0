@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postbuild": "node sitemap-generator.js"
+
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.6",
@@ -27,6 +29,7 @@
     "react-scroll-parallax": "^3.4.5",
     "react-tsparticles": "^2.12.2",
     "rollup": "^4.34.7",
+    "sitemap": "^8.0.0",
     "smooth-scrollbar": "^8.8.4",
     "tailwindcss": "^4.0.6",
     "three": "^0.167.1",
