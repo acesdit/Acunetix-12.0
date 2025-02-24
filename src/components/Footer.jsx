@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import acunetixLogo from '../assets/acunetix-logo.png';
+import acunetixLogo from '../assets/acunetix-logo.svg';
 import linkedin from "../assets/linkedin.svg";
 import youtube from "../assets/youtube.svg";
 import instagram from "../assets/instagram.svg";

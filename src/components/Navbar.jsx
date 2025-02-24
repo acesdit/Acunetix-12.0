@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/acunetix-logo.svg";
 
 const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,8 +56,6 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
             <img
               src={logo}
               alt="Logo"
-              width={48}
-              height={48}
               className="transform hover:scale-105 ml-8 transition-transform duration-300 "
             />
           </a>
