@@ -362,7 +362,7 @@ const Hyperspeed = ({ effectOptions = {
         this.camera.position.y = 8;
         this.camera.position.x = 0;
         this.scene = new THREE.Scene();
-        this.scene.background = null;  // Ensure scene background is transparent
+        this.scene.background = null;  
 
         let fog = new THREE.Fog(
           options.colors.background,

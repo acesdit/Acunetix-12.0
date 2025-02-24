@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useNavigate} from "react-router-dom";
-
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './index.css';
 import Navbar from './components/Navbar';
@@ -43,7 +41,6 @@ function MainContent() {
 
   useEffect(() => {
     if (location.pathname === '/') {
-      // Initialize Locomotive Scroll
       locomotiveScroll.current = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
