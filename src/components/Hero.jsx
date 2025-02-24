@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, memo } from 'react';
-import videoMobile from '../assets/background.mp4';
-import videoDesktop from '../assets/background.mp4';
+import videoMobile from '../assets/Background.mp4';
+import videoDesktop from '../assets/Background.mp4';
 import "../index.css";
 
 const CountdownUnit = memo(({ value, label }) => (
