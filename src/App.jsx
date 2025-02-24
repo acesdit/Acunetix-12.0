@@ -22,8 +22,6 @@ import CodeOfLies from "./pages/CodeOfLies";
 import Timescape from "./pages/TimeScape";
 import CtrlAltElite from "./pages/CtrlAltElite";
 import CinemaEyesLens from "./pages/CinemaEyesLens";
-import ReactGA from "react-ga4";
-ReactGA.initialize("G-LKRS84TD11");
 
 function MainContent() {
   const scrollRef = useRef(null);
