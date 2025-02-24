@@ -38,6 +38,7 @@ const Hero = () => {
                 muted
                 playsInline
                 preload="auto"
+                kind="captions"
             >
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
