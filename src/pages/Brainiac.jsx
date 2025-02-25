@@ -133,7 +133,7 @@ const Brainiac = () => {
         </div>
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
