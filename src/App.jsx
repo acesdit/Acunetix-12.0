@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import Chatbot from "./components/Chatbot";
 import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
+import EventDetails from "./components/EventDetails";
 import chatbotIcon from "./assets/AcunetixChatbot.png";
 import EventCard from "./pages/EventCard";
 import Reel from "./components/Reel";
@@ -247,6 +248,7 @@ function App() {
       {!startAnimationComplete ? <Start /> : (
         <Routes>
           <Route path="/" element={<MainContent />} />
+          <Route path="/event/:id" element={<EventDetails />} />
           <Route path="/event/brainiac" element={<EventWrapper Component={Brainiac} />} />
           <Route path="/event/codeOfLies" element={<EventWrapper Component={CodeOfLies} />} />
           <Route path="/event/timeScape" element={<EventWrapper Component={Timescape} />} />

@@ -6,13 +6,6 @@ import Particles from "./Particles";
 import { events } from "../data/eventsData";
 
 function Event() {
-  const handleCardClick = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  };
-
   return (
     <ParallaxProvider>
       <div className="app bg-black relative min-h-screen">
@@ -36,8 +29,7 @@ function Event() {
               <Link 
                 to={`/event/${event.id}`} 
                 key={event.id} 
-                className="p-2 sm:p-4"
-                onClick={handleCardClick}
+                // className="p-2 sm:p-4"       
               >
                 <TiltedCard
                   imageSrc={event.image}
