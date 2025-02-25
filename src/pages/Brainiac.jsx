@@ -46,13 +46,13 @@ const Brainiac = () => {
               handleLinkClick();
             }}
           >
-            <img
+            {/* <img
               src={logo}
               alt="Logo"
               width={48}
               height={48}
               className="transform hover:scale-105 ml-8 transition-transform duration-300"
-            />
+            /> */}
           </a>
         </div>
       </div>
@@ -65,7 +65,7 @@ const Brainiac = () => {
         <IoArrowBack className="text-lg" />
       </button>
 
-      <div className="relative min-h-screen pt-24 ">
+      <div className=" min-h-screen pt-24 ">
         <div className="absolute inset-0">
           <LetterGlitch
             glitchSpeed={50}
