@@ -144,7 +144,7 @@ const CodeOfLies = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

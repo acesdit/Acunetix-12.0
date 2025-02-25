@@ -153,7 +153,7 @@ const CinemaEyeLens = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

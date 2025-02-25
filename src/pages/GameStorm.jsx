@@ -147,7 +147,7 @@ const GameStorm = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
