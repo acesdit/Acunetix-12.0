@@ -141,7 +141,7 @@ export const CtrlAltElite = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

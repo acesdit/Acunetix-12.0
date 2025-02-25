@@ -145,7 +145,7 @@ const Sponsors = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r text-white bg-clip-text text-transparent mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r text-white bg-clip-text mb-6">
             Our Sponsors
           </h2>
           <p className="text-gray-900 max-w-2xl mx-auto text-lg md:text-xl">

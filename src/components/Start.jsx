@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import img from "../assets/logo.png";
-// import "./styles.css";
+import img from "../assets/acunetix-logo.svg";
+import "../index.css";
 
 export default function LogoAnimation() {
   // Controls the logo's animation (move/rotate/scale)
