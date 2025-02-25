@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useNavigate} from "react-router-dom";
-
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './index.css';
+import AcunetixMetaTags from "./components/AcunetixMetaTags";
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -40,7 +39,70 @@ function MainContent() {
   const [isScrolled, setIsScrolled] = useState(false);
 
 
- 
+  useEffect(() => {
+    if (location.pathname === '/') {
+      locomotiveScroll.current = new LocomotiveScroll({
+        el: scrollRef.current,
+        smooth: true,
+        getDirection: true,
+        smartphone: {
+          smooth: true
+        },
+        tablet: {
+          smooth: false
+        }
+      });
+      const timeoutId = setTimeout(() => {
+        if (locomotiveScroll.current) {
+          locomotiveScroll.current.scrollTo(0, { 
+            immediate: true,
+            duration: 0
+          });
+        }
+      }, 200);
+
+      // Mobile detection logic
+      const checkMobile = () => {
+        return window.matchMedia('(max-width: 768px)').matches;
+        
+      };
+
+      // Handle scroll after initialization
+      const handleInitialScroll = () => {
+        // Check if we need to scroll to event section
+        const shouldScroll = location.state?.scrollToEvent;
+        
+        if (shouldScroll && eventRef.current) {
+          // Use ResizeObserver to wait for content
+          const observer = new ResizeObserver(() => {
+            locomotiveScroll.current.update();
+            locomotiveScroll.current.scrollTo(eventRef.current);
+            observer.unobserve(eventRef.current);
+          });
+
+          observer.observe(eventRef.current);
+        }
+      };
+        // Wait for initial scroll instance to be ready
+        setTimeout(handleInitialScroll, 150);
+      
+
+      
+      const handleScroll = (args) => {
+        if (heroRef.current) {
+          const heroHeight = heroRef.current.offsetHeight;
+          setIsScrolled(args.scroll.y > heroHeight);
+        }
+      };
+      locomotiveScroll.current.on('scroll', handleScroll);
+
+      return () => {
+        if (locomotiveScroll.current) {
+          locomotiveScroll.current.destroy();
+        }
+      };
+    }
+  }, [location]);
 
 
   const toggleChatbot = () => setIsChatbotVisible(!isChatbotVisible);
@@ -110,6 +172,7 @@ function App() {
 
   return (
     <>
+     <AcunetixMetaTags /> 
       {!startAnimationComplete ? <Start /> : (
         <Routes>
           <Route path="/" element={<MainContent />} />

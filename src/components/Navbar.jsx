@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/acunetix-logo.svg";
 
 const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +18,6 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
         ? "bg-black/90 backdrop-blur-lg shadow-md" 
         : "bg-transparent"
     }`}>
-
       <div className="flex items-center justify-between" style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* Left as - Desktop */}
         <div className="hidden md:flex space-x-12 gap-16">
@@ -56,8 +55,6 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
             <img
               src={logo}
               alt="Logo"
-              width={48}
-              height={48}
               className="transform hover:scale-105 ml-8 transition-transform duration-300 "
             />
           </a>

@@ -14,8 +14,14 @@ const CodeOfLies = () => {
    }
    // Function to navigate back to the Event section in the main page
    const handleBackClick = () => {
-     navigate("/", { state: { scrollToEvent: true } }); // Pass state for scrolling
-   };
+    navigate("/", {
+      state: {
+        scrollToEvent: true, // State to trigger scrolling to the event section
+        timestamp: Date.now(), // Cache buster for mobile
+      },
+      replace: true, // Replace current history entry
+    })
+  };
    //function for when clicked on register button
    const handleRegisterClick = () => {
     window.open(
@@ -47,12 +53,12 @@ const CodeOfLies = () => {
       </div>
 
       {/* Back Button */}
-      <button
-        onClick={handleBackClick}
-        className="fixed top-6 left-6  text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 transition-all duration-200 z-50"
-      >
-        <IoArrowBack className="text-lg" /> 
-      </button>
+     <button
+            onClick={handleBackClick}
+            className="fixed top-3 left-3 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 transition-all duration-200 z-50 bg-black/50 backdrop-blur-sm"
+          >
+            <IoArrowBack className="text-lg" />
+          </button>
       {/* Outer container with top and bottom padding */}
       <div className="relative min-h-screen pt-24 pb-12">
         {/* Glitch Background with Dark Overlay */}
