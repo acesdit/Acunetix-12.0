@@ -129,11 +129,13 @@ const Brainiac = () => {
                 className="rounded-xl shadow-2xl w-full md:w-auto max-w-xl max-h-[500px] object-contain transform hover:scale-105 transition-all duration-300"
               />
             </div>
+            
           </div>
         </div>
+        
       </div>
-
       {/* <Footer /> */}
+      
     </>
   );
 };

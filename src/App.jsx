@@ -64,7 +64,7 @@ function MainContent() {
   // Initialize Locomotive Scroll on main page and, if requested, scroll to Event section
   useEffect(() => {
     if (location.pathname === '/') {
-      window.scrollTo(0, 0);
+      
 
       if (!isMobile) {
         locomotiveScroll.current = new LocomotiveScroll({
@@ -192,28 +192,17 @@ function MainContent() {
 }
 
 function EventWrapper({ Component }) {
-  const navigate = useNavigate();
   const location = useLocation();
-  
-  useEffect(() => {
-    // Force scroll to top when event page loads
-    const scrollToTop = () => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    };
-    scrollToTop();
-    const timeoutId = setTimeout(scrollToTop, 100);
-    return () => clearTimeout(timeoutId);
-  }, [location.pathname]);
 
-  const handleBack = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // Navigate back to home and pass state to scroll to event section
-    navigate('/', { 
-      state: { scrollToEvent: true },
-      replace: true
-    });
-  };
+  useEffect(() => {
+    console.log("Trying to scroll to top...");
+    
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 50);
+  }, [location.pathname]);
 
   return (
     <div className="relative min-h-screen bg-black">
