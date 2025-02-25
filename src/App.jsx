@@ -40,71 +40,7 @@ function MainContent() {
   const [isScrolled, setIsScrolled] = useState(false);
 
 
-  useEffect(() => {
-    if (location.pathname === '/') {
-      // Initialize Locomotive Scroll
-      locomotiveScroll.current = new LocomotiveScroll({
-        el: scrollRef.current,
-        smooth: true,
-        getDirection: true,
-        smartphone: {
-          smooth: true
-        },
-        tablet: {
-          smooth: false
-        }
-      });
-      const timeoutId = setTimeout(() => {
-        if (locomotiveScroll.current) {
-          locomotiveScroll.current.scrollTo(0, { 
-            immediate: true,
-            duration: 0
-          });
-        }
-      }, 200);
-
-      // Mobile detection logic
-      const checkMobile = () => {
-        return window.matchMedia('(max-width: 768px)').matches;
-        
-      };
-
-      // Handle scroll after initialization
-      const handleInitialScroll = () => {
-        // Check if we need to scroll to event section
-        const shouldScroll = location.state?.scrollToEvent;
-        
-        if (shouldScroll && eventRef.current) {
-          // Use ResizeObserver to wait for content
-          const observer = new ResizeObserver(() => {
-            locomotiveScroll.current.update();
-            locomotiveScroll.current.scrollTo(eventRef.current);
-            observer.unobserve(eventRef.current);
-          });
-
-          observer.observe(eventRef.current);
-        }
-      };
-        // Wait for initial scroll instance to be ready
-        setTimeout(handleInitialScroll, 150);
-      
-
-      
-      const handleScroll = (args) => {
-        if (heroRef.current) {
-          const heroHeight = heroRef.current.offsetHeight;
-          setIsScrolled(args.scroll.y > heroHeight);
-        }
-      };
-      locomotiveScroll.current.on('scroll', handleScroll);
-
-      return () => {
-        if (locomotiveScroll.current) {
-          locomotiveScroll.current.destroy();
-        }
-      };
-    }
-  }, [location]);
+ 
 
 
   const toggleChatbot = () => setIsChatbotVisible(!isChatbotVisible);

@@ -151,7 +151,7 @@ import { useNavigate } from "react-router-dom";
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

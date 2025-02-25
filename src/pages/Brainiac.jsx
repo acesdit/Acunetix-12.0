@@ -135,7 +135,7 @@ const handleBackClick = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
