@@ -25,11 +25,11 @@ function Event() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-6 lg:px-8 pb-12 my-7 mx-[1.5rem]">
-            {events.map((event) => (
+            {events.map((event, index) => (
               <Link 
                 to={`/event/${event.id}`} 
                 key={event.id} 
-                // className="p-2 sm:p-4"       
+                // className="p-2 sm:p-4"     
               >
                 <TiltedCard
                   imageSrc={event.image}
