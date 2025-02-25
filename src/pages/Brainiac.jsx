@@ -77,7 +77,7 @@ const Brainiac = () => {
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 container mx-auto px-4 py-12 h-full sm:h-[60vh] md:h-[80vh]">
+        <div className="relative z-10 container mx-auto px-4 py-12 h-full sm:h-[30vh] md:h-[80vh]">
           <div className="flex flex-col md:flex-row items-center gap-8 h-full">
             {/* Left Column */}
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center h-full space-y-10">
