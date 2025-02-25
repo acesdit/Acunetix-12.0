@@ -84,7 +84,7 @@ const Brainiac = () => {
               <h1 className="text-5xl md:text-6xl font-bold text-white">Brainiac</h1>
 
               {/* Mobile View */}
-                      <div className="md:hidden flex flex-col items-center space-y-6">
+                      <div className="md:hidden flex flex-col items-center space-y-6" style={{ height: "80vh" }}>
                       <img
                         src={brainiacImg}
                         alt="Event Poster"
