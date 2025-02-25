@@ -29,10 +29,10 @@ const Brainiac = () => {
     window.open("https://forms.gle/VP6Ti6g6JSLWnqnx9", "_blank");
   };
 
-  // Scroll to top on component mount (especially for mobile)
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, []);
+  // // Scroll to top on component mount (especially for mobile)
+  // useEffect(() => {
+  //   window.scrollTo({ top: 0, behavior: "instant" });
+  // }, []);
 
   return (
     <>
