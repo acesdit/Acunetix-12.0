@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import Chatbot from "./components/Chatbot";
 import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
+import EventDetails from "./components/EventDetails";
 import chatbotIcon from "./assets/AcunetixChatbot.png";
 import EventCard from "./pages/EventCard";
 import Reel from "./components/Reel";
@@ -176,17 +177,19 @@ function App() {
       {!startAnimationComplete ? <Start /> : (
         <Routes>
           <Route path="/" element={<MainContent />} />
-          <Route path="/event/brainiac" element={<Brainiac />} />
-          <Route path="/event/codeOfLies" element={<CodeOfLies />} />
-          <Route path="/event/timeScape" element={<Timescape />} />
-          <Route path="/event/ctrlAltElite2" element={<CtrlAltElite />} />
-          <Route path="/event/ctrlAltElite" element={<CtrlAltElite />} />
-          <Route path="/event/cinemaEyesLens" element={<CinemaEyesLens />} />
-          <Route path="/event/timeScape2" element={<Timescape />} />
-          <Route path="/event/brainiac2" element={<Brainiac />} />
-          <Route path="/event/cinemaEyesLens2" element={<CinemaEyesLens />} />
-          <Route path="/event/codeOfLies2" element={<CodeOfLies />} />
-          <Route path="/event/:id" element={<EventCard />} />
+          <Route path="/event/:id" element={<EventDetails />} />
+          <Route path="/event/brainiac" element={<EventWrapper Component={Brainiac} />} />
+          <Route path="/event/codeOfLies" element={<EventWrapper Component={CodeOfLies} />} />
+          <Route path="/event/timeScape" element={<EventWrapper Component={Timescape} />} />
+          <Route path="/event/ctrlAltElite2" element={<EventWrapper Component={CtrlAltElite} />} />
+          <Route path="/event/ctrlAltElite" element={<EventWrapper Component={CtrlAltElite} />} />
+          <Route path="/event/cinemaEyesLens" element={<EventWrapper Component={CinemaEyesLens} />} />
+          <Route path="/event/timeScape2" element={<EventWrapper Component={Timescape} />} />
+          <Route path="/event/brainiac2" element={<EventWrapper Component={Brainiac} />} />
+          <Route path="/event/cinemaEyesLens2" element={<EventWrapper Component={CinemaEyesLens} />} />
+          <Route path="/event/codeOfLies2" element={<EventWrapper Component={CodeOfLies} />} />
+          <Route path="/event/:id" element={<EventWrapper Component={EventCard} />} />
+
         </Routes>
       )}
     </>
