@@ -150,7 +150,7 @@ export const Dpl = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

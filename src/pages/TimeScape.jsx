@@ -149,7 +149,7 @@ const Timescape = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
