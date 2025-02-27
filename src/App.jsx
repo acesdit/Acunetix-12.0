@@ -246,7 +246,6 @@ function App() {
           <Route path="/event/ctrlAltElite" element={<EventWrapper Component={CtrlAltElite} />} />
           <Route path="/event/cinemaEyesLens" element={<EventWrapper Component={CinemaEyesLens} />} />
           <Route path="/event/timeScape2" element={<EventWrapper Component={Timescape} />} />
-          
           <Route path="/event/cinemaEyesLens2" element={<EventWrapper Component={CinemaEyesLens} />} />
           <Route path="/event/codeOfLies2" element={<EventWrapper Component={CodeOfLies} />} />
           <Route path="/event/:id" element={<EventWrapper Component={EventCard} />} />
