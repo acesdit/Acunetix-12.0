@@ -59,14 +59,24 @@ export default function Chatbot({ onClose }) {
   };
 
   const generateResponse = (question) => {
+    // Trim and normalize the question
+    const normalizedQuestion = question.trim().toLowerCase();
+
+    // Check for an exact match first
+    if (Qna_db[normalizedQuestion]) {
+      return Qna_db[normalizedQuestion].answer;
+    }
+
+    // Fallback: Check for partial matches
     const matchingQuestion = Object.keys(Qna_db).find((key) =>
-      question.toLowerCase().includes(key.toLowerCase())
+      normalizedQuestion.includes(key.toLowerCase())
     );
 
     if (matchingQuestion) {
       return Qna_db[matchingQuestion].answer;
     }
 
+    // Default response if no match is found
     return "I'm not sure how to answer that question. Could you try asking something else?";
   };
 
