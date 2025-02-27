@@ -23,6 +23,8 @@ import CodeOfLies from "./pages/CodeOfLies";
 import Timescape from "./pages/TimeScape";
 import CtrlAltElite from "./pages/CtrlAltElite";
 import CinemaEyesLens from "./pages/CinemaEyesLens";
+import Dpl from "./pages/Dpl";
+import GameStorm from "./pages/GameStorm";
 
 function MainContent() {
   const scrollRef = useRef(null);
@@ -239,11 +241,12 @@ function App() {
           <Route path="/event/brainiac" element={<EventWrapper Component={Brainiac} />} />
           <Route path="/event/codeOfLies" element={<EventWrapper Component={CodeOfLies} />} />
           <Route path="/event/timeScape" element={<EventWrapper Component={Timescape} />} />
-          <Route path="/event/ctrlAltElite2" element={<EventWrapper Component={CtrlAltElite} />} />
+          <Route path="/event/dpl" element={<EventWrapper Component={Dpl} />} />
+          <Route path="/event/gamestrom" element={<EventWrapper Component={GameStorm} />} />
           <Route path="/event/ctrlAltElite" element={<EventWrapper Component={CtrlAltElite} />} />
           <Route path="/event/cinemaEyesLens" element={<EventWrapper Component={CinemaEyesLens} />} />
           <Route path="/event/timeScape2" element={<EventWrapper Component={Timescape} />} />
-          <Route path="/event/brainiac2" element={<EventWrapper Component={Brainiac} />} />
+          
           <Route path="/event/cinemaEyesLens2" element={<EventWrapper Component={CinemaEyesLens} />} />
           <Route path="/event/codeOfLies2" element={<EventWrapper Component={CodeOfLies} />} />
           <Route path="/event/:id" element={<EventWrapper Component={EventCard} />} />
