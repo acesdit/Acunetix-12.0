@@ -13,10 +13,10 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
   };
 
   return (
-    <nav className={`text-white py-6 max-sm:px-5 md:px-4 lg:px-12 fixed w-full z-50 transition-all duration-300 ${
+    <nav className={`text-white py-4 max-sm:px-5 md:px-4 lg:px-12 fixed w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? "bg-black/90 backdrop-blur-lg shadow-md" 
-        : "bg-transparent"
+        ? "bg-black/90  backdrop-blur-lg shadow-md" 
+        : "bg-black/50"
     }`}>
       <div className="flex items-center justify-between" style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* Left as - Desktop */}
