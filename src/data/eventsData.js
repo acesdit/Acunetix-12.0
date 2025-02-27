@@ -6,7 +6,7 @@
  import timeScape from "../assets/timeScape.png"
  import cinemaEyesLens from "../assets/cinemaEyesLens.png"
  import codeOfLies from "../assets/codeOfLies.png"
- import Dpl from "../assets/Dpl.png"
+ import Dpl from "../assets/dpl.png"
  import GameStorm from "../assets/GameStorm.png"
 
  
