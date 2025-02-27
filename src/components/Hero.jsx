@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import video from '../assets/Background.mp4';
-
+import video from '../assets/Background4.mp4';
 const Hero = () => {
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
