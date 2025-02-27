@@ -13,7 +13,7 @@ const Navbar = ({ scrollToRefs, scrollToSection, isScrolled }) => {
   };
 
   return (
-    <nav className={`text-white py-3 max-sm:px-5 md:px-4 lg:px-12 fixed w-full z-50 transition-all duration-300 ${
+    <nav className={`text-white py-2 max-sm:px-5 md:px-4 lg:px-12 fixed w-full z-50 transition-all duration-300 ${
       isScrolled 
         ? "bg-black/90  backdrop-blur-lg shadow-md" 
         : "bg-black/50"
