@@ -39,7 +39,7 @@ const Hero = () => {
                 preload="auto"
             >
                 <source 
-                    src="https://cdn.jsdelivr.net/gh/sujal-pawar/video@main/Background.mp4" 
+                    src="https://cdn.jsdelivr.net/gh/sujal-pawar/video@main/Background6.mp4" 
                     type="video/mp4" 
                 />
                 Your browser does not support the video tag.
