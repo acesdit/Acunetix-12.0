@@ -158,7 +158,7 @@ function MainContent() {
           data-scroll-section={!isMobile} 
           className="min-h-screen py-16"
         >
-          <SchedulePage/>
+          {/* <SchedulePage/> */}
         </section>
 
         <section 
