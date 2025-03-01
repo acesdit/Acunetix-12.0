@@ -30,7 +30,7 @@ const Hero = () => {
 
     return (
         <div className="relative w-full flex items-center justify-center h-screen">
-            <video
+            {/* <video
                 className="absolute inset-0 w-full h-full object-cover"
                 autoPlay
                 loop
@@ -43,7 +43,7 @@ const Hero = () => {
                     type="video/mp4" 
                 />
                 Your browser does not support the video tag.
-            </video>
+            </video> */}
             <div className="absolute inset-0 bg-black/50 pb-0 "></div>
             {/* Content Container */}
             <div className="relative z-10 text-center text-white p-2 md:p-12 lg:p-16 flex flex-col items-center space-y-6 sm:space-y-8 md:space-y-10" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}>
