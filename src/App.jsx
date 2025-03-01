@@ -234,7 +234,7 @@ function App() {
   return (
     <>
       <AcunetixMetaTags /> 
-      {!startAnimationComplete ? <Start /> : (
+      {/* {!startAnimationComplete ? <Start /> : ( */}
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/event/:id" element={<EventDetails />} />
@@ -250,7 +250,7 @@ function App() {
           <Route path="/event/codeOfLies2" element={<EventWrapper Component={CodeOfLies} />} />
           <Route path="/event/:id" element={<EventWrapper Component={EventCard} />} />
         </Routes>
-      )}
+      {/* )} */}
     </>
   );
 }
