@@ -15,7 +15,7 @@ import Chatbot from "./components/Chatbot";
 import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
 import EventDetails from "./components/EventDetails";
-import chatbotIcon from "./assets/AcunetixChatbot.png";
+import chatbotIcon from "./assets/AcunetixChatbot.webp";
 import EventCard from "./pages/EventCard";
 import Reel from "./components/Reel";
 import Brainiac from "./pages/Brainiac";

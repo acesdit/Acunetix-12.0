@@ -4,7 +4,7 @@ import { IoArrowBack } from "react-icons/io5";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Squares from '../components/Squares';
-import TimescapeImg from '../assets/timeScape.png'
+import TimescapeImg from '../assets/timeScape.webp';
 import logo from "../assets/logo.png";
 
 const Timescape = () => {

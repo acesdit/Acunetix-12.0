@@ -4,7 +4,7 @@ import { IoArrowBack } from "react-icons/io5";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import LetterGlitch from "../components/LetterGlitch";
-import codeoflies from "../assets/codeOfLies.png";
+import codeoflies from "../assets/codeOfLies.webp";
 import logo from "../assets/logo.png";
 
 const CodeOfLies = () => {
