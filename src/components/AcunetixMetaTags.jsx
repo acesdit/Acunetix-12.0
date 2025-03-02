@@ -3,10 +3,10 @@ import { Helmet } from "react-helmet";
 
 const AcunetixMetaTags = () => {
   const eventUrl = "https://acunetix12.tech/";
-  const highResImage = "https://acunetix12.tech/assets/acunetix-logo.png";
+  const highResImage = "./assets/acunetix-logo.svg";
   const linkedinProfile = "https://www.linkedin.com/company/acunetix-dit/";
   const instagramHandle = "@acunetix.dit";
-  const absoluteLogoUrl = "https://acunetix12.tech/assets/acunetix-logo.png";
+  const absoluteLogoUrl = "./assets/acunetix-logo.svg";
 
   return (
     <Helmet>
@@ -98,7 +98,6 @@ const AcunetixMetaTags = () => {
             "sameAs": [
               linkedinProfile,
               `https://www.instagram.com/${instagramHandle}`,
-              "https://twitter.com/aces_dypatil"
             ],
             "contactPoint": {
               "@type": "ContactPoint",

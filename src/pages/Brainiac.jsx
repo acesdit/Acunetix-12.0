@@ -4,7 +4,7 @@ import { IoArrowBack } from "react-icons/io5";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import LetterGlitch from "../components/LetterGlitch";
-import brainiacImg from "../assets/Brainiac.png";
+import brainiacImg from "../assets/Brainiac.webp";
 import logo from "../assets/logo.png";
 
 const Brainiac = () => {

@@ -1,11 +1,13 @@
- import treasureTrove from "../assets/treasureTrove.png"
- import Brainiac from "../assets/Brainiac.png"
- import insightOPS from "../assets/insightOPS.png"
- import CtrlAltElite from "../assets/CtrlAltElite.png"
- import uxHunt from "../assets/uxHunt.png"
- import timeScape from "../assets/timeScape.png"
- import cinemaEyesLens from "../assets/cinemaEyesLens.png"
- import codeOfLies from "../assets/codeOfLies.png"
+//  import treasureTrove from "../assets/treasureTrove.webp"
+ import Brainiac from "../assets/Brainiac.webp"
+//  import insightOPS from "../assets/insightOPS.png"
+ import CtrlAltElite from "../assets/CtrlAltElite.webp"
+//  import uxHunt from "../assets/uxHunt.png"
+ import timeScape from "../assets/timeScape.webp"
+ import cinemaEyesLens from "../assets/cinemaEyesLens.webp"
+ import codeOfLies from "../assets/codeOfLies.webp"
+ import Dpl from "../assets/dpl.webp"
+ import GameStorm from "../assets/GameStorm.webp"
 
  
  export const events = [
@@ -45,19 +47,19 @@
       link: "/event/cinemaEyesLens",
     },
     {
-      id: "brainiac2",
-      image: Brainiac,
+      id: "Dpl",
+      image: Dpl,
       title: "Event 6",
       description: "This is the sixth event.",
-      link: "/event/brainiac2",
+      link: "/event/dpl",
     },
     
     {
-      id: "ctrlAltElite2",
-      image: CtrlAltElite,
+      id: "GameStorm",
+      image: GameStorm,
       title: "Event 7",
       description: "This is the seventh event.",
-      link: "/event/CtrlAltElite2",
+      link: "/event/gamestrom",
     },
    
     

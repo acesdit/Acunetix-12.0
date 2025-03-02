@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import video from '../assets/Background.mp4';
 
 const Hero = () => {
     const [timeLeft, setTimeLeft] = useState({
@@ -39,14 +38,17 @@ const Hero = () => {
                 playsInline
                 preload="auto"
             >
-                <source src={video} type="video/mp4" />
+                <source 
+                    src="https://cdn.jsdelivr.net/gh/sujal-pawar/video@main/Background6.mp4" 
+                    type="video/mp4" 
+                />
                 Your browser does not support the video tag.
             </video>
-
+            <div className="absolute inset-0 bg-black/50 pb-0 "></div>
             {/* Content Container */}
             <div className="relative z-10 text-center text-white p-2 md:p-12 lg:p-16 flex flex-col items-center space-y-6 sm:space-y-8 md:space-y-10" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}>
 
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-sans">Acunetix 12.0</h1>
+                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-sans">Acunetix 12.0</h1>
                 <p className="text-md sm:text-lg md:text-2xl lg:text-3xl">Dive into the world of illusions</p>
 
                 {/* Countdown Timer */}

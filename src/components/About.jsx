@@ -28,10 +28,10 @@ const About = () => {
       </div>
 
       {/* Mobile-First Animations */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ 
+        transition={{
           duration: prefersReducedMotion ? 0 : 0.8,
           ease: "easeOut"
         }}
@@ -40,7 +40,7 @@ const About = () => {
         <motion.h1
           initial={{ scale: 0.95 }}
           animate={{ scale: 1 }}
-          transition={{ 
+          transition={{
             duration: prefersReducedMotion ? 0 : 1.2,
             ease: "backOut"
           }}
@@ -52,15 +52,13 @@ const About = () => {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ 
+          transition={{
             delay: prefersReducedMotion ? 0 : 0.3,
             duration: prefersReducedMotion ? 0 : 0.8
           }}
           className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8 pt-6 sm:pt-10"
         >
-          Pioneering the future of digital experiences, we blend cutting-edge technology 
-          with creative vision to deliver transformative solutions. Our team of experts 
-          thrives at the intersection of <strong>innovation</strong> and <strong>execution</strong>.
+          <strong>Acunetix 12.0 </strong> is a flagship event organised by ACES and CSI, offering a range  of Tech & Non-Tech events. Participants take part in diverse competitions, showcasing their skills and earning recognition. With exciting prizes and a mix of solo and team events, it's a unique opportunity for students to shine and be part of an unforgettable experience.
         </motion.p>
       </motion.div>
     </section>
