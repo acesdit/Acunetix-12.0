@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import video from '../assets/Background6.mp4';
 
 const Hero = () => {
     const [timeLeft, setTimeLeft] = useState({
@@ -39,7 +40,8 @@ const Hero = () => {
                 preload="auto"
             >
                 <source 
-                    src="https://cdn.jsdelivr.net/gh/sujal-pawar/video@main/Background6.mp4" 
+                    // src="https://cdn.jsdelivr.net/gh/sujal-pawar/video@main/Background6.mp4" 
+                    src={video}
                     type="video/mp4" 
                 />
                 Your browser does not support the video tag.
