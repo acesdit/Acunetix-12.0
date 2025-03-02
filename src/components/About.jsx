@@ -1,8 +1,6 @@
-import React, { useState, useEffect, lazy, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import "./About.css";
-
-const Hyperspeed = lazy(() => import("../animation/Backgrounds/Hyperspeed/Hyperspeed"));
 
 const About = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -20,13 +18,6 @@ const About = () => {
 
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-black overflow-hidden px-4 sm:px-6">
-      {/* Mobile-Optimized Background */}
-      <div className="absolute inset-0 z-0 w-full h-full">
-        <Suspense fallback={<div className="bg-black absolute inset-0" />}>
-          <Hyperspeed mobileOptimized={isMobile} />
-        </Suspense>
-      </div>
-
       {/* Mobile-First Animations */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
