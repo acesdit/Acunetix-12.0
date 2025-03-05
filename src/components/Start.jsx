@@ -31,14 +31,14 @@ export default function LogoAnimation() {
       {/* Logo Container */}
       {showLogo && (
         <div
-          className={`relative flex flex-col items-center transition-all duration-1000 ${
+          className={`relative flex flex-col items-center transition-all duration-300 ${
             moveUp ? "mt-[-40vh]" : "mt-0"
           }`}
         >
           <img
             src={img}
             alt="Logo of Acunetix"
-            className={`w-24 h-24 sm:w-32 sm:h-32 transition-transform duration-1000 ${
+            className={`w-24 h-24 sm:w-32 sm:h-32 transition-transform duration-500 ${
               moveUp
                 ? "translate-y-[-24vh] max-sm:translate-y-[-18vh] scale-40 rotate-360"
                 : ""
