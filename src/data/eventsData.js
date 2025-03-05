@@ -1,10 +1,9 @@
 //  import treasureTrove from "../assets/treasureTrove.webp"
- import Brainiac from "../assets/Brainiac.webp"
+import Brainiac from "../assets/Brainiac.webp"
 //  import insightOPS from "../assets/insightOPS.png"
  import CtrlAltElite from "../assets/CtrlAltElite.webp"
 //  import uxHunt from "../assets/uxHunt.png"
  import timeScape from "../assets/timeScape.webp"
- import cinemaEyesLens from "../assets/cinemaEyesLens.webp"
  import codeOfLies from "../assets/codeOfLies.webp"
  import Dpl from "../assets/dpl.webp"
  import GameStorm from "../assets/GameStorm.webp"
@@ -17,7 +16,7 @@
   {
     id: "TreasureTrove",
     image: TreasureTroveImg,
-    title: "Treasure Trove",
+    title: "TreasureTrove",
     description: "First Event",
     link: "/event/TreasureTrove",
   },
@@ -26,7 +25,7 @@
     image: GameStorm,
     title: "Event 1",
     description: "First Event",
-    link: "/event/brainiac",
+    link: "/event/gameStorm",
   },
     {
       id: "brainiac",
@@ -72,25 +71,11 @@
       link: "/event/build-a-thon",
     },
     {
-      id: "timeScape2",
-      image:timeScape,
-      title: "Event 8",
-      description: "This is the eighth event.",
-      link: "/event/timeScape2",
-    },
-    {
-    id: "codeOfLies2",
-    image: codeOfLies,
+    id: "BugBounty",
+    image: BugbountyImg,
     title: "Event 9",
     description: "This is the ninth event.",
-    link: "/event/codeOfLies2",
-  },
-  {
-    id: "cinemaEyesLens2",
-    image: cinemaEyesLens,
-    title: "Event 10",
-    description: "This is the tenth event.",
-    link: "/event/cinemaEyesLens2",
+    link: "/event/BugBounty",
   },
   ];
   
