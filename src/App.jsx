@@ -27,6 +27,7 @@ import Dpl from "./pages/Dpl";
 import GameStorm from "./pages/GameStorm";
 import BuildAThon from "./pages/Build-A-Thon";
 import BugBounty from "./pages/BugBounty";
+import TreasureTrove from "./pages/TreasureTrove";
 
 function MainContent() {
   const scrollRef = useRef(null);
@@ -246,13 +247,14 @@ function App() {
           <Route path="/event/dpl" element={<EventWrapper Component={Dpl} />} />
           <Route path="/event/gamestrom" element={<EventWrapper Component={GameStorm} />} />
           <Route path="/event/ctrlAltElite" element={<EventWrapper Component={CtrlAltElite} />} />
-          <Route path="/event/cinemaEyesLens" element={<EventWrapper Component={CinemaEyesLens} />} />
-          <Route path="/event/timeScape2" element={<EventWrapper Component={Timescape} />} />
-          <Route path="/event/cinemaEyesLens2" element={<EventWrapper Component={CinemaEyesLens} />} />
-          <Route path="/event/codeOfLies2" element={<EventWrapper Component={CodeOfLies} />} />
+          {/* <Route path="/event/cinemaEyesLens" element={<EventWrapper Component={CinemaEyesLens} />} /> */}
+          {/* <Route path="/event/timeScape2" element={<EventWrapper Component={Timescape} />} /> */}
+          {/* <Route path="/event/cinemaEyesLens2" element={<EventWrapper Component={CinemaEyesLens} />} /> */}
+          {/* <Route path="/event/codeOfLies2" element={<EventWrapper Component={CodeOfLies} />} /> */}
           <Route path="/event/:id" element={<EventWrapper Component={EventCard} />} />
           <Route path="/event/build-a-thon" element={<EventWrapper Component={BuildAThon} /> } />
           <Route path="/event/BugBounty" element={<EventWrapper Component={BugBounty} /> } />
+          <Route path="/event/TreasureTrove" element={<EventWrapper Component={TreasureTrove} />}/>
         </Routes>
       )}
     </>
