@@ -4,7 +4,6 @@
  import CtrlAltElite from "../assets/CtrlAltElite.webp"
 //  import uxHunt from "../assets/uxHunt.png"
  import timeScape from "../assets/timeScape.webp"
- import cinemaEyesLens from "../assets/cinemaEyesLens.webp"
  import codeOfLies from "../assets/codeOfLies.webp"
  import Dpl from "../assets/dpl.webp"
  import GameStorm from "../assets/GameStorm.webp"
@@ -17,7 +16,7 @@
   {
     id: "TreasureTrove",
     image: TreasureTroveImg,
-    title: "Treasure Trove",
+    title: "TreasureTrove",
     description: "First Event",
     link: "/event/TreasureTrove",
   },
@@ -26,7 +25,7 @@
     image: GameStorm,
     title: "Event 1",
     description: "First Event",
-    link: "/event/brainiac",
+    link: "/event/GameStorm",
   },
     {
       id: "brainiac",
