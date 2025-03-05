@@ -36,7 +36,7 @@ function Event() {
               <Link 
                 to={`/event/${event.id}`} 
                 key={event.id} 
-                className={`p-2 sm:p-4 ${index === events.length - 1 ? 'sm:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}
+                className={`p-2 sm:p-4 ' : ''}`}
                 onClick={handleCardClick}
               >
                 <TiltedCard
