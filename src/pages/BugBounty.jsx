@@ -92,7 +92,7 @@ const BugBounty = () => {
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">
                         <p className="text-gray-50 text-sm leading-relaxed">
-                          The Ultimate Debugging Battle: Got an eye for detail? Dive into broken code, hidden bugs, and tricky errors! Compete solo or in teams to debug and optimize your way to victory. Fix fast, think smart — will you be the ultimate debugger?
+                        Think you have an eye for detail? Step into the world of broken code, hidden errors, and tricky bugs waiting to be squashed! Compete solo or in teams to debug, optimize, and restore code to perfection. The faster you fix, the closer you get to victory. Can you outsmart the glitches and emerge as the ultimate debugger?
                         </p>
                       </div>
                       <button
@@ -107,7 +107,7 @@ const BugBounty = () => {
               <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border mb-15 border-gray-500 p-11 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                  The Ultimate Debugging Battle: Got an eye for detail? Dive into broken code, hidden bugs, and tricky errors! Compete solo or in teams to debug and optimize your way to victory. Fix fast, think smart — will you be the ultimate debugger?
+                  Think you have an eye for detail? Step into the world of broken code, hidden errors, and tricky bugs waiting to be squashed! Compete solo or in teams to debug, optimize, and restore code to perfection. The faster you fix, the closer you get to victory. Can you outsmart the glitches and emerge as the ultimate debugger?
                   </p>
                 </div>
                 <div className="flex justify-center">

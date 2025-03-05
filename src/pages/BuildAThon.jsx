@@ -92,7 +92,7 @@ const BuildAThon = () => {
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">
                         <p className="text-gray-50 text-sm leading-relaxed">
-                         A 90-minute no-code challenge where creativity leads the way! Solo or duo teams will build a functional app or website using no-code tools — with a surprise twist! Compete for exciting rewards and showcase your innovation. Register now and unleash your creativity!
+                        A no-code development challenge where creativity takes the lead! In just 90 minutes, solo participants or teams of two will use powerful no-code tools to build a fully functional app or website—no coding required. But be prepared for an exciting surprise twist! Compete for exciting rewards and showcase your innovation in this one-of-a-kind challenge. Register now and unleash your creativity!
                         </p>
                       </div>
                       <button
@@ -107,7 +107,7 @@ const BuildAThon = () => {
               <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border mb-15 border-gray-500 p-11 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                  A 90-minute no-code challenge where creativity leads the way! Solo or duo teams will build a functional app or website using no-code tools — with a surprise twist! Compete for exciting rewards and showcase your innovation. Register now and unleash your creativity!
+                  A no-code development challenge where creativity takes the lead! In just 90 minutes, solo participants or teams of two will use powerful no-code tools to build a fully functional app or website—no coding required. But be prepared for an exciting surprise twist! Compete for exciting rewards and showcase your innovation in this one-of-a-kind challenge. Register now and unleash your creativity!
                   </p>
                 </div>
                 <div className="flex justify-center">

@@ -91,7 +91,7 @@ const GameStorm = () => {
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">
                         <p className="text-gray-50 text-sm leading-relaxed">
-                        The Ultimate Strategy Showdown: A fast-paced battle of wits, speed & strategy! Face unpredictable challenges, test your logic & reflexes, and outsmart rivals solo or in teams. Are you ready to conquer the game?
+                        A high-intensity battle of wits, speed, and strategy! Brace yourself for unpredictable challenges that will test your logic, reflexes, and adaptability. Compete solo or in teams, outthink your rivals, and claim victory in this electrifying showdown. Are you ready to storm the game?
                         </p>
                       </div>
                       <button
@@ -106,7 +106,7 @@ const GameStorm = () => {
               <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border mb-15 border-gray-500 p-11 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                  The Ultimate Strategy Showdown: A fast-paced battle of wits, speed & strategy! Face unpredictable challenges, test your logic & reflexes, and outsmart rivals solo or in teams. Are you ready to conquer the game?
+                  A high-intensity battle of wits, speed, and strategy! Brace yourself for unpredictable challenges that will test your logic, reflexes, and adaptability. Compete solo or in teams, outthink your rivals, and claim victory in this electrifying showdown. Are you ready to storm the game?
                   </p>
                 </div>
                 <div className="flex justify-center">

@@ -93,7 +93,7 @@ const CtrlAltElite = () => {
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">
                         <p className="text-gray-50 text-sm leading-relaxed">
-                        The Code Clash – A thrilling coding competition where only the best survive! Compete solo or in pairs across 3 intense rounds: MCQs, debugging, and a final coding battle in any language. Cash prizes, rewards & goodies await the champions. Register now and prove your coding prowess!
+                        An electrifying coding competition where the best prevail! Compete solo or in a duo through three intense rounds—an MCQ-based challenge, a debugging round, and a final coding battle where you can use any programming language. Test your skills, solve complex problems, and prove your coding prowess. Exciting cash prizes, rewards, and goodies await the champions. Register now and step into the ultimate coding battlefield!
                         </p>
                       </div>
                       <button
@@ -108,7 +108,7 @@ const CtrlAltElite = () => {
               <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border mb-15 border-gray-500 p-11 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                  The Code Clash – A thrilling coding competition where only the best survive! Compete solo or in pairs across 3 intense rounds: MCQs, debugging, and a final coding battle in any language. Cash prizes, rewards & goodies await the champions. Register now and prove your coding prowess!
+                  An electrifying coding competition where the best prevail! Compete solo or in a duo through three intense rounds—an MCQ-based challenge, a debugging round, and a final coding battle where you can use any programming language. Test your skills, solve complex problems, and prove your coding prowess. Exciting cash prizes, rewards, and goodies await the champions. Register now and step into the ultimate coding battlefield!
                   </p>
                 </div>
                 <div className="flex justify-center">

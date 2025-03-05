@@ -92,7 +92,7 @@ const Timescape = () => {
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">
                         <p className="text-gray-50 text-sm leading-relaxed">
-                        The Ultimate Escape Challenge: A thrilling escape room where nothing is as it seems! Solve puzzles, uncover secrets, and race against time in teams. Can you escape before the illusion traps you forever?
+                        A mind-bending escape room experience where nothing is as it seems! Step into a world of shifting realities, crack intricate puzzles, and unravel secrets that defy time. Work in teams, test your wit, and escape before the illusion traps you forever. Do you have what it takes?
                         </p>
                       </div>
                       <button
@@ -107,7 +107,7 @@ const Timescape = () => {
               <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border mb-15 border-gray-500 p-11 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                  The Ultimate Escape Challenge: A thrilling escape room where nothing is as it seems! Solve puzzles, uncover secrets, and race against time in teams. Can you escape before the illusion traps you forever?
+                  A mind-bending escape room experience where nothing is as it seems! Step into a world of shifting realities, crack intricate puzzles, and unravel secrets that defy time. Work in teams, test your wit, and escape before the illusion traps you forever. Do you have what it takes?
                   </p>
                 </div>
                 <div className="flex justify-center">

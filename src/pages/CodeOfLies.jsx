@@ -91,7 +91,7 @@ const CodeOfLies = () => {
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">
                         <p className="text-gray-50 text-sm leading-relaxed">
-                        Code of Lies is an interactive Capture The Flag (CTF)-style event where participants solve a single round containing 10 deception-based challenges to uncover the final truth and access The Mirage Vault.
+                        A thrilling cryptic hunt that challenges participants to decode mind-boggling puzzles and unravel mysteries. The event takes participants on a journey through a series of thought-provoking challenges that require sharp logic and creativity. This is the perfect event to push your intellectual limits.
                         </p>
                       </div>
                       <button
@@ -106,7 +106,7 @@ const CodeOfLies = () => {
               <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border mb-15 border-gray-500 p-11 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                  Code of Lies is an interactive Capture The Flag (CTF)-style event where participants solve a single round containing 10 deception-based challenges to uncover the final truth and access The Mirage Vault.
+                  A thrilling cryptic hunt that challenges participants to decode mind-boggling puzzles and unravel mysteries. The event takes participants on a journey through a series of thought-provoking challenges that require sharp logic and creativity. This is the perfect event to push your intellectual limits.
                   </p>
                 </div>
                 <div className="flex justify-center">
