@@ -92,7 +92,7 @@ const Dpl = () => {
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">
                         <p className="text-gray-50 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        D.Y. Patil Premier League: Show off your cricket knowledge, strategy, and auction skills! Start with a Cricket Quiz, build your team through player selection and an IPL-style auction, and compete for glory. Are you ready to create your dream XI?
                         </p>
                       </div>
                       <button
@@ -107,7 +107,7 @@ const Dpl = () => {
               <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border mb-15 border-gray-500 p-11 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  D.Y. Patil Premier League: Show off your cricket knowledge, strategy, and auction skills! Start with a Cricket Quiz, build your team through player selection and an IPL-style auction, and compete for glory. Are you ready to create your dream XI?
                   </p>
                 </div>
                 <div className="flex justify-center">
