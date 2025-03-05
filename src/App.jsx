@@ -22,7 +22,6 @@ import Brainiac from "./pages/Brainiac";
 import CodeOfLies from "./pages/CodeOfLies";
 import Timescape from "./pages/TimeScape";
 import CtrlAltElite from "./pages/CtrlAltElite";
-import CinemaEyesLens from "./pages/CinemaEyesLens";
 import Dpl from "./pages/Dpl";
 import GameStorm from "./pages/GameStorm";
 import BuildAThon from "./pages/BuildAThon";
@@ -242,6 +241,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/event/:id" element={<EventDetails />} />
+          <Route path="/event/TreasureTrove" element={<EventWrapper Component={TreasureTrove} />}/>
           <Route path="/event/brainiac" element={<EventWrapper Component={Brainiac} />} />
           <Route path="/event/codeOfLies" element={<EventWrapper Component={CodeOfLies} />} />
           <Route path="/event/timeScape" element={<EventWrapper Component={Timescape} />} />
@@ -257,7 +257,6 @@ function App() {
           <Route path="/event/BugBounty" element={<EventWrapper Component={BugBounty} /> } />
           <Route path="/event/TreasureTrove" element={<EventWrapper Component={TreasureTrove} />}/>
           <Route path="/event/gameStorm" element={<EventWrapper Component={GameStorm} />}/>
-
         </Routes>
       )}
     </>

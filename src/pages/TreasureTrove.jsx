@@ -78,7 +78,7 @@ const TreasureTrove= () => {
             <div className="flex flex-col md:flex-row items-center gap-8 h-full">
               {/* Left Column */}
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center h-full space-y-10">
-              <h1 className="text-5xl md:text-6xl font-bold text-white">Dpu Premier League</h1>
+              <h1 className="text-5xl md:text-6xl font-bold text-white">Treasure Trove</h1>
 
               {/* Mobile View */}
                       <div className="md:hidden flex flex-col items-center space-y-10" >
