@@ -144,13 +144,17 @@ html.has-scroll-smooth {
 
   
 .animate-fadeIn {
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .fade-out {
   opacity: 0;
   transition: opacity 1s ease-out;
 }
+h1, p {
+  will-change: opacity, transform;
+}
+
 html, body {
   height: 100%;
   overflow-x: hidden;
