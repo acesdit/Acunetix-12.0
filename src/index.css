@@ -1,50 +1,61 @@
-/* Import Tailwind */
+/* Optimized Global Styles */
 @import "tailwindcss";
 
-/* Font Optimization */
-@font-face {
-    font-family: "Zen Dots";
-    src: url("/assets/fonts/ZenDots-Regular.woff") format("woff");
-    font-display: swap; /* Reduces FOIT */
-}
-
-/* Global Styles */
 :root {
     font-family: 'Zen Dots', sans-serif;
     line-height: 1.5;
     font-weight: 400;
     color: rgba(230, 216, 216, 0.87);
     background-color: #000000;
+    font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    scroll-behavior: smooth;
 }
 
-/* Text Gradient */
+@font-face {
+    font-family: "Zen Dots";
+    src: url("/assets/fonts/ZenDots-Regular.woff") format("woff");
+    font-display: swap;
+}
+
 h1, p {
     font-family: "Zen Dots", sans-serif;
     font-weight: 400;
+    font-style: normal;
+    color: transparent;
     background: linear-gradient(to bottom, #999999, #FFFFFF, #999999);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Smooth Scrolling */
+/* Smooth Scroll */
 html.has-scroll-smooth {
+    overflow: hidden;
     touch-action: manipulation;
 }
 
 [data-scroll-container] {
     min-height: 100vh;
+    perspective: 1px;
+    transform-style: preserve-3d;
+}
+
+[data-scroll-section] {
+    transform: translateZ(0);
     will-change: transform;
 }
 
-/* Animation Optimizations */
+/* Animation Keyframes Optimization */
 @keyframes illusion {
     0%, 100% { opacity: 0.1; }
     50% { opacity: 0.15; }
+}
+
+@keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @keyframes fadeIn {
@@ -53,24 +64,24 @@ html.has-scroll-smooth {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); opacity: 0.8; }
-    50% { transform: translateY(10px); }
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0.8; }
+    50% { transform: translateY(10px) translateX(-10px); }
 }
 
-/* Optimized Animations */
 .animate-illusion { animation: illusion 1s ease-in-out infinite; }
-.animate-fadeIn { animation: fadeIn 0.8s ease-in-out; }
-.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 100s linear infinite; }
+.animate-fadeIn { animation: fadeIn 1s ease-in-out; }
+.animate-float { animation: float 8s ease-in-out infinite; }
 
-/* Hide Scrollbars */
+/* Scrollbar Hide */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Optimized Button Selector */
+/* Improved Button Selector */
 .selector-group {
     position: relative;
     margin: 2rem 0;
-    display: flex;
+    display: inline-flex;
     background: linear-gradient(145deg, #6366f1, #8b5cf6, #ec4899);
     padding: 4px;
     border-radius: 12px;
@@ -78,19 +89,19 @@ html.has-scroll-smooth {
 }
 
 .selector-button {
+    position: relative;
     padding: 12px 24px;
     border: none;
     background: rgba(255, 255, 255, 0.1);
     color: white;
     font-weight: 500;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     border-radius: 8px;
     backdrop-filter: blur(4px);
-    will-change: transform, background;
 }
 
-.selector-button:hover { background: rgba(255, 255, 255, 0.2); transform: scale(1.05); }
+.selector-button:hover { background: rgba(255, 255, 255, 0.2); }
 .selector-button.active {
     background: linear-gradient(145deg, rgba(99, 102, 241, 0.9), rgba(139, 92, 246, 0.9));
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
