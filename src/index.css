@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap'); */
 @import "tailwindcss";
 :root {
     font-family: 'Zen Dots';
@@ -14,9 +14,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+  @font-face {
+    font-family: "Zen Dots";
+    src: url("/assets/fonts/ZenDots-Regular.woff") format("woff");
+    font-display: swap;
+  }
+   
 h1{
     font-family: "Zen Dots", serif;
+    font-display: swap;
     font-weight: 400;
     font-style: normal;
     color: transparent;
