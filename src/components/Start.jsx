@@ -39,6 +39,7 @@ export default function LogoAnimation() {
             src={img}
             alt="Logo"
              fetchpriority="high"
+             loading="eager"
             className={`w-24 h-24 sm:w-32 sm:h-32 transition-transform duration-1000 ${
               moveUp
                 ? "translate-y-[-24vh] max-sm:translate-y-[-18vh] scale-40 rotate-360"
