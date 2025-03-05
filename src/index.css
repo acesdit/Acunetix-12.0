@@ -151,9 +151,6 @@ html.has-scroll-smooth {
   opacity: 0;
   transition: opacity 1s ease-out;
 }
-h1, p {
-  will-change: opacity, transform;
-}
 
 html, body {
   height: 100%;
