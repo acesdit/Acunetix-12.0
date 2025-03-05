@@ -37,7 +37,7 @@ export default function LogoAnimation() {
         >
           <img
             src={img}
-            alt="Logo"
+            alt="Logo of Acunetix"
             className={`w-24 h-24 sm:w-32 sm:h-32 transition-transform duration-1000 ${
               moveUp
                 ? "translate-y-[-24vh] max-sm:translate-y-[-18vh] scale-40 rotate-360"
