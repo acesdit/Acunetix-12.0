@@ -252,7 +252,7 @@ function App() {
           {/* <Route path="/event/timeScape2" element={<EventWrapper Component={Timescape} />} /> */}
           {/* <Route path="/event/cinemaEyesLens2" element={<EventWrapper Component={CinemaEyesLens} />} /> */}
           {/* <Route path="/event/codeOfLies2" element={<EventWrapper Component={CodeOfLies} />} /> */}
-          <Route path="/event/:id" element={<EventWrapper Component={EventCard} />} />
+          {/* <Route path="/event/:id" element={<EventWrapper Component={EventCard} />} /> */}
           <Route path="/event/build-a-thon" element={<EventWrapper Component={BuildAThon} /> } />
           <Route path="/event/BugBounty" element={<EventWrapper Component={BugBounty} /> } />
           <Route path="/event/TreasureTrove" element={<EventWrapper Component={TreasureTrove} />}/>
