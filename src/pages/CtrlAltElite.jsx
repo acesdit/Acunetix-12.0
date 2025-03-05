@@ -93,7 +93,7 @@ const CtrlAltElite = () => {
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">
                         <p className="text-gray-50 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        The Code Clash – A thrilling coding competition where only the best survive! Compete solo or in pairs across 3 intense rounds: MCQs, debugging, and a final coding battle in any language. Cash prizes, rewards & goodies await the champions. Register now and prove your coding prowess!
                         </p>
                       </div>
                       <button
@@ -108,7 +108,7 @@ const CtrlAltElite = () => {
               <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border mb-15 border-gray-500 p-11 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  The Code Clash – A thrilling coding competition where only the best survive! Compete solo or in pairs across 3 intense rounds: MCQs, debugging, and a final coding battle in any language. Cash prizes, rewards & goodies await the champions. Register now and prove your coding prowess!
                   </p>
                 </div>
                 <div className="flex justify-center">

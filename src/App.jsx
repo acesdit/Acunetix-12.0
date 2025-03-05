@@ -140,13 +140,7 @@ function MainContent() {
           <Hero />
         </section>
 
-        <section 
-          ref={aboutRef} 
-          data-scroll-section={!isMobile} 
-          className='flex bg-black text-white flex-col items-center justify-center min-h-screen w-full'
-        >
-          <About />
-        </section>
+        
 
         <section 
           ref={eventRef} 
@@ -156,6 +150,13 @@ function MainContent() {
           <Event />
         </section>
 
+        <section 
+          ref={aboutRef} 
+          data-scroll-section={!isMobile} 
+          className='flex bg-black text-white flex-col items-center justify-center min-h-screen w-full'
+        >
+          <About />
+        </section>
         {/* <section 
           ref={scheduleRef} 
           data-scroll-section={!isMobile} 

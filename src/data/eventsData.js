@@ -72,12 +72,25 @@
       link: "/event/build-a-thon",
     },
     {
-      id: "BugBounty",
-      image: BugbountyImg,
-      title: "Event 6",
-      description: "This is the sixth event.",
-      link: "/event/BugBounty",
+      id: "timeScape2",
+      image:timeScape,
+      title: "Event 8",
+      description: "This is the eighth event.",
+      link: "/event/timeScape2",
     },
-    
+    {
+    id: "codeOfLies2",
+    image: codeOfLies,
+    title: "Event 9",
+    description: "This is the ninth event.",
+    link: "/event/codeOfLies2",
+  },
+  {
+    id: "cinemaEyesLens2",
+    image: cinemaEyesLens,
+    title: "Event 10",
+    description: "This is the tenth event.",
+    link: "/event/cinemaEyesLens2",
+  },
   ];
   
