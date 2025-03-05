@@ -78,12 +78,12 @@
     description: "This is the ninth event.",
     link: "/event/codeOfLies2",
   },
-  {
-    id: "cinemaEyesLens2",
-    image: cinemaEyesLens,
-    title: "Event 10",
-    description: "This is the tenth event.",
-    link: "/event/cinemaEyesLens2",
-  },
+  // {
+  //   id: "cinemaEyesLens2",
+  //   image: cinemaEyesLens,
+  //   title: "Event 10",
+  //   description: "This is the tenth event.",
+  //   link: "/event/cinemaEyesLens2",
+  // },
   ];
   
