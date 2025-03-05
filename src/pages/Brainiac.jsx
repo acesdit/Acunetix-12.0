@@ -88,6 +88,7 @@ const Brainiac = () => {
                       <img
                         src={brainiacImg}
                         alt="Event Poster"
+                        loading="lazy"
                         className="rounded-xl shadow-2xl w-full max-w-sm max-h-[350px] object-contain transform hover:scale-105 transition-all duration-300"
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">

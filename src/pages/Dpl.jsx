@@ -87,6 +87,7 @@ const Dpl = () => {
                       <div className="md:hidden flex flex-col items-center space-y-10" >
                       <img
                         src={dplImg}
+                        loading="lazy"
                         alt="Event Poster"
                         className="rounded-xl shadow-2xl w-full max-w-sm max-h-[350px] object-contain transform hover:scale-105 transition-all duration-300"
                       />
