@@ -241,6 +241,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/event/:id" element={<EventDetails />} />
+          <Route path="/event/TreasureTrove" element={<EventWrapper Component={TreasureTrove} />}/>
           <Route path="/event/brainiac" element={<EventWrapper Component={Brainiac} />} />
           <Route path="/event/codeOfLies" element={<EventWrapper Component={CodeOfLies} />} />
           <Route path="/event/timeScape" element={<EventWrapper Component={Timescape} />} />
@@ -250,7 +251,7 @@ function App() {
           {/* <Route path="/event/:id" element={<EventWrapper Component={EventCard} />} /> */}
           <Route path="/event/build-a-thon" element={<EventWrapper Component={BuildAThon} /> } />
           <Route path="/event/BugBounty" element={<EventWrapper Component={BugBounty} /> } />
-          <Route path="/event/TreasureTrove" element={<EventWrapper Component={TreasureTrove} />}/>
+          
         </Routes>
       )}
     </>
