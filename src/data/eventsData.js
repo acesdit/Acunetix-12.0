@@ -8,9 +8,26 @@
  import codeOfLies from "../assets/codeOfLies.webp"
  import Dpl from "../assets/dpl.webp"
  import GameStorm from "../assets/GameStorm.webp"
+ import TreasureTroveImg from "../assets/treasure-trove.webp";
+ import BuildAThonImg from "../assets/build-a-thon.webp";
+ import BugbountyImg from "../assets/Bugbounty.webp";
 
  
  export const events = [
+  {
+    id: "TreasureTrove",
+    image: TreasureTroveImg,
+    title: "Treasure Trove",
+    description: "First Event",
+    link: "/event/TreasureTrove",
+  },
+  {
+    id: "GameStorm",
+    image: GameStorm,
+    title: "Event 1",
+    description: "First Event",
+    link: "/event/brainiac",
+  },
     {
       id: "brainiac",
       image: Brainiac,
@@ -39,13 +56,7 @@
       description: "This is the fourth event.",
       link: "/event/codeOfLies",
     },
-    {
-      id: "cinemaEyesLens",
-      image: cinemaEyesLens,
-      title: "Event 5",
-      description: "This is the fifth event.",
-      link: "/event/cinemaEyesLens",
-    },
+   
     {
       id: "Dpl",
       image: Dpl,
@@ -53,17 +64,13 @@
       description: "This is the sixth event.",
       link: "/event/dpl",
     },
-    
     {
-      id: "GameStorm",
-      image: GameStorm,
-      title: "Event 7",
-      description: "This is the seventh event.",
-      link: "/event/gamestrom",
+      id: "BuildAThon",
+      image: BuildAThonImg,
+      title: "BuildAThon",
+      description: "This is the sixth event.",
+      link: "/event/build-a-thon",
     },
-   
-    
-   
     {
       id: "timeScape2",
       image:timeScape,
@@ -78,12 +85,12 @@
     description: "This is the ninth event.",
     link: "/event/codeOfLies2",
   },
-  // {
-  //   id: "cinemaEyesLens2",
-  //   image: cinemaEyesLens,
-  //   title: "Event 10",
-  //   description: "This is the tenth event.",
-  //   link: "/event/cinemaEyesLens2",
-  // },
+  {
+    id: "cinemaEyesLens2",
+    image: cinemaEyesLens,
+    title: "Event 10",
+    description: "This is the tenth event.",
+    link: "/event/cinemaEyesLens2",
+  },
   ];
   
