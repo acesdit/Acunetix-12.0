@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import img from "../assets/acunetix-logo.svg";
+import img from "../assets/acunetix-logo.webp";
 import "../index.css";
 
 export default function LogoAnimation() {
