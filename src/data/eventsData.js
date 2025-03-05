@@ -23,7 +23,7 @@ import Brainiac from "../assets/Brainiac.webp"
     {
       id: "ctrlAltElite",
       image: CtrlAltElite,
-      title: "CltrlAltElite",
+      title: "Cltrl Alt Elite",
       description: "This is the second event.",
       link: "/event/CtrlAltElite",
     },
@@ -73,7 +73,7 @@ import Brainiac from "../assets/Brainiac.webp"
   {
     id: "Dpl",
     image: Dpl,
-    title: "Dpl",
+    title: "DPL",
     description: "This is the sixth event.",
     link: "/event/dpl",
   },
