@@ -1,5 +1,5 @@
 //  import treasureTrove from "../assets/treasureTrove.webp"
- import Brainiac from "../assets/Brainiac.webp"
+import Brainiac from "../assets/Brainiac.webp"
 //  import insightOPS from "../assets/insightOPS.png"
  import CtrlAltElite from "../assets/CtrlAltElite.webp"
 //  import uxHunt from "../assets/uxHunt.png"
@@ -25,7 +25,7 @@
     image: GameStorm,
     title: "Event 1",
     description: "First Event",
-    link: "/event/GameStorm",
+    link: "/event/gameStorm",
   },
     {
       id: "brainiac",

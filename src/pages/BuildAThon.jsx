@@ -26,7 +26,7 @@ const BuildAThon = () => {
   };
 
   const handleRegisterClick = () => {
-    window.open("https://forms.gle/pmJvsvYNDw5qYv1a9", "_blank");
+    window.open("https://forms.gle/GNGtoVyhhsErYvY39", "_blank");
   };
 
   // // Scroll to top on component mount (especially for mobile)
