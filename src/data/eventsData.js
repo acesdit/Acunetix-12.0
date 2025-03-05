@@ -13,20 +13,6 @@ import Brainiac from "../assets/Brainiac.webp"
 
  
  export const events = [
-  {
-    id: "TreasureTrove",
-    image: TreasureTroveImg,
-    title: "TreasureTrove",
-    description: "First Event",
-    link: "/event/TreasureTrove",
-  },
-  {
-    id: "GameStorm",
-    image: GameStorm,
-    title: "Event 1",
-    description: "First Event",
-    link: "/event/gameStorm",
-  },
     {
       id: "brainiac",
       image: Brainiac,
@@ -57,13 +43,6 @@ import Brainiac from "../assets/Brainiac.webp"
     },
    
     {
-      id: "Dpl",
-      image: Dpl,
-      title: "Event 6",
-      description: "This is the sixth event.",
-      link: "/event/dpl",
-    },
-    {
       id: "BuildAThon",
       image: BuildAThonImg,
       title: "BuildAThon",
@@ -76,6 +55,27 @@ import Brainiac from "../assets/Brainiac.webp"
     title: "Event 9",
     description: "This is the ninth event.",
     link: "/event/BugBounty",
+  },
+  {
+    id: "TreasureTrove",
+    image: TreasureTroveImg,
+    title: "TreasureTrove",
+    description: "First Event",
+    link: "/event/TreasureTrove",
+  },
+  {
+    id: "GameStorm",
+    image: GameStorm,
+    title: "Event 1",
+    description: "First Event",
+    link: "/event/gameStorm",
+  },
+  {
+    id: "Dpl",
+    image: Dpl,
+    title: "Event 6",
+    description: "This is the sixth event.",
+    link: "/event/dpl",
   },
   ];
   
