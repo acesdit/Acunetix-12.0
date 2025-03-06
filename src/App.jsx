@@ -22,9 +22,11 @@ import Brainiac from "./pages/Brainiac";
 import CodeOfLies from "./pages/CodeOfLies";
 import Timescape from "./pages/TimeScape";
 import CtrlAltElite from "./pages/CtrlAltElite";
-import CinemaEyesLens from "./pages/CinemaEyesLens";
 import Dpl from "./pages/Dpl";
 import GameStorm from "./pages/GameStorm";
+import BuildAThon from "./pages/BuildAThon";
+import BugBounty from "./pages/BugBounty";
+import TreasureTrove from "./pages/TreasureTrove";
 
 function MainContent() {
   const scrollRef = useRef(null);
@@ -137,13 +139,7 @@ function MainContent() {
           <Hero />
         </section>
 
-        <section 
-          ref={aboutRef} 
-          data-scroll-section={!isMobile} 
-          className='flex bg-black text-white flex-col items-center justify-center min-h-screen w-full'
-        >
-          <About />
-        </section>
+        
 
         <section 
           ref={eventRef} 
@@ -153,6 +149,13 @@ function MainContent() {
           <Event />
         </section>
 
+        <section 
+          ref={aboutRef} 
+          data-scroll-section={!isMobile} 
+          className='flex bg-black text-white flex-col items-center justify-center min-h-screen w-full'
+        >
+          <About />
+        </section>
         {/* <section 
           ref={scheduleRef} 
           data-scroll-section={!isMobile} 
@@ -161,13 +164,13 @@ function MainContent() {
           <SchedulePage/>
         </section> */}
 
-        <section 
+        {/* <section 
           ref={sponsorsRef} 
           data-scroll-section={!isMobile} 
           className="min-h-screen"
         >
           <Sponsors />
-        </section>
+        </section> */}
 
         <section 
           ref={footerRef} 
@@ -238,17 +241,22 @@ function App() {
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/event/:id" element={<EventDetails />} />
+          <Route path="/event/TreasureTrove" element={<EventWrapper Component={TreasureTrove} />}/>
           <Route path="/event/brainiac" element={<EventWrapper Component={Brainiac} />} />
           <Route path="/event/codeOfLies" element={<EventWrapper Component={CodeOfLies} />} />
           <Route path="/event/timeScape" element={<EventWrapper Component={Timescape} />} />
           <Route path="/event/dpl" element={<EventWrapper Component={Dpl} />} />
-          <Route path="/event/gamestrom" element={<EventWrapper Component={GameStorm} />} />
+          
           <Route path="/event/ctrlAltElite" element={<EventWrapper Component={CtrlAltElite} />} />
-          <Route path="/event/cinemaEyesLens" element={<EventWrapper Component={CinemaEyesLens} />} />
-          <Route path="/event/timeScape2" element={<EventWrapper Component={Timescape} />} />
-          <Route path="/event/cinemaEyesLens2" element={<EventWrapper Component={CinemaEyesLens} />} />
-          <Route path="/event/codeOfLies2" element={<EventWrapper Component={CodeOfLies} />} />
+          {/* <Route path="/event/cinemaEyesLens" element={<EventWrapper Component={CinemaEyesLens} />} /> */}
+          {/* <Route path="/event/timeScape2" element={<EventWrapper Component={Timescape} />} /> */}
+          {/* <Route path="/event/cinemaEyesLens2" element={<EventWrapper Component={CinemaEyesLens} />} /> */}
+          {/* <Route path="/event/codeOfLies2" element={<EventWrapper Component={CodeOfLies} />} /> */}
           <Route path="/event/:id" element={<EventWrapper Component={EventCard} />} />
+          <Route path="/event/BuildAThon" element={<EventWrapper Component={BuildAThon} /> } />
+          <Route path="/event/BugBounty" element={<EventWrapper Component={BugBounty} /> } />
+          <Route path="/event/TreasureTrove" element={<EventWrapper Component={TreasureTrove} />}/>
+          <Route path="/event/gameStorm" element={<EventWrapper Component={GameStorm} />}/>
         </Routes>
       )}
     </>

@@ -26,7 +26,7 @@ const Timescape = () => {
   };
 
   const handleRegisterClick = () => {
-    window.open("https://forms.gle/VP6Ti6g6JSLWnqnx9", "_blank");
+    window.open(" https://forms.gle/wrMqjquYG1YYLcFX7", "_blank");
   };
 
   // // Scroll to top on component mount (especially for mobile)
@@ -81,7 +81,7 @@ const Timescape = () => {
             <div className="flex flex-col md:flex-row items-center gap-8 h-full">
               {/* Left Column */}
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center h-full space-y-10">
-              <h1 className="text-5xl md:text-6xl font-bold text-white">Time Scape</h1>
+              <h1 className="text-5xl md:text-6xl font-bold text-white">Escape Room</h1>
 
               {/* Mobile View */}
                       <div className="md:hidden flex flex-col items-center space-y-10" >
@@ -92,7 +92,7 @@ const Timescape = () => {
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">
                         <p className="text-gray-50 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        A mind-bending escape room experience where nothing is as it seems! Step into a world of shifting realities, crack intricate puzzles, and unravel secrets that defy time. Work in teams, test your wit, and escape before the illusion traps you forever. Do you have what it takes?
                         </p>
                       </div>
                       <button
@@ -107,7 +107,7 @@ const Timescape = () => {
               <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border mb-15 border-gray-500 p-11 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  A mind-bending escape room experience where nothing is as it seems! Step into a world of shifting realities, crack intricate puzzles, and unravel secrets that defy time. Work in teams, test your wit, and escape before the illusion traps you forever. Do you have what it takes?
                   </p>
                 </div>
                 <div className="flex justify-center">

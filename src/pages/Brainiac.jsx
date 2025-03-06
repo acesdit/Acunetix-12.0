@@ -26,7 +26,7 @@ const Brainiac = () => {
   };
 
   const handleRegisterClick = () => {
-    window.open("https://forms.gle/VP6Ti6g6JSLWnqnx9", "_blank");
+    window.open("https://forms.gle/pmJvsvYNDw5qYv1a9", "_blank");
   };
 
   // // Scroll to top on component mount (especially for mobile)
@@ -92,7 +92,9 @@ const Brainiac = () => {
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">
                         <p className="text-gray-50 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        A placement preparation challenge designed to test your aptitude, communication, and interview skills through three intense rounds—Aptitude Test, Group Discussion, and Mock Interview. Compete solo, refine your problem-solving abilities, and gain real-world interview experience.
+
+Showcase your potential and take a step closer to your dream job!
                         </p>
                       </div>
                       <button
@@ -107,7 +109,9 @@ const Brainiac = () => {
               <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border mb-15 border-gray-500 p-11 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  A placement preparation challenge designed to test your aptitude, communication, and interview skills through three intense rounds—Aptitude Test, Group Discussion, and Mock Interview. Compete solo, refine your problem-solving abilities, and gain real-world interview experience.
+
+Showcase your potential and take a step closer to your dream job!
                   </p>
                 </div>
                 <div className="flex justify-center">

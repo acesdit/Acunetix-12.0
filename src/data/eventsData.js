@@ -1,89 +1,81 @@
 //  import treasureTrove from "../assets/treasureTrove.webp"
- import Brainiac from "../assets/Brainiac.webp"
+import Brainiac from "../assets/Brainiac.webp"
 //  import insightOPS from "../assets/insightOPS.png"
  import CtrlAltElite from "../assets/CtrlAltElite.webp"
 //  import uxHunt from "../assets/uxHunt.png"
  import timeScape from "../assets/timeScape.webp"
- import cinemaEyesLens from "../assets/cinemaEyesLens.webp"
  import codeOfLies from "../assets/codeOfLies.webp"
  import Dpl from "../assets/dpl.webp"
  import GameStorm from "../assets/GameStorm.webp"
+ import TreasureTroveImg from "../assets/treasure-trove.webp";
+ import BuildAThonImg from "../assets/build-a-thon.webp";
+ import BugbountyImg from "../assets/Bugbounty.webp";
 
  
  export const events = [
     {
       id: "brainiac",
       image: Brainiac,
-      title: "Event 1",
+      title: "Brainiac",
       description: "First Event",
       link: "/event/brainiac",
     },
     {
       id: "ctrlAltElite",
       image: CtrlAltElite,
-      title: "Event 2",
+      title: "Cltrl Alt Elite",
       description: "This is the second event.",
       link: "/event/CtrlAltElite",
     },
     {
       id: "timeScape",
       image:timeScape,
-      title: "Event 3",
+      title: "Escape Room",
       description: "This is the third event.",
       link: "/event/timeScape",
     },
     {
       id: "codeOfLies",
       image: codeOfLies,
-      title: "Event 4",
+      title: "Code Of Lies",
       description: "This is the fourth event.",
       link: "/event/codeOfLies",
     },
+   
     {
-      id: "cinemaEyesLens",
-      image: cinemaEyesLens,
-      title: "Event 5",
-      description: "This is the fifth event.",
-      link: "/event/cinemaEyesLens",
-    },
-    {
-      id: "Dpl",
-      image: Dpl,
-      title: "Event 6",
+      id: "BuildAThon",
+      image: BuildAThonImg,
+      title: "Build-A-Thon",
       description: "This is the sixth event.",
-      link: "/event/dpl",
-    },
-    
-    {
-      id: "GameStorm",
-      image: GameStorm,
-      title: "Event 7",
-      description: "This is the seventh event.",
-      link: "/event/gamestrom",
-    },
-   
-    
-   
-    {
-      id: "timeScape2",
-      image:timeScape,
-      title: "Event 8",
-      description: "This is the eighth event.",
-      link: "/event/timeScape2",
+      link: "/event/build-a-thon",
     },
     {
-    id: "codeOfLies2",
-    image: codeOfLies,
-    title: "Event 9",
+    id: "BugBounty",
+    image: BugbountyImg,
+    title: "Bug Bounty",
     description: "This is the ninth event.",
-    link: "/event/codeOfLies2",
+    link: "/event/BugBounty",
   },
   {
-    id: "cinemaEyesLens2",
-    image: cinemaEyesLens,
-    title: "Event 10",
-    description: "This is the tenth event.",
-    link: "/event/cinemaEyesLens2",
+    id: "TreasureTrove",
+    image: TreasureTroveImg,
+    title: "Treasure Trove",
+    description: "First Event",
+    link: "/event/TreasureTrove",
+  },
+  // {
+  //   id: "GameStorm",
+  //   image: GameStorm,
+  //   title: "GameStorm",
+  //   description: "First Event",
+  //   link: "/event/gameStorm",
+  // },
+  {
+    id: "Dpl",
+    image: Dpl,
+    title: "DPL",
+    description: "This is the sixth event.",
+    link: "/event/dpl",
   },
   ];
   

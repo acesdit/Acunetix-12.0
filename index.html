@@ -2,18 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" href="./src/assets/acunetix-logo.png" type="image/x-icon" /> -->
      <link rel="icon" href="favicon.ico" type="image/favicon.ico" />
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.172.0/three.tsl.js" integrity="sha512-PiFiRajtnAStBKn2yo9z+RO3RJ6/Njc4l2KhPRuJ3jQ3J8aro4NRQpoGVNDOJNQ6Iuzou85TWxN2QGNDUyj6wA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000">
+    <link rel="preload" href="/assets/fonts/ZenDots-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" as="image" href="src/assets/acunetix-logo.webp" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" as="style" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" media="print" onload="this.onload=null;this.removeAttribute('media');">
+<style>
+     
+h1{
+    font-family: "Zen Dots", serif;
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+    color: transparent;
+    background: linear-gradient(to bottom,#999999, #FFFFFF, #999999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+p{
+    font-family: "Zen Dots", serif;
+    font-weight: 200;
+    font-style: normal;
+    color: transparent;
+    background: linear-gradient(to bottom,#999999, #FFFFFF, #999999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+</style>
     <title>Acunetix 12.0</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LKRS84TD11"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKRS84TD11"></script> -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}

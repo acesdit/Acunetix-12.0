@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import img from "../assets/acunetix-logo.svg";
+import img from "../assets/acunetix-logo.webp";
 import "../index.css";
 
 export default function LogoAnimation() {
@@ -31,14 +31,14 @@ export default function LogoAnimation() {
       {/* Logo Container */}
       {showLogo && (
         <div
-          className={`relative flex flex-col items-center transition-all duration-1000 ${
+          className={`relative flex flex-col items-center transition-all duration-300 ${
             moveUp ? "mt-[-40vh]" : "mt-0"
           }`}
         >
           <img
             src={img}
-            alt="Logo"
-            className={`w-24 h-24 sm:w-32 sm:h-32 transition-transform duration-1000 ${
+            alt="Logo of Acunetix"
+            className={`w-24 h-24 sm:w-32 sm:h-32 transition-transform duration-500 ${
               moveUp
                 ? "translate-y-[-24vh] max-sm:translate-y-[-18vh] scale-40 rotate-360"
                 : ""

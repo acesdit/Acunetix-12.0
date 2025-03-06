@@ -27,7 +27,7 @@ const Dpl = () => {
   };
 
   const handleRegisterClick = () => {
-    window.open("https://forms.gle/VP6Ti6g6JSLWnqnx9", "_blank");
+    window.open("https://forms.gle/Eg839vLu25s2aj9G6", "_blank");
   };
 
   // // Scroll to top on component mount (especially for mobile)
@@ -92,7 +92,11 @@ const Dpl = () => {
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">
                         <p className="text-gray-50 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Are you ready to test your cricket knowledge, strategic skills, and auction tactics?
+From a thrilling Cricket Quiz to an IPL-style Auction, this event is your chance to craft the perfect XI and compete for glory!
+ Round 1: General Quiz Round on Cricket
+ Round 2: Quiz Round + 3 Player Selection Pool
+ Round 3: IPL Auction
                         </p>
                       </div>
                       <button
@@ -107,7 +111,11 @@ const Dpl = () => {
               <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border mb-15 border-gray-500 p-11 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Are you ready to test your cricket knowledge, strategic skills, and auction tactics?
+From a thrilling Cricket Quiz to an IPL-style Auction, this event is your chance to craft the perfect XI and compete for glory!
+ Round 1: General Quiz Round on Cricket
+ Round 2: Quiz Round + 3 Player Selection Pool
+ Round 3: IPL Auction
                   </p>
                 </div>
                 <div className="flex justify-center">

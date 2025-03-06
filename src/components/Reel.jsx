@@ -1,4 +1,7 @@
 import React from "react";
+import video1 from "../assets/Reel-Acunetix4.mp4";
+import video2 from "../assets/Reel-Acunetix3.mp4";
+import video3 from "../assets/Reel-Acunetix.mp4";
 
 
 function Reel() {
@@ -27,7 +30,7 @@ function Reel() {
                 playsInline
                 preload="auto"
               >
-                <source src="https://cdn.jsdelivr.net/gh/sujal-pawar/video@main/Reel%20Acunetix4.mp4"
+                <source src={video1}
                  type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -50,7 +53,7 @@ function Reel() {
                 playsInline
                 preload="auto"
               >
-                <source src="https://cdn.jsdelivr.net/gh/sujal-pawar/video@main/Reel%20Acunetix.mp4"
+                <source src={video2}
                  type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -74,7 +77,7 @@ function Reel() {
                 playsInline
                 preload="auto"
               >
-                <source src="https://cdn.jsdelivr.net/gh/sujal-pawar/video@main/Reel%20Acunetix3.mp4"
+                <source src={video3}
                  type="video/mp4" />
                 Your browser does not support the video tag.
               </video>

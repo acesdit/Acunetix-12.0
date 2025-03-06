@@ -28,7 +28,7 @@ const CtrlAltElite = () => {
   };
 
   const handleRegisterClick = () => {
-    window.open("https://forms.gle/VP6Ti6g6JSLWnqnx9", "_blank");
+    window.open("https://forms.gle/7zQjkqEEcmmRfzF59", "_blank");
   };
 
   // // Scroll to top on component mount (especially for mobile)
@@ -82,7 +82,7 @@ const CtrlAltElite = () => {
             <div className="flex flex-col md:flex-row items-center gap-8 h-full">
               {/* Left Column */}
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center h-full space-y-10">
-              <h1 className="text-5xl md:text-6xl font-bold text-white">Cltrl Alt Elit</h1>
+              <h1 className="text-5xl md:text-6xl font-bold text-white">Cltrl Alt Elite</h1>
 
               {/* Mobile View */}
                       <div className="md:hidden flex flex-col items-center space-y-10" >
@@ -93,7 +93,7 @@ const CtrlAltElite = () => {
                       />
                       <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm pb-5">
                         <p className="text-gray-50 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        An electrifying coding competition where the best prevail! Compete solo or in a duo through three intense rounds—an MCQ-based challenge, a debugging round, and a final coding battle where you can use any programming language. Test your skills, solve complex problems, and prove your coding prowess. Exciting cash prizes, rewards, and goodies await the champions. Register now and step into the ultimate coding battlefield!
                         </p>
                       </div>
                       <button
@@ -108,7 +108,7 @@ const CtrlAltElite = () => {
               <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="bg-black/30 backdrop-blur-sm rounded-2xl border mb-15 border-gray-500 p-11 shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-xl">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  An electrifying coding competition where the best prevail! Compete solo or in a duo through three intense rounds—an MCQ-based challenge, a debugging round, and a final coding battle where you can use any programming language. Test your skills, solve complex problems, and prove your coding prowess. Exciting cash prizes, rewards, and goodies await the champions. Register now and step into the ultimate coding battlefield!
                   </p>
                 </div>
                 <div className="flex justify-center">
