@@ -12,7 +12,7 @@ import '../locomotive-custom.scss';
 import Sponsors from './components/Sponsors';
 import Footer from './components/Footer';
 import Chatbot from "./components/Chatbot";
-import Start from "./components/Start";
+// import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
 import EventDetails from "./components/EventDetails";
 import chatbotIcon from "./assets/AcunetixChatbot.webp";
@@ -237,7 +237,7 @@ function App() {
   return (
     <>
       <AcunetixMetaTags /> 
-      {!startAnimationComplete ? <Start /> : (
+      {/* {!startAnimationComplete ? <Start /> : ( */}
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/event/:id" element={<EventDetails />} />
@@ -258,7 +258,7 @@ function App() {
           <Route path="/event/TreasureTrove" element={<EventWrapper Component={TreasureTrove} />}/>
           <Route path="/event/gameStorm" element={<EventWrapper Component={GameStorm} />}/>
         </Routes>
-      )}
+      {/* )} */}
     </>
   );
 }
