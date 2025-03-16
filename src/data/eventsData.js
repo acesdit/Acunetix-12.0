@@ -13,49 +13,6 @@ import Brainiac from "../assets/Brainiac.webp"
 
  
  export const events = [
-    {
-      id: "brainiac",
-      image: Brainiac,
-      title: "Brainiac",
-      description: "First Event",
-      link: "/event/brainiac",
-    },
-    {
-      id: "ctrlAltElite",
-      image: CtrlAltElite,
-      title: "Cltrl Alt Elite",
-      description: "This is the second event.",
-      link: "/event/CtrlAltElite",
-    },
-    {
-      id: "timeScape",
-      image:timeScape,
-      title: "Escape Room",
-      description: "This is the third event.",
-      link: "/event/timeScape",
-    },
-    {
-      id: "codeOfLies",
-      image: codeOfLies,
-      title: "Code Of Lies",
-      description: "This is the fourth event.",
-      link: "/event/codeOfLies",
-    },
-   
-    {
-      id: "BuildAThon",
-      image: BuildAThonImg,
-      title: "Build-A-Thon",
-      description: "This is the sixth event.",
-      link: "/event/build-a-thon",
-    },
-    {
-    id: "BugBounty",
-    image: BugbountyImg,
-    title: "Bug Bounty",
-    description: "This is the ninth event.",
-    link: "/event/BugBounty",
-  },
   {
     id: "TreasureTrove",
     image: TreasureTroveImg,
@@ -77,5 +34,50 @@ import Brainiac from "../assets/Brainiac.webp"
     description: "This is the sixth event.",
     link: "/event/dpl",
   },
+  {
+    id: "codeOfLies",
+    image: codeOfLies,
+    title: "Code Of Lies",
+    description: "This is the fourth event.",
+    link: "/event/codeOfLies",
+  },
+    {
+      id: "brainiac",
+      image: Brainiac,
+      title: "Brainiac",
+      description: "First Event",
+      link: "/event/brainiac",
+    },
+    {
+      id: "ctrlAltElite",
+      image: CtrlAltElite,
+      title: "Cltrl Alt Elite",
+      description: "This is the second event.",
+      link: "/event/CtrlAltElite",
+    },
+    {
+      id: "timeScape",
+      image:timeScape,
+      title: "Escape Room",
+      description: "This is the third event.",
+      link: "/event/timeScape",
+    },
+   
+   
+    {
+      id: "BuildAThon",
+      image: BuildAThonImg,
+      title: "Build-A-Thon",
+      description: "This is the sixth event.",
+      link: "/event/build-a-thon",
+    },
+    {
+    id: "BugBounty",
+    image: BugbountyImg,
+    title: "Bug Bounty",
+    description: "This is the ninth event.",
+    link: "/event/BugBounty",
+  },
+ 
   ];
   
