@@ -95,7 +95,7 @@ const Dpl = () => {
                         Are you ready to test your cricket knowledge, strategic skills, and auction tactics?
 From a thrilling Cricket Quiz to an IPL-style Auction, this event is your chance to craft the perfect XI and compete for glory!
  Round 1: General Quiz Round on Cricket
- Round 2: Quiz Round + 3 Player Selection Pool
+ Round 2: Image Recognition Quiz
  Round 3: IPL Auction
                         </p>
                       </div>
@@ -114,7 +114,7 @@ From a thrilling Cricket Quiz to an IPL-style Auction, this event is your chance
                   Are you ready to test your cricket knowledge, strategic skills, and auction tactics?
 From a thrilling Cricket Quiz to an IPL-style Auction, this event is your chance to craft the perfect XI and compete for glory!
  Round 1: General Quiz Round on Cricket
- Round 2: Quiz Round + 3 Player Selection Pool
+ Round 2: Image Recognition Quiz
  Round 3: IPL Auction
                   </p>
                 </div>
