@@ -20,13 +20,13 @@ import Brainiac from "../assets/Brainiac.webp"
     description: "First Event",
     link: "/event/TreasureTrove",
   },
-  // {
-  //   id: "GameStorm",
-  //   image: GameStorm,
-  //   title: "GameStorm",
-  //   description: "First Event",
-  //   link: "/event/gameStorm",
-  // },
+  {
+    id: "GameStorm",
+    image: GameStorm,
+    title: "GameStorm",
+    description: "First Event",
+    link: "/event/gameStorm",
+  },
   {
     id: "Dpl",
     image: Dpl,
