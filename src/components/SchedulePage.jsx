@@ -6,13 +6,13 @@ const SchedulePage = () => {
       day: 1,
       date: '27 March 2025',
       events: [
-        { name: 'Gamestrom', time: '8:00 AM - 7:00 PM', description: 'Location: 4th Floor ' },
-        { name: 'Escape Room', time: '8:00 AM - 7:00 PM', description: 'Location: 409 & 411 ' },
-        { name: 'Ctrl Alt Elite', rounds: ['ROUND 1 & 2 10:00 AM - 1:00 PM', 'ROUND 3 3:00 PM - 5:00 PM'], description: 'Coding Competition' },
-        { name: 'Buildathon', time: '9:00 AM - 10:00 AM', description: 'Prompt Engineering' },
-        { name: 'DPL', rounds: ['ROUND 1 & ROUND 2 : 10:00 AM - 1:00 PM'], description: 'Cricket quiz & Questions' },
+        { name: 'Gamestrom', time: '7:30 AM - 6:30 PM', description: 'Location: 508 ' },
+        { name: 'Escape Room', time: '7:30 AM - 6:30 PM', description: 'Location: 409 & 411 ' },
+        { name: 'Ctrl Alt Elite', rounds: ['ROUND 1 & 2 10:00 AM - 1:00 PM', 'ROUND 3 3:00 PM - 5:30 PM'], description: 'Coding Competition' },
+        { name: 'Buildathon', time: '7:30 AM - 9:00 AM', description: 'Location: 504,505,506' },
+        { name: 'DPL', rounds: ['ROUND 1 & ROUND 2 : 9:30 AM - 12:30 PM'], description: 'Location: 509,511' },
         { name: 'Code of Lies', time: '1:00 PM - 3:00 PM', description: 'CTF event' },
-        { name: 'Brainaic', rounds: ['ROUND 1 8:00 AM - 9:00 AM', 'ROUND 2 3:00 PM - 6:00 PM'], description: 'Aptitude and GD' },
+        { name: 'Brainaic', rounds: ['ROUND 1 8:30 AM - 9:00 AM', 'ROUND 2 2:30 PM - 5:30 PM'], description: 'Location: 402,509,511' },
       ]
     },
     {

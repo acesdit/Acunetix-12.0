@@ -163,8 +163,8 @@ function MainContent() {
         >
           <SchedulePage/>
         </section>
-
-        {/* <section 
+{/* 
+        <section 
           ref={sponsorsRef} 
           data-scroll-section={!isMobile} 
           className="min-h-screen"
