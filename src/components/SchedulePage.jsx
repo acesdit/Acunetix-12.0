@@ -4,107 +4,125 @@ const SchedulePage = () => {
   const days = [
     {
       day: 1,
+      date: '27 March 2025',
       events: [
-      { name: 'Timescape', time: '10:00 AM', description: 'Virtual Reality Experience' },
-      { name: 'Dpl', time: '2:00 PM', description: 'Design Prototyping Lab' },
-      { name: 'Brainiac', time: '4:30 PM', description: 'Quiz Competition' }
+        { name: 'Gamestrom', time: '8:00 AM - 7:00 PM', description: 'Location: 4th Floor ' },
+        { name: 'Escape Room', time: '8:00 AM - 7:00 PM', description: 'Location: 409 & 411 ' },
+        { name: 'Ctrl Alt Elite', rounds: ['ROUND 1 & 2 10:00 AM - 1:00 PM', 'ROUND 3 3:00 PM - 5:00 PM'], description: 'Coding Competition' },
+        { name: 'Buildathon', time: '9:00 AM - 10:00 AM', description: 'Prompt Engineering' },
+        { name: 'DPL', rounds: ['ROUND 1 & ROUND 2 : 10:00 AM - 1:00 PM'], description: 'Cricket quiz & Questions' },
+        { name: 'Code of Lies', time: '1:00 PM - 3:00 PM', description: 'CTF event' },
+        { name: 'Brainaic', rounds: ['ROUND 1 8:00 AM - 9:00 AM', 'ROUND 2 3:00 PM - 6:00 PM'], description: 'Aptitude and GD' },
       ]
     },
     {
       day: 2,
+      date: '28 March 2025',
       events: [
-      { name: 'Ctrl Alt Del', time: '9:30 AM', description: 'Coding Challenge' },
-      { name: 'Treasure Trove', time: '1:00 PM', description: 'Scavenger Hunt' },
-      { name: 'Cinema Eyes Lens', time: '3:30 PM', description: 'Short Film Festival' }
+        { name: 'Gamestrom', time: '8:00 AM - 7:00 PM', description: 'Location: 4th Floor ' },
+        { name: 'Escape Room', time: '8:00 AM - 7:00 PM', description: 'Location: 409 & 411 ' },
+        { name: 'Bug Bounty', time: '8:00 AM - 10:00 AM', description: 'Broken Code' },
+        { name: 'DPL (Auction)', time: '11:00 AM - 7:00 PM', description: 'Auction' },
+        { name: 'Brainiac (Interview)', time: '8:00 AM - 11:00 AM', description: 'Interview' },
       ]
     },
     {
       day: 3,
+      date: '29 March 2025',
       events: [
-      { name: 'Game Storm', time: '11:00 AM', description: 'Esports Tournament' },
-      { name: 'Code of Lies', time: '2:30 PM', description: 'Programming Puzzle' },
-      { name: 'Code-o-Fiesta', time: '5:00 PM', description: 'Final Coding Showdown' }
+        { name: 'Gamestorm', time: '9:00 AM - 3:00 PM', description: 'Location: 4th Floor ' },
+        { name: 'Treasure Trove', time: '9:00 AM - 5:00 PM', description: 'Treasure Hunt' },
       ]
     }
-    ];
+  ];
 
   return (
-    <div className="min-h-screen bg-black py-8 px-4 sm:px-6 lg:px-8">
-    {/* ... (keep header same) */}
-    <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-center mt-20 mb-20 md:mb-12 text-transparent">
-    Schedule
-    </h1>
-
-    <div className="max-w-5xl mx-auto flex flex-col lg:grid lg:grid-cols-3 gap-6 md:gap-8">
-    {days.map((day) => (
-    <div 
-      key={day.day}
-      className="w-full mb-6 lg:mb-0 lg:group perspective-1000"
-    >
-      {/* 3D Container */}
-      <div className="relative preserve-3d transition-all duration-500 lg:hover:rotate-x-12 lg:hover:rotate-y-12 h-full">
-      {/* Tilted Card Body */}
-      <div className="lg:absolute inset-0 bg-gray-800 rounded-lg lg:rounded-2xl shadow-xl transform transition-all duration-500 
-      hover:shadow-2xl hover:shadow-purple-500/30
-      lg:hover:-translate-y-2 lg:hover:translate-z-10 h-full flex flex-col"
-      >
-      <div className="p-4 md:p-6 space-y-4 md:space-y-6 flex-grow">
-      {/* Day Header */}
-      <h2 className="text-2xl md:text-3xl font-bold text-purple-400 mb-3 md:mb-4 border-b border-purple-500/50 pb-2 text-center">
-        Day {day.day}
-      </h2>
-      
-      {/* Events Container */}
-      <div className="space-y-3 md:space-y-4">
-        {day.events.map((event) => (
-        <div 
-        key={event.name}
-        className="transform transition-all duration-300 hover:scale-[1.02] 
-        lg:hover:translate-z-5 lg:hover:-translate-y-1"
-        >
-        {/* Centered Event Card for Mobile */}
-        <div className="bg-gray-700/40 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 
-        border border-gray-600/20 shadow-lg
-        relative before:absolute before:inset-0 before:bg-gradient-to-r 
-        before:from-purple-500/10 before:to-pink-500/10 before:rounded-lg
-        before:opacity-0 hover:before:opacity-100 before:transition-opacity
-        flex flex-col items-center text-center md:text-left md:block">
-        <div className="flex flex-col md:flex-row md:justify-between items-center gap-2 w-full">
-          <h3 className="text-base md:text-lg font-semibold text-red-500">
-          {event.name}
-          </h3>
-          <span className="text-xs md:text-sm text-cyan-300 bg-gray-800 px-2 py-1 rounded-full">
-          {event.time}
-          </span>
-        </div>
-        <p className="text-xs md:text-sm text-gray-300 mt-1 md:mt-2 text-center md:text-left">
-          {event.description}
+    <div className="min-h-screen bg-black py-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Top Heading with Dates */}
+      <div className="text-center mb-12">
+        <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white animate-pulse">
+          Schedule
+        </h1>
+        <p className="text-lg md:text-xl text-cyan-300 mt-2 bg-gray-900/50 px-4 py-2 rounded-lg inline-block 
+        border border-cyan-500/30 shadow-lg animate-fade-in">
+          27, 28, 29 March 2025
         </p>
-        </div>
-        </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto flex flex-col lg:grid lg:grid-cols-3 gap-6">
+        {days.map((day) => (
+          <div
+            key={day.day}
+            className="w-full bg-gray-800 rounded-2xl shadow-xl p-6 transition-all duration-500 
+            hover:shadow-2xl hover:shadow-purple-500/50 hover:-translate-y-2"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-purple-400 mb-6 border-b border-purple-500/50 pb-2 text-center 
+            transition-all duration-300 hover:text-purple-300">
+              Day {day.day} - {day.date}
+            </h2>
+
+            <div className="space-y-4">
+              {day.events.map((event) => (
+                <div
+                  key={event.name}
+                  className="bg-gray-700/40 rounded-xl p-4 border border-gray-600/20 transition-all duration-300 
+                  hover:bg-gray-700/70 hover:shadow-lg hover:shadow-cyan-500/20"
+                >
+                  <div className="flex flex-col space-y-2">
+                    <div className="flex justify-between items-center flex-wrap gap-2">
+                      <h3 className="text-lg font-semibold text-red-500 transition-colors duration-300 hover:text-red-400">
+                        {event.name}
+                      </h3>
+                      {event.time && (
+                        <span className="text-sm text-cyan-300 bg-gray-800 px-3 py-1 rounded-lg 
+                        border border-cyan-500/30 shadow-md transition-all duration-300 
+                        hover:bg-cyan-900/50 hover:shadow-cyan-500/40 hover:-translate-y-0.5 hover:scale-105">
+                          {event.time}
+                        </span>
+                      )}
+                    </div>
+
+                    {event.rounds && (
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {event.rounds.map((round, index) => (
+                          <span
+                            key={index}
+                            className="inline-block text-xs text-cyan-300 bg-gray-800 px-3 py-1 rounded-lg 
+                            border border-cyan-500/30 shadow-md transition-all duration-300 
+                            hover:shadow-lg hover:shadow-cyan-500/40 hover:-translate-y-0.5 hover:scale-105 
+                            hover:bg-cyan-900/50 hover:border-cyan-400"
+                          >
+                            {round}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <p className="text-sm text-gray-300 transition-colors duration-300 hover:text-gray-200">
+                      {event.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
-      </div>
-      </div>
-      </div>
-    </div>
-    ))}
-    </div>
 
-    {/* ... (keep particles same) */}
-    <div className="absolute inset-0 pointer-events-none">
-    {[...Array(20)].map((_, i) => (
-    <div
-    key={i}
-    className="absolute w-0.5 h-0.5 md:w-1 md:h-1 bg-purple-500 rounded-full animate-float"
-    style={{
-    left: `${Math.random() * 100}%`,
-    top: `${Math.random() * 100}%`,
-    animationDelay: `${Math.random() * 5}s`
-    }}
-    />
-    ))}
-    </div>
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(30)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-purple-500 rounded-full animate-float opacity-75"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${4 + Math.random() * 4}s`
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 };

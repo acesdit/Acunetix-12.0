@@ -156,13 +156,13 @@ function MainContent() {
         >
           <About />
         </section>
-        {/* <section 
+        <section 
           ref={scheduleRef} 
           data-scroll-section={!isMobile} 
           className="min-h-screen py-16"
         >
           <SchedulePage/>
-        </section> */}
+        </section>
 
         {/* <section 
           ref={sponsorsRef} 
