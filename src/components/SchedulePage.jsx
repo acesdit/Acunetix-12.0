@@ -79,7 +79,7 @@ const SchedulePage = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
-        <h1 className="text-2xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-400 mb-4 glitch">
+        <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-400 mb-4 glitch">
           SCHEDULE
         </h1>
         <p className="text-xl md:text-2xl text-cyan-300 font-mono bg-black/50 px-6 py-3 rounded-full inline-block border-2 border-cyan-400/50 shadow-glow">
