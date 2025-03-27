@@ -20,11 +20,11 @@ const SchedulePage = () => {
       day: 2,
       date: '28 March 2025',
       events: [
-        { name: 'Gamestrom', time: '8:00 AM - 7:00 PM', description: 'Location: 4th Floor ' },
+        { name: 'Gamestrom', time: '8:00 AM - 7:00 PM', description: 'Location: 508 ' },
         { name: 'Escape Room', time: '8:00 AM - 7:00 PM', description: 'Location: 409 & 411 ' },
-        { name: 'Bug Bounty', time: '8:00 AM - 10:00 AM', description: 'Broken Code' },
-        { name: 'DPL (Auction)', time: '11:00 AM - 7:00 PM', description: 'Auction' },
-        { name: 'Brainiac (Interview)', time: '8:00 AM - 11:00 AM', description: 'Interview' },
+        { name: 'Bug Bounty', time: '8:00 AM - 10:00 AM', description: 'Locaton: 5th Floor' },
+        { name: 'DPL (Auction)', time: '10:00 AM - 7:00 PM', description: 'Location: Library' },
+        { name: 'Brainiac (Interview)', time: '8:00 AM - 11:00 AM', description: 'Location: 401' },
       ]
     },
     {
