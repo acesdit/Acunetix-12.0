@@ -169,8 +169,8 @@ function MainContent() {
           data-scroll-section={!isMobile} 
           className="min-h-screen"
         >
-          <Sponsors /> */}
-        </section>
+          <Sponsors />
+        </section> */}
 
         <section 
           ref={footerRef} 
