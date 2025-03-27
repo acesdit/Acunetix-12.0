@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const SchedulePage = () => {
   const days = [
@@ -36,92 +37,158 @@ const SchedulePage = () => {
     }
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { staggerChildren: 0.2 }
+    }
+  };
+
+  const dayVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { type: 'spring', stiffness: 100 }
+    }
+  };
+
+  const eventVariants = {
+    hover: {
+      y: -5,
+      scale: 1.02,
+      boxShadow: '0px 10px 30px rgba(111, 76, 255, 0.5)',
+      background: 'linear-gradient(45deg, rgba(17, 24, 39, 0.8), rgba(8, 14, 44, 0.9))',
+      transition: { duration: 0.3 }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-black py-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Top Heading with Dates */}
-      <div className="text-center mb-12">
-        <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white animate-pulse">
-          Schedule
-        </h1>
-        <p className="text-lg md:text-xl text-cyan-300 mt-2 bg-gray-900/50 px-4 py-2 rounded-lg inline-block 
-        border border-cyan-500/30 shadow-lg animate-fade-in">
-          27, 28, 29 March 2025
-        </p>
+    <div className="min-h-screen bg-black py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Cyberpunk Grid Background */}
+      <div className="absolute inset-0 z-0 opacity-20">
+        <div className="h-full w-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjZmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==')]"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto flex flex-col lg:grid lg:grid-cols-3 gap-6">
-        {days.map((day) => (
-          <div
-            key={day.day}
-            className="w-full bg-gray-800 rounded-2xl shadow-xl p-6 transition-all duration-500 
-            hover:shadow-2xl hover:shadow-purple-500/50 hover:-translate-y-2"
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-purple-400 mb-6 border-b border-purple-500/50 pb-2 text-center 
-            transition-all duration-300 hover:text-purple-300">
-              Day {day.day} - {day.date}
-            </h2>
+      {/* Animated Glitch Text */}
+      <motion.div 
+        className="text-center mb-16 relative"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
+        <h1 className="text-2xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-400 mb-4 glitch">
+          SCHEDULE
+        </h1>
+        <p className="text-xl md:text-2xl text-cyan-300 font-mono bg-black/50 px-6 py-3 rounded-full inline-block border-2 border-cyan-400/50 shadow-glow">
+          27-29 MARCH 2025
+        </p>
+      </motion.div>
 
-            <div className="space-y-4">
+      {/* Schedule Timeline */}
+      <motion.div 
+        className="max-w-7xl mx-auto grid gap-12 relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {days.map((day) => (
+          <motion.div 
+            key={day.day}
+            variants={dayVariants}
+            className="group relative overflow-hidden rounded-2xl border-2 border-purple-500/30 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl shadow-cyber"
+          >
+            {/* Day Header */}
+            <div className="p-6 bg-gradient-to-r from-purple-600/30 to-cyan-500/30 border-b-2 border-cyan-400/50">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-300 font-mono">
+                DAY {day.day} <span className="text-cyan-400 ml-4">{day.date}</span>
+              </h2>
+            </div>
+
+            {/* Holographic Effect */}
+            <div className="absolute inset-0 opacity-30 mix-blend-overlay pointer-events-none">
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/holo-square.png')] animate-holo"></div>
+            </div>
+
+            {/* Events Grid */}
+            <div className="p-6 grid gap-4">
               {day.events.map((event) => (
-                <div
+                <motion.div
                   key={event.name}
-                  className="bg-gray-700/40 rounded-xl p-4 border border-gray-600/20 transition-all duration-300 
-                  hover:bg-gray-700/70 hover:shadow-lg hover:shadow-cyan-500/20"
+                  variants={eventVariants}
+                  whileHover="hover"
+                  className="p-4 rounded-xl border-2 border-cyan-500/20 bg-gray-900/50 backdrop-blur-sm relative overflow-hidden"
                 >
-                  <div className="flex flex-col space-y-2">
-                    <div className="flex justify-between items-center flex-wrap gap-2">
-                      <h3 className="text-lg font-semibold text-red-500 transition-colors duration-300 hover:text-red-400">
-                        {event.name}
-                      </h3>
+                  {/* Event Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-400/10 opacity-0 group-hover:opacity-30 transition-opacity"></div>
+
+                  <div className="flex flex-col space-y-3">
+                    <div className="flex justify-between items-start">
+                      <h3 className="text-xl font-bold text-cyan-400 font-mono">{event.name}</h3>
                       {event.time && (
-                        <span className="text-sm text-cyan-300 bg-gray-800 px-3 py-1 rounded-lg 
-                        border border-cyan-500/30 shadow-md transition-all duration-300 
-                        hover:bg-cyan-900/50 hover:shadow-cyan-500/40 hover:-translate-y-0.5 hover:scale-105">
+                        <span className="text-sm text-purple-300 bg-black/50 px-3 py-1 rounded-full border border-cyan-400/30">
                           {event.time}
                         </span>
                       )}
                     </div>
 
                     {event.rounds && (
-                      <div className="flex flex-wrap gap-2 mt-2">
+                      <div className="flex flex-wrap gap-2">
                         {event.rounds.map((round, index) => (
-                          <span
+                          <span 
                             key={index}
-                            className="inline-block text-xs text-cyan-300 bg-gray-800 px-3 py-1 rounded-lg 
-                            border border-cyan-500/30 shadow-md transition-all duration-300 
-                            hover:shadow-lg hover:shadow-cyan-500/40 hover:-translate-y-0.5 hover:scale-105 
-                            hover:bg-cyan-900/50 hover:border-cyan-400"
+                            className="text-xs text-cyan-300 bg-black/50 px-2 py-1 rounded-md border border-cyan-400/20 font-mono"
                           >
-                            {round}
+                            ⚡ {round}
                           </span>
                         ))}
                       </div>
                     )}
 
-                    <p className="text-sm text-gray-300 transition-colors duration-300 hover:text-gray-200">
+                    <p className="text-sm text-cyan-200/80 font-mono leading-relaxed">
                       {event.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
+      {/* Animated Particles */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(30)].map((_, i) => (
-          <div
+        {[...Array(50)].map((_, i) => (
+          <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-purple-500 rounded-full animate-float opacity-75"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${4 + Math.random() * 4}s`
+            className="absolute w-1 h-1 bg-cyan-400 rounded-full"
+            initial={{
+              x: Math.random() * 100 + 'vw',
+              y: Math.random() * 100 + 'vh',
+              scale: 0,
+              opacity: 0
+            }}
+            animate={{
+              x: ['0%', Math.random() * 100 + '%', '0%'],
+              y: ['0%', Math.random() * 100 + '%', '0%'],
+              scale: [0, 1, 0],
+              opacity: [0, 0.8, 0],
+              rotate: 360
+            }}
+            transition={{
+              duration: Math.random() * 4 + 6,
+              repeat: Infinity,
+              ease: 'linear'
             }}
           />
         ))}
+      </div>
+
+      {/* Scanlines Overlay */}
+      <div className="fixed inset-0 pointer-events-none z-20 opacity-20" 
+           style={{background: 'repeating-linear-gradient(0deg, #000 0px, #000 1px, transparent 2px, transparent 4px)'}}>
       </div>
     </div>
   );
