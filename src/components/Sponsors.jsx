@@ -4,32 +4,32 @@ import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-mo
 const sponsors = [
   {
     id: 1,
-    name: "TechCorp",
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop",
+    name: "Edualliance",
+    logo: "src\assets\sponsor\edualliance logo.png",
     description: "Leading technology solutions provider",
     website: "https://example.com",
   },
   {
     id: 2,
-    name: "InnovateLabs",
+    name: "Learnomate Technologies",
     logo: "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=200&h=200&fit=crop",
     description: "Innovation at its finest",
     website: "https://example.com",
   },
   {
     id: 3,
-    name: "FutureTech",
+    name: "GS SAP",
     logo: "https://images.unsplash.com/photo-1516387938699-a93567ec168e?w=200&h=200&fit=crop",
     description: "Shaping the future of technology",
     website: "https://example.com",
   },
-  {
-    id: 4,
-    name: "CodeMasters",
-    logo: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200&h=200&fit=crop",
-    description: "Excellence in software development",
-    website: "https://example.com",
-  },
+  // {
+  //   id: 4,
+  //   name: "CodeMasters",
+  //   logo: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200&h=200&fit=crop",
+  //   description: "Excellence in software development",
+  //   website: "https://example.com",
+  // },
   
 ];
 

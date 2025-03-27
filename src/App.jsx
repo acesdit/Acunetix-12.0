@@ -163,14 +163,14 @@ function MainContent() {
         >
           <SchedulePage/>
         </section>
-{/* 
+
         <section 
           ref={sponsorsRef} 
           data-scroll-section={!isMobile} 
           className="min-h-screen"
         >
           <Sponsors />
-        </section> */}
+        </section>
 
         <section 
           ref={footerRef} 
