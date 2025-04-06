@@ -37,20 +37,6 @@ Acunetix 12.0 is a flagship tech event organized by **ACES** and **CSI**, featur
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint)
 ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier)
 
-# 🚀 ACUNETIX 12.0 ARCHITECTURE
-
-```diff
-+-------------------------------------------------------------------+
-|                                                                   |
-|                  ▒▓█► 𝔸ℂ𝕌ℕ𝔼𝕋𝕀𝕏 𝟙𝟚.𝟘 ◄█▓▒                        | 
-|                                                                   |
-|           ░░▓▓██► 𝕋𝔼ℂℍℕ𝕀ℂ𝔸𝕃 𝕊𝕋ℝ𝕌ℂ𝕋𝕌ℝ𝔼 ◄██▓▓░░                 |
-|                                                                   |
-+===================================================================+
-
-```
-
-
 ## 📂 Project Structure
 ```
 📦 Acunetix-12.0
