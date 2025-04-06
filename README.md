@@ -1,6 +1,4 @@
-# 🌐 Acunetix 12.0 - Official Event Platform
-
-![Event Banner](https://via.placeholder.com/1200x400/1a237e/ffffff?text=ACUNETIX+12.0)
+# 🌀 Acunetix 12.0 - Official Event Platform
 
 [![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://acunetix12.tech)
 [![React](https://img.shields.io/badge/React-18.2-%2361DAFB?logo=react)](https://reactjs.org)
@@ -66,7 +64,6 @@ Acunetix-12.0/
 ├── README.md
 └── vite.config.js
 
-Copy
 
 ## 🏆 Featured Events
 
@@ -103,28 +100,9 @@ git clone https://github.com/ACES-CSI/Acunetix-12.0.git
 cd Acunetix-12.0
 npm install
 npm run dev
-Build Commands
-bash
-Copy
-npm run build  # Production build
-npm run preview  # Local preview
-🤝 Contributing
-Fork the repository
-
-Create your feature branch (git checkout -b feature/amazing-feature)
-
-Commit changes (git commit -m 'Add amazing feature')
-
-Push to branch (git push origin feature/amazing-feature)
-
-Open a Pull Request
 
 📬 Contact
 Organizing Committee:
-
-📧 Email: contact@acunetix12.tech
-
-🐦 Twitter: @Acunetix12
 
 📱 Instagram: @Acunetix12
 
