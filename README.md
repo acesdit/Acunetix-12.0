@@ -1,5 +1,18 @@
 # 🌀 Acunetix 12.0 - Official Event Platform
 
+# 🚀 ACUNETIX 12.0 ARCHITECTURE
+
+```diff
++-------------------------------------------------------------------+
+|                                                                   |
+|                  ▒▓█► 𝔸ℂ𝕌ℕ𝔼𝕋𝕀𝕏 𝟙𝟚.𝟘 ◄█▓▒                        | 
+|                                                                   |
+|           ░░▓▓██► 𝕋𝔼ℂℍℕ𝕀ℂ𝔸𝕃 𝕊𝕋ℝ𝕌ℂ𝕋𝕌ℝ𝔼 ◄██▓▓░░                 |
+|                                                                   |
++===================================================================+
+
+```
+
 [![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://acunetix12.tech)
 [![React](https://img.shields.io/badge/React-18.2-%2361DAFB?logo=react)](https://reactjs.org)
 [![Vite](https://img.shields.io/badge/Vite-4.0-%646CFF?logo=vite)](https://vitejs.dev)
@@ -37,33 +50,35 @@ Acunetix 12.0 is a flagship tech event organized by **ACES** and **CSI**, featur
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint)
 ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier)
 
+
+
 ## 📂 Project Structure
 ```
-Acunetix-12.0/
-├── public/
-│ ├── favicon.ico
-│ └── index.html
-├── src/
-│ ├── assets/
-│ │ ├── fonts/
-│ │ └── images/
-│ ├── components/
-│ │ ├── Events/
-│ │ ├── Hero/
-│ │ └── Navigation/
-│ ├── pages/
-│ │ ├── Home.jsx
-│ │ ├── Events.jsx
-│ │ └── Registration.jsx
-│ ├── styles/
-│ │ ├── main.scss
-│ │ └── animations.scss
-│ ├── App.jsx
-│ └── main.jsx
-├── .gitignore
-├── package.json
-├── README.md
-└── vite.config.js
+📦 Acunetix-12.0
+├── 📂 public
+│   ├── 🌌 favicon.ico
+│   └── 🌀 index.html
+├── 📂 src
+│   ├── 📂 assets
+│   │   ├── ✨ fonts
+│   │   └── 🖼️ images
+│   ├── 📂 components
+│   │   ├── 🎩 Events
+│   │   ├── 🦄 Hero
+│   │   └── 🧭 Navigation
+│   ├── 📂 pages
+│   │   ├── 🏰 Home.jsx
+│   │   ├── 🎪 Events.jsx
+│   │   └── ✍️ Registration.jsx
+│   ├── 📂 styles
+│   │   ├── 🌈 main.scss
+│   │   └── ⚡ animations.scss
+│   ├── 🔮 App.jsx
+│   └── 🚀 main.jsx
+├── 📜 .gitignore
+├── 📝 package.json
+├── 📖 README.md
+└── ⚙️ vite.config.js
 ```
 
 ## 🏆 Featured Events
