@@ -48,5 +48,29 @@ This website is built using modern web technologies for a high-performance, visu
 
 Below is a detailed breakdown of the repository’s structure, designed for scalability and ease of development:
 
-Acunetix-12.0/ ├── 📂 assets/ → Custom assets like fonts, images, and logos │ ├── 📂 fonts/ → Typography assets used sitewide │ └── 📂 images/ → Event-related images, banners, and logos │ ├── 📂 src/ → Main React source code │ ├── 📂 components/ → Reusable UI components │ │ ├── 🧩 Hero.jsx → Landing section featuring the event title and animations │ │ ├── 🧩 Events.jsx → Component listing all event names and details │ │ ├── 🧩 About.jsx → Section detailing event background and overview │ │ ├── 🧩 Contact.jsx → Contact information or form (if applicable) │ │ └── 🧩 [OtherComponents].jsx → Additional components as the project expands │ │ │ ├── 🧠 App.jsx → Root component that integrates all sections │ ├── 🚀 main.jsx → Entry point for mounting the React application │ └── 🎨 styles/ → SCSS/CSS styling files │ └── 🌀 locomotive-custom.scss
-│ → Custom styling for scroll animations and UI effects │ ├── 📂 public/ → Static files (favicon, meta tags, etc.) │ └── 🌐 index.html → Base HTML template used by Vite │ ├── 📜 vite.config.js → Vite configuration file (module resolution, plugins, etc.) ├── 📦 package.json → Project metadata, dependencies, and scripts ├── 📄 .gitignore → Specifies files/folders to be ignored by Git └── 📝 README.md → This documentation file
+Acunetix-12.0/
+├── 📂 assets/                     # Custom fonts, images, and visual assets
+│   ├── 📂 fonts/                 # Typography used across the website
+│   └── 📂 images/                # Banners, illustrations, and event graphics
+│
+├── 📂 src/                        # Core source code of the React application
+│   ├── 📂 components/            # Reusable React components
+│   │   ├── 🧩 Hero.jsx           # Landing section with event title & animations
+│   │   ├── 🧩 Events.jsx         # Lists all tech & non-tech event cards
+│   │   ├── 🧩 About.jsx          # Overview and purpose of the event
+│   │   ├── 🧩 Contact.jsx        # Contact details or query form
+│   │   └── 🧩 [Other].jsx        # Any additional sections/components
+│   │
+│   ├── 🧠 App.jsx                # Root component wrapping all sections
+│   ├── 🚀 main.jsx               # Entry point that bootstraps the React app
+│   └── 🎨 styles/                # Global styles and animation configs
+│       └── 🌀 locomotive-custom.scss  # Smooth scroll styling using Locomotive Scroll
+│
+├── 📂 public/                    # Static files served directly
+│   └── 🌐 index.html             # Main HTML template rendered by Vite
+│
+├── 📜 vite.config.js             # Vite build & plugin configuration
+├── 📦 package.json               # Project dependencies and npm scripts
+├── 📄 .gitignore                 # Files and folders ignored by Git
+└── 📝 README.md                  # This awesome documentation file
+
