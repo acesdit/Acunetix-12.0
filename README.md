@@ -38,6 +38,7 @@ Acunetix 12.0 is a flagship tech event organized by **ACES** and **CSI**, featur
 ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier)
 
 ## 📂 Project Structure
+```
 Acunetix-12.0/
 ├── public/
 │ ├── favicon.ico
@@ -63,7 +64,7 @@ Acunetix-12.0/
 ├── package.json
 ├── README.md
 └── vite.config.js
-
+```
 
 ## 🏆 Featured Events
 
