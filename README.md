@@ -1,78 +1,135 @@
-# 🔐 Acunetix 12.0 – Official Event Website
+# 🌐 Acunetix 12.0 - Official Event Platform
 
-**Acunetix 12.0** is the flagship tech event organized by **ACES** and **CSI**, designed to bring out the best in student talent across technical and non-technical domains. This is the official React-based web platform built to showcase event details, schedules, and announcements in a modern, animated experience.
+![Event Banner](https://via.placeholder.com/1200x400/1a237e/ffffff?text=ACUNETIX+12.0)
 
-🌐 **Live Website**: [https://acunetix12.tech/](https://acunetix12.tech/)
+[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://acunetix12.tech)
+[![React](https://img.shields.io/badge/React-18.2-%2361DAFB?logo=react)](https://reactjs.org)
+[![Vite](https://img.shields.io/badge/Vite-4.0-%646CFF?logo=vite)](https://vitejs.dev)
+[![License](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
 
----
+## 📜 Table of Contents
+- [About](#-about)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Featured Events](#-featured-events)
+- [Getting Started](#-getting-started)
+- [Contributing](#-contributing)
+- [Contact](#-contact)
 
-## 🎯 About the Event
+## 🌟 About
+Acunetix 12.0 is a flagship tech event organized by **ACES** and **CSI**, featuring:
+- 💻 10+ technical competitions
+- 🎮 4 esports tournaments
+- 🏆 ₹50,000+ prize pool
+- 📅 Multi-day hybrid event
 
-Acunetix 12.0 offers a dynamic mix of solo and team-based **Tech & Non-Tech competitions** where students can showcase their talents, creativity, and problem-solving skills. With exciting rewards, recognition, and a festival-like vibe, this is more than just a competition—it's an **unforgettable experience**.
-
-**Organized by:**  
-- 💻 ACES (Association of Computer Engineering Students)  
-- 🧠 CSI (Computer Society of India – Student Chapter)
-
----
-
-## 🌟 Highlights
-
-- 🧠 Technical Challenges  
-- 🎮 Non-Technical Games  
-- 👨‍💻 Hackathons & Quizzes  
-- 🎤 Guest Talks & Presentations  
-- 🏆 Prizes & Certificates  
-- 👥 Solo & Team Participation
-
----
+🔗 **Official Website:** [acunetix12.tech](https://acunetix12.tech)
 
 ## 🛠 Tech Stack
+### Frontend
+![React](https://img.shields.io/badge/React-20232A?logo=react)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?logo=vite)
+![SCSS](https://img.shields.io/badge/SCSS-CC6699?logo=sass)
 
-This website is built using modern web technologies for a high-performance, visually engaging user experience:
+### Animations
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?logo=framer)
+![Locomotive Scroll](https://img.shields.io/badge/Locomotive_Scroll-000000)
 
-- **React**  
-  A powerful, component-based JavaScript library for building interactive UIs.
-- **Vite**  
-  A lightning-fast development and build tool that streamlines the workflow.
-- **SCSS/CSS**  
-  For writing modular, maintainable, and responsive styles.
-- **Locomotive Scroll**  
-  Adds smooth, scroll-based animations to enhance user interaction.
-- **Custom Fonts & Graphic Assets**  
-  Curated assets that align with the vibrant event theme.
+### Dev Tools
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier)
 
----
+## 📂 Project Structure
+Acunetix-12.0/
+├── public/
+│ ├── favicon.ico
+│ └── index.html
+├── src/
+│ ├── assets/
+│ │ ├── fonts/
+│ │ └── images/
+│ ├── components/
+│ │ ├── Events/
+│ │ ├── Hero/
+│ │ └── Navigation/
+│ ├── pages/
+│ │ ├── Home.jsx
+│ │ ├── Events.jsx
+│ │ └── Registration.jsx
+│ ├── styles/
+│ │ ├── main.scss
+│ │ └── animations.scss
+│ ├── App.jsx
+│ └── main.jsx
+├── .gitignore
+├── package.json
+├── README.md
+└── vite.config.js
 
-## 📁 Project Structure
+Copy
 
-Below is a detailed breakdown of the repository’s structure, designed for scalability and ease of development:
-<details>
-  <summary>
-      Acunetix-12.0/
-├── 📂 assets/                     # Custom fonts, images, and visual assets
-│   ├── 📂 fonts/                 # Typography used across the website
-│   └── 📂 images/                # Banners, illustrations, and event graphics
-│
-├── 📂 src/                        # Core source code of the React application
-│   ├── 📂 components/            # Reusable React components
-│   │   ├── 🧩 Hero.jsx           # Landing section with event title & animations
-│   │   ├── 🧩 Events.jsx         # Lists all tech & non-tech event cards
-│   │   ├── 🧩 About.jsx          # Overview and purpose of the event
-│   │   ├── 🧩 Contact.jsx        # Contact details or query form
-│   │   └── 🧩 [Other].jsx        # Any additional sections/components
-│   │
-│   ├── 🧠 App.jsx                # Root component wrapping all sections
-│   ├── 🚀 main.jsx               # Entry point that bootstraps the React app
-│   └── 🎨 styles/                # Global styles and animation configs
-│       └── 🌀 locomotive-custom.scss  # Smooth scroll styling using Locomotive Scroll
-│
-├── 📂 public/                    # Static files served directly
-│   └── 🌐 index.html             # Main HTML template rendered by Vite
-│
-├── 📜 vite.config.js             # Vite build & plugin configuration
-├── 📦 package.json               # Project dependencies and npm scripts
-├── 📄 .gitignore                 # Files and folders ignored by Git
-└── 📝 README.md                  # This awesome documentation file
-  </summary>
-</details>
+## 🏆 Featured Events
+
+### 🎮 Esports Tournaments
+| Event       | Prize Pool | Format                      |
+|-------------|------------|-----------------------------|
+| Valorant    | ₹10,000    | 5v5 Elimination Tournament  |
+| FIFA 23     | ₹5,000     | 1v1 Knockout                |
+| COD Mobile  | ₹7,000     | 4v4 Battle Royale           |
+| Free Fire   | ₹8,000     | Squad Survival              |
+
+### 💻 Technical Events
+| Event          | Prize Pool | Description                     |
+|----------------|------------|---------------------------------|
+| Ctrl-AIt-Elite | ₹6,000     | 3-round coding challenge        |
+| BUG Bounty     | ₹3,000     | Debugging competition           |
+| Code of Lies   | ₹5,000     | Cybersecurity CTF               |
+| Build-a-thon   | ₹3,000     | No-code development challenge   |
+
+### 🧠 Quiz Events
+- DPL Cricket Auction (₹5,000)
+- Brainiac Quiz (₹4,000)
+- Treasure Trove (₹8,000)
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js ≥16.0
+- npm ≥8.0
+
+### Installation
+```bash
+git clone https://github.com/ACES-CSI/Acunetix-12.0.git
+cd Acunetix-12.0
+npm install
+npm run dev
+Build Commands
+bash
+Copy
+npm run build  # Production build
+npm run preview  # Local preview
+🤝 Contributing
+Fork the repository
+
+Create your feature branch (git checkout -b feature/amazing-feature)
+
+Commit changes (git commit -m 'Add amazing feature')
+
+Push to branch (git push origin feature/amazing-feature)
+
+Open a Pull Request
+
+📬 Contact
+Organizing Committee:
+
+📧 Email: contact@acunetix12.tech
+
+🐦 Twitter: @Acunetix12
+
+📱 Instagram: @Acunetix12
+
+Twitter Follow
+Instagram
+
+Join India's premier tech fest!
+Organized by ACES & CSI | acunetix12.tech
