@@ -47,8 +47,9 @@ This website is built using modern web technologies for a high-performance, visu
 ## 📁 Project Structure
 
 Below is a detailed breakdown of the repository’s structure, designed for scalability and ease of development:
-
-Acunetix-12.0/
+<details>
+  <summary>
+      Acunetix-12.0/
 ├── 📂 assets/                     # Custom fonts, images, and visual assets
 │   ├── 📂 fonts/                 # Typography used across the website
 │   └── 📂 images/                # Banners, illustrations, and event graphics
@@ -73,4 +74,5 @@ Acunetix-12.0/
 ├── 📦 package.json               # Project dependencies and npm scripts
 ├── 📄 .gitignore                 # Files and folders ignored by Git
 └── 📝 README.md                  # This awesome documentation file
-
+  </summary>
+</details>
