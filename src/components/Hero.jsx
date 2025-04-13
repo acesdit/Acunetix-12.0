@@ -71,7 +71,7 @@ const Hero = () => {
                 <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-sans">Acunetix 12.0</h1>
                 <p className="text-md sm:text-lg md:text-2xl lg:text-3xl">Dive into the world of illusions</p>
 
-                {/* Countdown Timer */}
+                {/* Countdown Timer
                 <div className="flex flex-wrap gap-4 sm:gap-8 md:gap-10 text-2xl sm:text-2xl md:text-2xl font-bold justify-center">
                     {["days", "hours", "minutes", "seconds"].map((unit, index) => (
                         <div key={index} className="flex flex-col items-center w-17 sm:w-24 md:w-28">
@@ -79,7 +79,7 @@ const Hero = () => {
                             <span className="text-[12px] sm:text-lg md:text-xl">{unit.toUpperCase()}</span>
                         </div>
                     ))}
-                </div>
+                </div> */}
             </div>
         </div>
     );

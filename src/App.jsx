@@ -12,7 +12,7 @@ import '../locomotive-custom.scss';
 import Sponsors from './components/Sponsors';
 import Footer from './components/Footer';
 import Chatbot from "./components/Chatbot";
-// import Start from "./components/Start";
+import Start from "./components/Start";
 import SchedulePage from "./components/SchedulePage";
 import EventDetails from "./components/EventDetails";
 import chatbotIcon from "./assets/AcunetixChatbot.webp";
@@ -139,6 +139,13 @@ function MainContent() {
           <Hero />
         </section>
 
+        <section 
+          ref={aboutRef} 
+          data-scroll-section={!isMobile} 
+          className='flex bg-black text-white flex-col items-center justify-center min-h-screen w-full'
+        >
+          <About />
+        </section>
         
 
         <section 
@@ -149,13 +156,6 @@ function MainContent() {
           <Event />
         </section>
 
-        <section 
-          ref={aboutRef} 
-          data-scroll-section={!isMobile} 
-          className='flex bg-black text-white flex-col items-center justify-center min-h-screen w-full'
-        >
-          <About />
-        </section>
         <section 
           ref={scheduleRef} 
           data-scroll-section={!isMobile} 
