@@ -226,18 +226,18 @@ function EventWrapper({ Component }) {
 }
 
 function App() {
-  // const [startAnimationComplete, setStartAnimationComplete] = useState(false);
-  // const location = useLocation();
+  const [startAnimationComplete, setStartAnimationComplete] = useState(false);
+  const location = useLocation();
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => setStartAnimationComplete(true), 3900);
-  //   return () => clearTimeout(timer);
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => setStartAnimationComplete(true), 3500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
       <AcunetixMetaTags /> 
-      {/* {!startAnimationComplete ? <Start /> : ( */}
+      {!startAnimationComplete ? <Start /> : (
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/event/:id" element={<EventDetails />} />
@@ -258,7 +258,7 @@ function App() {
           <Route path="/event/TreasureTrove" element={<EventWrapper Component={TreasureTrove} />}/>
           <Route path="/event/gameStorm" element={<EventWrapper Component={GameStorm} />}/>
         </Routes>
-      {/* )} */}
+       )} 
     </>
   );
 }
