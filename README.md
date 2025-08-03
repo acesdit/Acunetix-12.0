@@ -1,4 +1,4 @@
-# 🌀 Acunetix 12.0– Tech Fest Website
+# 🌀 Acunetix 12.0 – Tech Fest Website
 
 [![Website](https://img.shields.io/badge/Website-Live-brightgreen?style=for-the-badge)](https://acunetix12.tech)
 [![React](https://img.shields.io/badge/React-19.0-%2361DAFB?style=for-the-badge&logo=react)](https://reactjs.org)
