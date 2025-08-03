@@ -1,4 +1,4 @@
-# 🌀 Acunetix 12.0 - Official Event Platform
+# 🌀 Acunetix 12.0– Tech Fest Website
 
 [![Website](https://img.shields.io/badge/Website-Live-brightgreen?style=for-the-badge)](https://acunetix12.tech)
 [![React](https://img.shields.io/badge/React-19.0-%2361DAFB?style=for-the-badge&logo=react)](https://reactjs.org)
@@ -9,14 +9,13 @@
 
 ## 🎯 Project Overview
 
-**Acunetix 12.0** is the official website for India's largest student-organized cybersecurity and technology festival. A modern, high-performance web platform built with React 19 and advanced animations.
+**Acunetix 12.0** is a flagship event organized by ACES and CSI, offering a range of Tech & Non-Tech events. Participants take part in diverse competitions, showcasing their skills and earning recognition. With exciting prizes and a mix of solo and team events, it's a unique opportunity for students to shine and be part of an unforgettable experience.
 
 ### 🏆 Key Achievements
-- **2000+** participants from 50+ colleges across India
-- **₹5L+** total prize pool with national-level competitions
-- **95+** Lighthouse performance score
+- **3000+** students used the platform during the tech fest
+- **97% Mobile** and **100% Desktop** SEO scores via Google Search Console
+- **Ranked #2** in Google Search with analytics monitored via Google Analytics
 - **500+** AI chatbot responses for real-time assistance
-- **WCAG 2.1 AA** accessibility compliant
 
 ## 📜 Table of Contents
 - [✨ Features](#-features)
@@ -35,13 +34,12 @@
 - **Advanced Animations**: Framer Motion, GSAP, Locomotive Scroll
 - **3D Graphics**: Three.js and WebGL for immersive experiences
 - **AI Chatbot**: 500+ responses with natural language processing
-- **Performance**: 95+ Lighthouse score with optimized loading
+- **Performance**: 97% Mobile and 100% Desktop SEO scores
 
 ### 🎯 **Key Technical Highlights**
 
 - **Responsive Design**: Mobile-first approach with dark theme
 - **SEO Optimized**: Comprehensive meta tags and structured data
-- **Accessibility**: WCAG 2.1 AA compliant
 - **Real-time Features**: Live countdown, dynamic content updates
 - **Modern Architecture**: Component-based design with TypeScript support
 
@@ -97,15 +95,15 @@ $ npm run lint      # Check code quality
 ## 🏅 Key Metrics & Recognition
 
 ### **Technical Excellence**
-- ⚡ **95+** Lighthouse Performance Score
-- 📱 **100%** Mobile-Friendly Design
-- � **98+** SEO Optimization Score
+- ⚡ **97% Mobile** and **100% Desktop** SEO Scores
+- 📱 **3000+** Students Used the Platform
+- � **Ranked #2** in Google Search
 
 ### **Event Impact**
-- 👥 **2000+** Registered Participants
-- 🌍 **50+** Colleges Across India
-- 🏆 **₹5L+** Total Prize Pool
-- � **85%+** User Engagement Rate
+- Built SPA with modern animation and optimized performance, used by **3000+ students** during the tech fest
+- Deployed chatbot with **500+ FAQs**; enhanced UI with Framer Motion components
+- Achieved **97% Mobile** and **100% Desktop** SEO scores via Google Search Console
+- Ranked **#2 in Google Search** and monitored analytics via Google Analytics
 
 ---
 
