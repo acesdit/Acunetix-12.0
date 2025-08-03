@@ -1,11 +1,15 @@
 # 🚀 Acunetix 12.0– Tech Fest Website
 
+<div align="center">
+
 ![Banner](./screenshot/banner.png)
 
 [![Website](https://img.shields.io/badge/Website-Live-brightgreen?style=for-the-badge)](https://acunetix12.tech)
 [![React](https://img.shields.io/badge/React-19.0-%2361DAFB?style=for-the-badge&logo=react)](https://reactjs.org)
 [![Vite](https://img.shields.io/badge/Vite-6.2-%2346CFF?style=for-the-badge&logo=vite)](https://vitejs.dev)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0-%2306B6D4?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com)
+
+</div>
 
 > **"Dive into the world of illusions"** - India's premier student-led tech festival featuring cutting-edge technology and immersive experiences.
 
@@ -49,29 +53,25 @@
 
 ## 📸 Website Screenshots
 
-<div align="center">
-
 ### Main Pages
-
-<img src="./screenshot/home-page.png" alt="Home Page" width="400" style="margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-<img src="./screenshot/About-us.png" alt="About Us" width="400" style="margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-<img src="./screenshot/schedule.png" alt="Schedule" width="400" style="margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+| Home Page | About Us | Schedule |
+|-----------|----------|----------|
+| <img src="./screenshot/home-page.png" alt="Home Page" width="500"/> | <img src="./screenshot/About-us.png" alt="About Us" width="500"/> | <img src="./screenshot/schedule.png" alt="Schedule" width="500"/> |
 
 ### Event Pages
-
-<img src="./screenshot/Tech-events.png" alt="Tech Events" width="400" style="margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-<img src="./screenshot/no-tech-event.png" alt="Non-Tech Events" width="400" style="margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+| Tech Events | Non-Tech Events |
+|-------------|----------------|
+| <img src="./screenshot/Tech-events.png" alt="Tech Events" width="500"/> | <img src="./screenshot/no-tech-event.png" alt="Non-Tech Events" width="500"/> |
 
 ### Registration System
-
-<img src="./screenshot/tech-registration.png" alt="Tech Registration" width="400" style="margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-<img src="./screenshot/non-tech-registration.png" alt="Non-Tech Registration" width="400" style="margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+| Tech Registration | Non-Tech Registration |
+|-------------------|----------------------|
+| <img src="./screenshot/tech-registration.png" alt="Tech Registration" width="500"/> | <img src="./screenshot/non-tech-registration.png" alt="Non-Tech Registration" width="500"/> |
 
 ### AI Chatbot
-
-<img src="./screenshot/chatbot.png" alt="Chatbot" width="400" style="margin: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-
-</div>
+| Chatbot |
+|---------|
+| <img src="./screenshot/chatbot.png" alt="AI Chatbot" width="500"/> |
 
 ---
 
