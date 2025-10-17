@@ -139,6 +139,13 @@ function MainContent() {
           <Hero />
         </section>
 
+        <section 
+          ref={aboutRef} 
+          data-scroll-section={!isMobile} 
+          className='flex bg-black text-white flex-col items-center justify-center min-h-screen w-full'
+        >
+          <About />
+        </section>
         
 
         <section 
@@ -150,27 +157,20 @@ function MainContent() {
         </section>
 
         <section 
-          ref={aboutRef} 
-          data-scroll-section={!isMobile} 
-          className='flex bg-black text-white flex-col items-center justify-center min-h-screen w-full'
-        >
-          <About />
-        </section>
-        {/* <section 
           ref={scheduleRef} 
           data-scroll-section={!isMobile} 
           className="min-h-screen py-16"
         >
           <SchedulePage/>
-        </section> */}
+        </section>
 
-        {/* <section 
+        <section 
           ref={sponsorsRef} 
           data-scroll-section={!isMobile} 
           className="min-h-screen"
         >
           <Sponsors />
-        </section> */}
+        </section>
 
         <section 
           ref={footerRef} 
@@ -226,18 +226,18 @@ function EventWrapper({ Component }) {
 }
 
 function App() {
-  const [startAnimationComplete, setStartAnimationComplete] = useState(false);
-  const location = useLocation();
+  // const [startAnimationComplete, setStartAnimationComplete] = useState(false);
+  // const location = useLocation();
 
-  useEffect(() => {
-    const timer = setTimeout(() => setStartAnimationComplete(true), 3900);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setStartAnimationComplete(true), 3900);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <>
       <AcunetixMetaTags /> 
-      {!startAnimationComplete ? <Start /> : (
+      {/* {!startAnimationComplete ? <Start /> : ( */}
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/event/:id" element={<EventDetails />} />
@@ -258,7 +258,7 @@ function App() {
           <Route path="/event/TreasureTrove" element={<EventWrapper Component={TreasureTrove} />}/>
           <Route path="/event/gameStorm" element={<EventWrapper Component={GameStorm} />}/>
         </Routes>
-      )}
+      {/* )} */}
     </>
   );
 }

@@ -13,6 +13,34 @@ import Brainiac from "../assets/Brainiac.webp"
 
  
  export const events = [
+  {
+    id: "TreasureTrove",
+    image: TreasureTroveImg,
+    title: "Treasure Trove",
+    description: "First Event",
+    link: "/event/TreasureTrove",
+  },
+  {
+    id: "GameStorm",
+    image: GameStorm,
+    title: "GameStorm",
+    description: "First Event",
+    link: "/event/gameStorm",
+  },
+  {
+    id: "Dpl",
+    image: Dpl,
+    title: "DPL",
+    description: "This is the sixth event.",
+    link: "/event/dpl",
+  },
+  {
+    id: "codeOfLies",
+    image: codeOfLies,
+    title: "Code Of Lies",
+    description: "This is the fourth event.",
+    link: "/event/codeOfLies",
+  },
     {
       id: "brainiac",
       image: Brainiac,
@@ -34,13 +62,7 @@ import Brainiac from "../assets/Brainiac.webp"
       description: "This is the third event.",
       link: "/event/timeScape",
     },
-    {
-      id: "codeOfLies",
-      image: codeOfLies,
-      title: "Code Of Lies",
-      description: "This is the fourth event.",
-      link: "/event/codeOfLies",
-    },
+   
    
     {
       id: "BuildAThon",
@@ -56,26 +78,6 @@ import Brainiac from "../assets/Brainiac.webp"
     description: "This is the ninth event.",
     link: "/event/BugBounty",
   },
-  {
-    id: "TreasureTrove",
-    image: TreasureTroveImg,
-    title: "Treasure Trove",
-    description: "First Event",
-    link: "/event/TreasureTrove",
-  },
-  // {
-  //   id: "GameStorm",
-  //   image: GameStorm,
-  //   title: "GameStorm",
-  //   description: "First Event",
-  //   link: "/event/gameStorm",
-  // },
-  {
-    id: "Dpl",
-    image: Dpl,
-    title: "DPL",
-    description: "This is the sixth event.",
-    link: "/event/dpl",
-  },
+ 
   ];
   

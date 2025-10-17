@@ -1,7 +1,7 @@
 import React from "react";
-import video1 from "../assets/Reel-Acunetix4.mp4";
-import video2 from "../assets/Reel-Acunetix3.mp4";
-import video3 from "../assets/Reel-Acunetix.mp4";
+import video1 from "../assets/Reel-Acunetix5.mp4";
+import video2 from "../assets/Reel-Acunetix6.mp4";
+import video3 from "../assets/Reel-Acunetix7.mp4";
 
 
 function Reel() {
@@ -15,7 +15,7 @@ function Reel() {
         <div className="flex overflow-x-auto pb-4 scrollbar-hide md:grid md:grid-cols-3 md:gap-6 lg:gap-8 md:overflow-visible">
           {/* First Reel */}
           <a
-          href="https://www.instagram.com/reel/DGZ-W7GI9jw/"
+          href="https://www.instagram.com/acunetix.dit/reel/DHblKP0qE4C/"
             
             target="_blank"
             rel="noopener noreferrer"
@@ -39,7 +39,7 @@ function Reel() {
 
           {/* Second Reel */}
           <a
-            href="https://www.instagram.com/reel/C16YeEQKCe5/"
+            href="https://www.instagram.com/acunetix.dit/reel/DHeK-3ISMWk/"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative flex-shrink-0 w-[80vw] sm:w-[60vw] md:w-full mr-4 md:mr-0 transition-transform duration-300 hover:scale-105"
@@ -63,7 +63,7 @@ function Reel() {
           {/* Third Reel */}
           <a
             
-            href="https://www.instagram.com/reel/C4SnEGfKtDg/"
+            href="https://www.instagram.com/acunetix.dit/reel/DHdYGQDKG0E/"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative flex-shrink-0 w-[80vw] sm:w-[60vw] md:w-full mr-4 md:mr-0 transition-transform duration-300 hover:scale-105"

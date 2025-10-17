@@ -26,7 +26,7 @@ const GameStorm = () => {
   };
 
   const handleRegisterClick = () => {
-    window.open("https://forms.gle/NsHEZ9udbAGptkJU9", "_blank");
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSevQ-JSVd3Si2iuNhpo5jTasR33YT1f6i6RuMLMYIehkTlxig/viewform", "_blank");
   };
 
   // // Scroll to top on component mount (especially for mobile)
